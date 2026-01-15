@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -262,7 +263,7 @@ const gameResults: Record<string, any> = {
   },
 };
 
-export default function ResultPage() {
+function ResultContent() {
   const searchParams = useSearchParams();
   const game = searchParams.get("game") || "G1";
   const secondary = searchParams.get("secondary") || "";
@@ -460,5 +461,19 @@ export default function ResultPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    }>
+      <ResultContent />
+    </Suspense>
   );
 }

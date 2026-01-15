@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-export default function IntakePage() {
+function IntakeForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const auditType = searchParams.get("type") || "Game Audit";
@@ -273,5 +273,19 @@ export default function IntakePage() {
         </form>
       </div>
     </div>
+  );
+}
+
+export default function IntakePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    }>
+      <IntakeForm />
+    </Suspense>
   );
 }
