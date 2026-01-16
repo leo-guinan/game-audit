@@ -263,16 +263,19 @@ export default function QuizPage() {
     if (currentSectionComplete && !isLastSection) {
       setCurrentSection(currentSection + 1);
       trackFathomEvent("quiz_section_advance", currentSection + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   const prevSection = () => {
     if (!isFirstSection) {
       setCurrentSection(currentSection - 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  // Scroll to top when section changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentSection]);
 
   return (
     <div className="min-h-screen bg-background">
