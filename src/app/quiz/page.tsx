@@ -1,7 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+
+// Fathom tracking helper
+declare global {
+  interface Window {
+    fathom?: {
+      trackEvent: (eventId: string, options?: { value?: number }) => void;
+    };
+  }
+}
+
+const trackFathomEvent = (eventId: string, value?: number) => {
+  if (typeof window !== "undefined" && window.fathom) {
+    try {
+      window.fathom.trackEvent(eventId, value !== undefined ? { value } : undefined);
+    } catch (error) {
+      // Fathom not loaded yet, ignore
+    }
+  }
+};
 
 const questions = [
   {
@@ -177,6 +196,8 @@ export default function QuizPage() {
 
   const handleAnswer = (questionId: string, value: string) => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
+    // Track quiz answer (question ID and answer value)
+    trackFathomEvent(`quiz_answer_${questionId}_${value}`);
   };
 
   const calculateResult = () => {
@@ -219,8 +240,16 @@ export default function QuizPage() {
     }
 
     const result = calculateResult();
+    // Track quiz completion
+    trackFathomEvent("quiz_completed", 1);
+    trackFathomEvent(`quiz_result_${result.primaryGame}`, 1);
     router.push(`/quiz/result?game=${result.primaryGame}&secondary=${result.secondaryGame}`);
   };
+
+  // Track quiz start
+  useEffect(() => {
+    trackFathomEvent("quiz_started", 1);
+  }, []);
 
   const currentSectionData = questions[currentSection];
   const isLastSection = currentSection === questions.length - 1;
@@ -233,6 +262,7 @@ export default function QuizPage() {
   const nextSection = () => {
     if (currentSectionComplete && !isLastSection) {
       setCurrentSection(currentSection + 1);
+      trackFathomEvent("quiz_section_advance", currentSection + 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };

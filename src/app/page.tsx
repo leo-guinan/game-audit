@@ -12,6 +12,9 @@ export default function Home() {
           <p className="mt-6 text-xl leading-8 text-muted-foreground sm:text-2xl">
             Identify the game you're actually playing — and why it's not working yet.
           </p>
+          <p className="mt-4 text-lg leading-8 text-muted-foreground sm:text-xl">
+            Then lock that game in with guardrails your AI, VAs, and systems can't drift from.
+          </p>
         </div>
       </section>
 
@@ -53,10 +56,15 @@ export default function Home() {
             <li>Getting good feedback</li>
             <li>Interviewing impressive people</li>
             <li>Saying things that feel important</li>
+            <li>Delegating or automating output that quietly breaks the game</li>
           </ul>
           <p className="pt-4">…and still see no leverage, no growth, no momentum.</p>
           <p className="font-semibold">Why?</p>
           <p>
+            Most breakdowns aren't caused by bad execution —
+            they're caused by systems optimizing for the wrong rules.
+          </p>
+          <p className="pt-2">
             Because different games reward different behaviors —
             and most people are unknowingly optimizing for the wrong one.
           </p>
@@ -97,6 +105,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI/VA Section */}
+      <section className="mx-auto mt-24 max-w-3xl px-6 sm:px-8">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
+          Why scale breaks alignment before it breaks quality
+        </h2>
+        <div className="space-y-6 text-lg leading-8 text-foreground">
+          <p>
+            AI systems and VAs don't fail because they're low-quality.
+            <br />
+            They fail because they optimize locally — while games are global.
+          </p>
+          <p>Without explicit game constraints, systems drift toward:</p>
+          <ul className="space-y-2 pl-6 list-disc">
+            <li>The wrong success metrics</li>
+            <li>The wrong tone and structure</li>
+            <li>The wrong form of leverage</li>
+          </ul>
+          <p className="pt-4">
+            The result looks like productivity.
+            <br />
+            It feels like momentum.
+            <br />
+            <strong>But it's off-game.</strong>
+          </p>
+        </div>
+      </section>
+
       {/* Solution - The Quiz */}
       <section className="mx-auto mt-24 max-w-3xl px-6 sm:px-8">
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
@@ -133,7 +168,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-12">
           What you'll see after the quiz
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="p-6 border rounded-lg bg-card">
             <div className="text-3xl font-bold text-primary mb-4">1</div>
             <h3 className="text-xl font-bold text-foreground mb-3">Your Primary Game</h3>
@@ -153,6 +188,14 @@ export default function Home() {
             <h3 className="text-xl font-bold text-foreground mb-3">Your Best Next Move</h3>
             <p className="text-muted-foreground">
               Whether you need structural fixes, clearer leverage, better compression, stronger positioning, or a full audit.
+            </p>
+          </div>
+          <div className="p-6 border rounded-lg bg-card">
+            <div className="text-3xl font-bold text-primary mb-4">4</div>
+            <h3 className="text-xl font-bold text-foreground mb-3">Your Game Guardrails</h3>
+            <p className="text-muted-foreground">
+              The constraints your content, systems, and delegates must obey —
+              regardless of who (or what) produces the output.
             </p>
           </div>
         </div>
@@ -200,7 +243,19 @@ export default function Home() {
             You'll see the relevant audit after your results —
             only if it actually applies to you.
           </p>
-          <p className="text-muted-foreground italic">
+          <p className="pt-4">
+            Each Game Audit can be translated into:
+          </p>
+          <ul className="space-y-2 pl-6 list-disc">
+            <li>AI prompt constraints</li>
+            <li>VA review checklists</li>
+            <li>Content acceptance criteria</li>
+          </ul>
+          <p className="pt-4">
+            So quality doesn't depend on taste, vigilance, or taste battles —
+            it's enforced structurally.
+          </p>
+          <p className="text-muted-foreground italic pt-4">
             No pressure. The quiz stands on its own.
           </p>
         </div>
@@ -234,6 +289,13 @@ export default function Home() {
             <h3 className="text-xl font-semibold text-foreground mb-2">Q: Will I be sold to immediately?</h3>
             <p className="text-lg text-muted-foreground">
               No. You'll see your results first. Always.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-foreground mb-2">Q: Is this about automating content?</h3>
+            <p className="text-lg text-muted-foreground">
+              No. It's about preventing automation from breaking your strategy.
+              The audit defines what must not change — even as output scales.
             </p>
           </div>
         </div>
