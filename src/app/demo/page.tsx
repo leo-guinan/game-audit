@@ -11,81 +11,16 @@ type Episode = {
   premise?: string;
 };
 
-type Persona = {
-  id: string;
-  name: string;
-  emoji: string;
-  problem: string;
-  primaryGames: string[];
-  success: string;
-  accentColor?: string;
-};
-
 type Analysis = {
   alignment: number;
   failures: string[];
   genericSummary: string;
-  reactions: {
-    type: string;
-    reactions: string[];
-  };
   audienceEngagement: {
     aligned: number;
     misaligned1: number;
     misaligned2: number;
   };
-  audienceScenarios?: Array<{
-    problem: string;
-    background: string;
-    reaction: string;
-    helped: string;
-    missed: string;
-  }>;
-  personaReaction?: {
-    summary: string;
-    helped: string[];
-    missed: string[];
-  };
 };
-
-const personas: Persona[] = [
-  {
-    id: "independent-author",
-    name: "The Independent Author",
-    emoji: "📘",
-    problem: "Traditional vs self-publishing decision",
-    primaryGames: ["G2", "G4"],
-    success: "Clear ROI framework + control",
-    accentColor: "blue",
-  },
-  {
-    id: "systems-thinker",
-    name: "The Systems Thinker",
-    emoji: "🧠",
-    problem: "Understanding leverage vs distribution",
-    primaryGames: ["G3"],
-    success: "Transferable mental model",
-    accentColor: "purple",
-  },
-  {
-    id: "community-builder",
-    name: "The Community Builder",
-    emoji: "🧑‍🤝‍🧑",
-    problem: "Building durable audience trust",
-    primaryGames: ["G6"],
-    success: "Long-term cohesion, not virality",
-    accentColor: "green",
-  },
-  {
-    id: "meaning-seeker",
-    name: "The Meaning-Seeker",
-    emoji: "🧭",
-    problem: "Navigating identity change via work",
-    primaryGames: ["G5"],
-    success: "Narrative clarity + orientation",
-    accentColor: "orange",
-  },
-];
 
 const games = [
   {
@@ -124,7 +59,6 @@ export default function DemoPage() {
   const [step, setStep] = useState(0);
   const [episodes, setEpisodes] = useState<Episode[]>([]);
   const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null);
-  const [selectedPersona, setSelectedPersona] = useState<Persona | null>(null);
   const [selectedGame, setSelectedGame] = useState<string | null>(null);
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
   const [loading, setLoading] = useState(false);
@@ -139,18 +73,16 @@ export default function DemoPage() {
       .catch(console.error);
   }, []);
 
-  // Optimistically preload generic summary when both episode and persona are selected
+  // Optimistically preload generic summary when episode is selected
   useEffect(() => {
-    if (selectedEpisode && selectedPersona && !preloadedSummary && !preloadingSummary) {
+    if (selectedEpisode && !preloadedSummary && !preloadingSummary) {
       setPreloadingSummary(true);
       
-      // Start fetching generic summary in background (separate endpoint)
       fetch("/api/demo/analyze/generic", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           episodeId: selectedEpisode.id,
-          personaId: selectedPersona.id,
         }),
       })
         .then((res) => res.json())
@@ -163,61 +95,12 @@ export default function DemoPage() {
           setPreloadingSummary(false);
         });
     }
-  }, [selectedEpisode?.id, selectedPersona?.id, preloadedSummary, preloadingSummary]);
+  }, [selectedEpisode?.id, preloadedSummary, preloadingSummary]);
 
-  // Clear preloaded data when episode/persona changes
-  useEffect(() => {
-    if (step === 0) {
-      setPreloadedSummary(null);
-      setPreloadingSummary(false);
-    }
-  }, [selectedEpisode?.id, selectedPersona?.id]);
-
-  // Use preloaded summary if it becomes available while we're waiting on step 1
-  useEffect(() => {
-    if (step === 1 && loading && preloadedSummary && !analysis) {
-      setAnalysis(preloadedSummary);
-      setLoading(false);
-    }
-  }, [step, loading, preloadedSummary, analysis]);
-
-  // Optimistically preload game analysis when on step 2 for persona's primary games
-  useEffect(() => {
-    if (step === 2 && selectedEpisode && selectedPersona && analysis?.genericSummary) {
-      // Preload game analysis for persona's primary games
-      selectedPersona.primaryGames.forEach((gameId) => {
-        // Only preload if we haven't already selected this game
-        if (selectedGame !== gameId) {
-          fetch("/api/demo/analyze/game", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              episodeId: selectedEpisode.id,
-              selectedGame: gameId,
-              personaId: selectedPersona.id,
-            }),
-          }).catch(() => {
-            // Silently fail - preload is optional
-          });
-        }
-      });
-    }
-  }, [step, selectedEpisode?.id, selectedPersona?.primaryGames, selectedGame, analysis?.genericSummary]);
-
-  const handleEpisodeSelect = (episode: Episode) => {
+  const handleEpisodeSelect = async (episode: Episode) => {
     setSelectedEpisode(episode);
-    // Don't auto-advance, wait for persona selection
-  };
-
-  const handlePersonaSelect = (persona: Persona) => {
-    setSelectedPersona(persona);
-    // Still don't auto-advance - user clicks continue after both selected
-  };
-
-  const handleEpisodePersonaContinue = async () => {
-    if (!selectedEpisode || !selectedPersona) return;
     
-    // If we already have preloaded summary, use it immediately (instant transition!)
+    // If we already have preloaded summary, use it immediately
     if (preloadedSummary) {
       setAnalysis(preloadedSummary);
       setStep(1);
@@ -225,26 +108,19 @@ export default function DemoPage() {
       return;
     }
     
-    // Otherwise, show step 1 and fetch it
-    // If preload completes during fetch, useEffect will intercept and use it instead
     setLoading(true);
     setStep(1);
     
-    // Fetch the summary from separate endpoint
     try {
       const response = await fetch("/api/demo/analyze/generic", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          episodeId: selectedEpisode.id,
-          personaId: selectedPersona.id,
+          episodeId: episode.id,
         }),
       });
       const data = await response.json();
-      // Only set if we're still loading (preload might have already set it)
-      if (loading) {
       setAnalysis(data);
-      }
     } catch (error) {
       console.error(error);
     } finally {
@@ -253,78 +129,31 @@ export default function DemoPage() {
   };
 
   const handleGameSelect = async (gameId: string) => {
-    if (!selectedEpisode || !selectedPersona) return;
+    if (!selectedEpisode) return;
     setSelectedGame(gameId);
     setLoading(true);
 
     try {
-      // Fetch game analysis (separate endpoint)
       const gameResponse = await fetch("/api/demo/analyze/game", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           episodeId: selectedEpisode.id,
           selectedGame: gameId,
-          personaId: selectedPersona.id,
         }),
       });
       const gameData = await gameResponse.json();
       
-      // Merge with existing analysis - ensure all fields are present and properly typed
+      // Merge with existing analysis
       setAnalysis((prev) => ({
         alignment: gameData.alignment ?? prev?.alignment ?? 0,
         failures: Array.isArray(gameData.failures) ? gameData.failures : (prev?.failures || []),
         genericSummary: prev?.genericSummary || "",
-        reactions: prev?.reactions || { type: "mixed", reactions: [] },
         audienceEngagement: gameData.audienceEngagement || prev?.audienceEngagement || { aligned: 0, misaligned1: 0, misaligned2: 0 },
-        audienceScenarios: prev?.audienceScenarios,
-        personaReaction: prev?.personaReaction,
       }));
 
-      // Navigate to step 4 after we have the data
-      setStep(4);
-
-      // Preload audience scenarios in background (optimistic)
-      fetch("/api/demo/analyze/audience", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          episodeId: selectedEpisode.id,
-          selectedGame: gameId,
-          personaId: selectedPersona.id,
-          genericSummary: analysis?.genericSummary || "",
-          alignment: gameData.alignment || 0,
-        }),
-      })
-        .then((res) => res.json())
-        .then((audienceData) => {
-          // Update analysis with audience data when it arrives
-          setAnalysis((prev) => ({
-            alignment: prev?.alignment ?? 0,
-            failures: prev?.failures ?? [],
-            genericSummary: prev?.genericSummary ?? "",
-            reactions: audienceData.reactions ?? prev?.reactions ?? { type: "mixed", reactions: [] },
-            audienceEngagement: prev?.audienceEngagement ?? { aligned: 0, misaligned1: 0, misaligned2: 0 },
-            audienceScenarios: audienceData.audienceScenarios,
-            personaReaction: prev?.personaReaction,
-          }));
-        })
-        .catch((error) => {
-          console.error("Audience scenarios error:", error);
-          // Use fallback reactions if audience fails
-          setAnalysis((prev) => ({
-            alignment: prev?.alignment ?? 0,
-            failures: prev?.failures ?? [],
-            genericSummary: prev?.genericSummary ?? "",
-            reactions: {
-              type: "mixed",
-              reactions: ["Interesting content", "Good insights"],
-            },
-            audienceEngagement: prev?.audienceEngagement ?? { aligned: 0, misaligned1: 0, misaligned2: 0 },
-            audienceScenarios: prev?.audienceScenarios,
-            personaReaction: prev?.personaReaction,
-          }));
-        });
+      // Navigate to step 3 (game-aligned rewrite) after we have the data
+      setStep(3);
     } catch (error) {
       console.error(error);
     } finally {
@@ -332,11 +161,14 @@ export default function DemoPage() {
     }
   };
 
-  const getGameFitForPersona = (gameId: string): "high" | "medium" | "low" => {
-    if (!selectedPersona) return "medium";
-    if (selectedPersona.primaryGames.includes(gameId)) return "high";
-    // Could add more logic here for medium fit
-    return "low";
+  const getGameFitIndicator = (gameId: string): "high" | "medium" | "low" => {
+    if (!analysis || !selectedGame) return "medium";
+    if (gameId === selectedGame) {
+      return analysis.alignment > 50 ? "high" : "low";
+    }
+    // For other games, we could calculate based on episode's native games
+    const episodeNativeGames = selectedEpisode?.nativeGames || [];
+    return episodeNativeGames.includes(gameId) ? "high" : "medium";
   };
 
   return (
@@ -352,129 +184,45 @@ export default function DemoPage() {
           </p>
         </div>
 
-        {/* Step 0: Choose Episode × Persona */}
+        {/* Screen 0: Episode Selection */}
         {step === 0 && (
           <div className="space-y-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Step 0: Choose an Episode × Persona
+                Choose an episode
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Alignment is a three-body problem: Content × Game × Audience Persona
+                Pick a real episode so the baseline is grounded in reality.
               </p>
             </div>
-
-            <div className="grid gap-8 md:grid-cols-2">
-              {/* Episode Selector */}
-              <div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Episode</h3>
-                <div className="space-y-3">
+            <div className="grid gap-4 md:grid-cols-2">
               {episodes.map((episode) => (
                 <button
                   key={episode.id}
                   onClick={() => handleEpisodeSelect(episode)}
-                      className={`w-full p-4 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left ${
-                        selectedEpisode?.id === episode.id
-                          ? "border-primary bg-primary/10"
-                          : ""
-                      }`}
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="text-lg font-semibold text-foreground">
+                  className="p-6 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left"
+                >
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     {episode.title}
-                        </h4>
-                      </div>
-                      {episode.nativeGames && episode.nativeGames.length > 0 && (
-                        <p className="text-xs text-muted-foreground mb-1">
-                          Native: {episode.nativeGames.join(", ")}
-                        </p>
-                      )}
-                      {episode.premise && (
-                  <p className="text-sm text-muted-foreground">
-                          {episode.premise}
-                        </p>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Persona Selector */}
-              <div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Persona</h3>
-                <div className="space-y-3">
-                  {personas.map((persona) => (
-                    <button
-                      key={persona.id}
-                      onClick={() => handlePersonaSelect(persona)}
-                      className={`w-full p-4 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left ${
-                        selectedPersona?.id === persona.id
-                          ? "border-primary bg-primary/10"
-                          : ""
-                      }`}
-                    >
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-2xl">{persona.emoji}</span>
-                        <h4 className="text-lg font-semibold text-foreground">
-                          {persona.name}
-                        </h4>
-                      </div>
-                      <p className="text-sm text-foreground mb-2">
-                        <span className="font-medium">Problem:</span> {persona.problem}
-                      </p>
-                      <p className="text-xs text-muted-foreground mb-1">
-                        Primary Game: {persona.primaryGames.join(", ")}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        Success: {persona.success}
-                  </p>
+                  </h3>
+                  {episode.premise && (
+                    <p className="text-sm text-muted-foreground">
+                      {episode.premise}
+                    </p>
+                  )}
                 </button>
               ))}
             </div>
-              </div>
-            </div>
-
-            {/* Continue Button */}
-            {selectedEpisode && selectedPersona && (
-              <div className="text-center pt-6 border-t">
-                <div className="mb-4 p-4 bg-primary/5 border border-primary/20 rounded-lg">
-                  <p className="text-sm text-foreground font-medium">
-                    Simulating how <span className="font-semibold">{selectedPersona.name}</span> experiences <span className="font-semibold">{selectedEpisode.title}</span>
-                  </p>
-                  {preloadingSummary && (
-                    <p className="text-xs text-muted-foreground mt-2">
-                      ⚡ Preloading summary in the background...
-                    </p>
-                  )}
-                  {preloadedSummary && (
-                    <p className="text-xs text-green-600 dark:text-green-400 mt-2">
-                      ✓ Summary ready!
-                    </p>
-                  )}
-                </div>
-                <button
-                  onClick={handleEpisodePersonaContinue}
-                  disabled={loading}
-                  className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
-                >
-                  {preloadedSummary ? "Continue →" : loading || preloadingSummary ? "Loading..." : "Continue →"}
-                </button>
-              </div>
-            )}
           </div>
         )}
 
-        {/* Step 1: Generic Summary (Persona-Agnostic) */}
-        {step === 1 && selectedEpisode && selectedPersona && (
-
+        {/* Screen 1: Baseline Reality - Generic Summary */}
+        {step === 1 && selectedEpisode && (
           <div className="space-y-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Step 1: Generic Summary (Persona-Agnostic)
+                Here's what happens when you don't specify a game
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                This is what a neutral system produces when it ignores audience context.
-              </p>
             </div>
             <div className="p-8 border rounded-lg bg-muted/30">
               {loading ? (
@@ -485,7 +233,7 @@ export default function DemoPage() {
                     "{analysis?.genericSummary || "This episode discusses the importance of focus, long-term thinking, and disciplined execution as key drivers of sustained success."}"
                   </p>
                   <p className="text-sm text-muted-foreground pt-4">
-                    No persona cues. No game cues. This builds trust before we show the persona-specific fit.
+                    This is what AI produces by default.
                   </p>
                 </div>
               )}
@@ -493,56 +241,58 @@ export default function DemoPage() {
             <div className="text-center">
               <button
                 onClick={() => setStep(2)}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
+                disabled={loading}
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
               >
-                Continue to Step 2 →
+                Continue →
               </button>
             </div>
           </div>
         )}
 
-        {/* Step 2: Choose Game (Persona-Aware) */}
-        {step === 2 && selectedPersona && (
+        {/* Screen 2: Game Fit Reveal */}
+        {step === 2 && selectedEpisode && (
           <div className="space-y-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Step 2: Choose a game to apply
+                Now watch what changes when we choose a game
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Now decide what game this content is trying to play.
+                This content isn't bad. It just belongs somewhere specific.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {games.map((game) => {
-                const fit = getGameFitForPersona(game.id);
+                const fit = getGameFitIndicator(game.id);
                 return (
-                <button
-                  key={game.id}
-                  onClick={() => handleGameSelect(game.id)}
-                  disabled={loading}
+                  <button
+                    key={game.id}
+                    onClick={() => handleGameSelect(game.id)}
+                    disabled={loading}
                     className={`p-6 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left disabled:opacity-50 ${
-                      fit === "high" ? "border-green-500/50 bg-green-500/5" : ""
+                      fit === "high" ? "border-green-500/50 bg-green-500/5" : 
+                      fit === "low" ? "border-red-500/50 bg-red-500/5" : ""
                     }`}
-                >
+                  >
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-bold text-foreground">
-                    {game.id} — {game.name}
-                  </h3>
+                        {game.id} — {game.name}
+                      </h3>
                       {fit === "high" && (
                         <span className="text-green-600 font-semibold text-sm">
-                          ✓✓ High fit
+                          ✓ High Fit
                         </span>
                       )}
                       {fit === "low" && (
-                        <span className="text-yellow-600 font-semibold text-sm">
-                          ⚠️ Likely mismatch
+                        <span className="text-red-600 font-semibold text-sm">
+                          ✗ Mismatch
                         </span>
                       )}
                     </div>
-                  <p className="text-sm text-muted-foreground">
-                    {game.description}
-                  </p>
-                </button>
+                    <p className="text-sm text-muted-foreground">
+                      {game.description}
+                    </p>
+                  </button>
                 );
               })}
             </div>
@@ -554,253 +304,47 @@ export default function DemoPage() {
           </div>
         )}
 
-        {/* Step 3: Fit Check (Game × Episode × Persona) */}
-        {step === 4 && analysis && selectedGame && selectedPersona && (
+        {/* Screen 3: Game-Aligned Rewrite */}
+        {step === 3 && analysis && selectedGame && selectedEpisode && (
           <div className="space-y-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Step 3: Fit Check (Game × Episode × Persona)
+                Same content. Correct game.
               </h2>
             </div>
 
-            {/* Fit Score */}
-            <div className="p-8 border rounded-lg bg-card text-center">
-              <div className="mb-4">
-                <p className="text-sm text-muted-foreground mb-2">
-                  Fit for {selectedPersona.name}
-                </p>
-                <p className="text-6xl font-bold text-foreground">
-                  {analysis.alignment}%
-                </p>
+            {/* Fit Check */}
+            {analysis.alignment > 0 && (
+              <div className="p-8 border rounded-lg bg-card text-center">
+                <div className="mb-4">
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Alignment with {games.find((g) => g.id === selectedGame)?.name}
+                  </p>
+                  <p className="text-6xl font-bold text-foreground">
+                    {analysis.alignment}%
+                  </p>
+                </div>
+                {analysis.failures && analysis.failures.length > 0 && (
+                  <div className="mt-6 text-left">
+                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                      Why this {analysis.alignment < 50 ? "struggles" : "works"} for this game
+                    </h3>
+                    <ul className="space-y-2 pl-6 list-disc text-foreground">
+                      {(analysis.failures || []).map((failure, i) => (
+                        <li key={i}>{failure}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-              <p className="text-muted-foreground text-sm">
-                Fit measures whether this content solves the persona's problem when played as this game.
-              </p>
-            </div>
+            )}
 
-            {/* Why it fails/passes */}
+            {/* Rewritten Summary */}
             <div className="p-8 border rounded-lg bg-card">
               <h3 className="text-xl font-semibold text-foreground mb-4">
-                Why this {analysis.alignment < 50 ? "struggles" : "works"} for {games.find((g) => g.id === selectedGame)?.name}
+                Game-Aligned Summary
               </h3>
-              <ul className="space-y-2 pl-6 list-disc text-foreground">
-                {(analysis.failures || []).map((failure, i) => (
-                  <li key={i}>{failure}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="text-center">
-              <button
-                onClick={() => setStep(5)}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
-              >
-                See Persona Reaction →
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 4: Persona Reaction Panel */}
-        {step === 5 && analysis && selectedPersona && (
-          <div className="space-y-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Step 4: Persona Reaction Panel
-              </h2>
-            </div>
-
-            {/* Persona Snapshot */}
-            <div className="p-6 border rounded-lg bg-card">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">{selectedPersona.emoji}</span>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground">
-                    {selectedPersona.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Problem: {selectedPersona.problem}
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Game lens: {selectedPersona.primaryGames.join(", ")}
-                  </p>
-                </div>
-              </div>
-
-              {/* Reaction Summary */}
-              {analysis.audienceScenarios && analysis.audienceScenarios.length > 0 && (
-                <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                  <h4 className="text-sm font-semibold text-muted-foreground mb-2">
-                    Reaction
-                  </h4>
-                  <p className="text-foreground">
-                    {analysis.audienceScenarios[0]?.reaction || "Positive, but incomplete. The emphasis resonates, but lacks concrete decision criteria."}
-                  </p>
-                </div>
-              )}
-
-              {/* What Helped / What Was Missing */}
-              {analysis.audienceScenarios && analysis.audienceScenarios.length > 0 && (
-                <div className="grid md:grid-cols-2 gap-4 mt-6">
-                  <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
-                    <h4 className="text-sm font-semibold text-green-700 dark:text-green-400 mb-2">
-                      ✅ Solved for me
-                    </h4>
-                    <p className="text-foreground text-sm">
-                      {analysis.audienceScenarios[0]?.helped || "The emphasis on reader relationships and control resonates with my goals."}
-                    </p>
-                  </div>
-                  <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-                    <h4 className="text-sm font-semibold text-red-700 dark:text-red-400 mb-2">
-                      ❌ Still unresolved
-                    </h4>
-                    <p className="text-foreground text-sm">
-                      {analysis.audienceScenarios[0]?.missed || "Lacks concrete decision criteria and ROI framework for making the final choice."}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Audience Engagement Distribution (Persona-Scoped) */}
-            <div className="p-8 border rounded-lg bg-card">
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                Expected Engagement From This Persona's World
-              </h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                Engagement weighted by people who share this problem.
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-foreground">Aligned audience</span>
-                    <span className="text-foreground font-semibold">
-                      {analysis.audienceEngagement.aligned}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-4 overflow-hidden">
-                    <div
-                      className="bg-primary h-full transition-all"
-                      style={{ width: `${analysis.audienceEngagement.aligned}%` }}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-foreground">Misaligned group 1</span>
-                    <span className="text-foreground font-semibold">
-                      {analysis.audienceEngagement.misaligned1}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-4 overflow-hidden">
-                    <div
-                      className="bg-yellow-500 h-full transition-all"
-                      style={{ width: `${analysis.audienceEngagement.misaligned1}%` }}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-foreground">Misaligned group 2</span>
-                    <span className="text-foreground font-semibold">
-                      {analysis.audienceEngagement.misaligned2}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-4 overflow-hidden">
-                    <div
-                      className="bg-orange-500 h-full transition-all"
-                      style={{ width: `${analysis.audienceEngagement.misaligned2}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-              <p className="mt-6 text-center text-muted-foreground italic">
-                "Most engagement comes from people not playing the game you intended."
-              </p>
-            </div>
-
-            {/* Audience Scenarios */}
-            <div className="p-8 border rounded-lg bg-card">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                Audience Scenarios
-              </h3>
-              {analysis.audienceScenarios && analysis.audienceScenarios.length > 0 ? (
-                <div className="space-y-6">
-                  {analysis.audienceScenarios.map((scenario, i) => (
-                    <div
-                      key={i}
-                      className={`p-6 rounded-lg border ${
-                        analysis.reactions.type.includes("aligned")
-                          ? "bg-primary/5 border-primary/20"
-                          : "bg-muted/50 border-border"
-                      }`}
-                    >
-                      <div className="mb-4">
-                        <div className="text-sm text-muted-foreground mb-1">Problem</div>
-                        <p className="text-foreground font-medium">{scenario.problem}</p>
-                      </div>
-                      <div className="mb-4">
-                        <div className="text-sm text-muted-foreground mb-1">Background</div>
-                        <p className="text-foreground text-sm">{scenario.background}</p>
-                      </div>
-                      <div className="mb-4">
-                        <div className="text-sm text-muted-foreground mb-1">Reaction</div>
-                        <p className="text-foreground">{scenario.reaction}</p>
-                      </div>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                          <div className="text-sm text-muted-foreground mb-1">✅ What Helped</div>
-                          <p className="text-foreground text-sm">{scenario.helped}</p>
-                        </div>
-                        <div>
-                          <div className="text-sm text-muted-foreground mb-1">❌ What They Missed</div>
-                          <p className="text-foreground text-sm">{scenario.missed}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-              <div className="space-y-3">
-                {analysis.reactions.reactions.map((reaction, i) => (
-                  <div
-                    key={i}
-                    className={`p-4 rounded-lg ${
-                      analysis.reactions.type.includes("aligned")
-                        ? "bg-primary/10 border border-primary/20"
-                        : "bg-muted"
-                    }`}
-                  >
-                    <p className="text-foreground">{reaction}</p>
-                  </div>
-                ))}
-              </div>
-              )}
-            </div>
-
-            <div className="text-center">
-              <button
-                onClick={() => setStep(6)}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
-              >
-                See Rewritten Version →
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 5: Game-Aligned Rewrite (Persona-Aware) */}
-        {step === 6 && analysis && selectedGame && selectedEpisode && selectedPersona && (
-          <div className="space-y-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
-                Step 5: Rewritten for {selectedPersona.name} Playing {games.find((g) => g.id === selectedGame)?.name}
-              </h2>
-            </div>
-
-            <div className="p-8 border rounded-lg bg-card">
               <div className="space-y-4 text-lg leading-8 text-foreground">
-                <p className="font-semibold mb-4">Game-Aligned Summary:</p>
                 <p className="italic text-muted-foreground">
                   {selectedGame === "G1"
                     ? "Bill Gates as founder archetype: what sacrifice and focus actually cost, and why most people can't sustain it. This isn't inspiration — it's lineage. The episode traces how fanatical commitment shapes not just success, but identity. Who you become matters more than what you achieve."
@@ -811,70 +355,48 @@ export default function DemoPage() {
               </div>
             </div>
 
-            {/* Updated Engagement */}
-            <div className="p-8 border-2 border-primary rounded-lg bg-primary/5">
-              <h3 className="text-xl font-semibold text-foreground mb-6">
-                Updated Engagement Distribution
-              </h3>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-foreground">Aligned audience</span>
-                    <span className="text-foreground font-semibold">78%</span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-4 overflow-hidden">
-                    <div className="bg-primary h-full" style={{ width: "78%" }} />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-foreground">Misaligned groups</span>
-                    <span className="text-foreground font-semibold">22%</span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-4 overflow-hidden">
-                    <div className="bg-yellow-500 h-full" style={{ width: "22%" }} />
-                  </div>
-                </div>
-              </div>
-              <p className="mt-6 text-center font-semibold text-foreground">
-                "Total engagement may drop. Meaningful engagement increases."
+            {/* Callout */}
+            <div className="p-8 border-2 border-primary rounded-lg bg-primary/5 text-center">
+              <p className="text-xl font-semibold text-foreground">
+                "This version attracts fewer people — and the right ones."
               </p>
             </div>
 
             <div className="text-center">
               <button
-                onClick={() => setStep(7)}
+                onClick={() => setStep(4)}
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
               >
-                See How This Would Perform For Your Audience →
+                See the Insight →
               </button>
             </div>
           </div>
         )}
 
-        {/* Step 6: Conclusion & CTA */}
-        {step === 7 && (
+        {/* Screen 4: Quiet Punchline (Optional) */}
+        {step === 4 && (
           <div className="space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl font-bold text-foreground mb-8">
                 The Quiet Punchline
               </h2>
             </div>
 
             <div className="p-8 border-l-4 border-primary bg-primary/5 rounded-r-lg">
-              <p className="text-xl font-semibold text-foreground mb-6">
-                "This is what happens accidentally when you don't specify a game."
+              <p className="text-2xl font-semibold text-foreground mb-6">
+                "Most creators don't fail because they lack quality.<br />
+                They fail because they let the wrong game leak into their system."
               </p>
             </div>
 
             <div className="p-8 border rounded-lg bg-card">
               <h3 className="text-2xl font-bold text-foreground mb-6">
-                What the full Game Audit does
+                What the Game Audit Does
               </h3>
               <ul className="space-y-3 pl-6 list-disc text-lg leading-8 text-foreground">
                 <li>Identifies your primary game</li>
-                <li>Maps where your content drifts</li>
-                <li>Defines guardrails for AI / VAs</li>
+                <li>Shows where your content drifts</li>
+                <li>Defines AI / VA guardrails</li>
                 <li>Tunes for your audience, not the algorithm</li>
               </ul>
             </div>
