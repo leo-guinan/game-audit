@@ -144,13 +144,12 @@ export default function DemoPage() {
     if (selectedEpisode && selectedPersona && !preloadedSummary && !preloadingSummary) {
       setPreloadingSummary(true);
       
-      // Start fetching generic summary in background
-      fetch("/api/demo/analyze", {
+      // Start fetching generic summary in background (separate endpoint)
+      fetch("/api/demo/analyze/generic", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           episodeId: selectedEpisode.id,
-          selectedGame: "generic",
           personaId: selectedPersona.id,
         }),
       })
@@ -182,6 +181,29 @@ export default function DemoPage() {
     }
   }, [step, loading, preloadedSummary, analysis]);
 
+  // Optimistically preload game analysis when on step 2 for persona's primary games
+  useEffect(() => {
+    if (step === 2 && selectedEpisode && selectedPersona && analysis?.genericSummary) {
+      // Preload game analysis for persona's primary games
+      selectedPersona.primaryGames.forEach((gameId) => {
+        // Only preload if we haven't already selected this game
+        if (selectedGame !== gameId) {
+          fetch("/api/demo/analyze/game", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              episodeId: selectedEpisode.id,
+              selectedGame: gameId,
+              personaId: selectedPersona.id,
+            }),
+          }).catch(() => {
+            // Silently fail - preload is optional
+          });
+        }
+      });
+    }
+  }, [step, selectedEpisode?.id, selectedPersona?.primaryGames, selectedGame, analysis?.genericSummary]);
+
   const handleEpisodeSelect = (episode: Episode) => {
     setSelectedEpisode(episode);
     // Don't auto-advance, wait for persona selection
@@ -208,21 +230,20 @@ export default function DemoPage() {
     setLoading(true);
     setStep(1);
     
-    // Fetch the summary (preload useEffect will handle if it completes first)
+    // Fetch the summary from separate endpoint
     try {
-      const response = await fetch("/api/demo/analyze", {
+      const response = await fetch("/api/demo/analyze/generic", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           episodeId: selectedEpisode.id,
-          selectedGame: "generic",
           personaId: selectedPersona.id,
         }),
       });
       const data = await response.json();
       // Only set if we're still loading (preload might have already set it)
       if (loading) {
-        setAnalysis(data);
+      setAnalysis(data);
       }
     } catch (error) {
       console.error(error);
@@ -235,9 +256,11 @@ export default function DemoPage() {
     if (!selectedEpisode || !selectedPersona) return;
     setSelectedGame(gameId);
     setLoading(true);
+    setStep(4); // Show step 4 immediately (optimistic UI)
 
     try {
-      const response = await fetch("/api/demo/analyze", {
+      // Fetch game analysis (separate endpoint)
+      const gameResponse = await fetch("/api/demo/analyze/game", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -246,9 +269,60 @@ export default function DemoPage() {
           personaId: selectedPersona.id,
         }),
       });
-      const data = await response.json();
-      setAnalysis(data);
-      setStep(4);
+      const gameData = await gameResponse.json();
+      
+      // Merge with existing analysis
+      setAnalysis((prev) => ({
+        alignment: gameData.alignment ?? prev?.alignment ?? 0,
+        failures: gameData.failures ?? prev?.failures ?? [],
+        genericSummary: prev?.genericSummary ?? "",
+        reactions: prev?.reactions ?? { type: "mixed", reactions: [] },
+        audienceEngagement: gameData.audienceEngagement ?? prev?.audienceEngagement ?? { aligned: 0, misaligned1: 0, misaligned2: 0 },
+        audienceScenarios: prev?.audienceScenarios,
+        personaReaction: prev?.personaReaction,
+      }));
+
+      // Preload audience scenarios in background (optimistic)
+      fetch("/api/demo/analyze/audience", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          episodeId: selectedEpisode.id,
+          selectedGame: gameId,
+          personaId: selectedPersona.id,
+          genericSummary: analysis?.genericSummary || "",
+          alignment: gameData.alignment || 0,
+        }),
+      })
+        .then((res) => res.json())
+        .then((audienceData) => {
+          // Update analysis with audience data when it arrives
+          setAnalysis((prev) => ({
+            alignment: prev?.alignment ?? 0,
+            failures: prev?.failures ?? [],
+            genericSummary: prev?.genericSummary ?? "",
+            reactions: audienceData.reactions ?? prev?.reactions ?? { type: "mixed", reactions: [] },
+            audienceEngagement: prev?.audienceEngagement ?? { aligned: 0, misaligned1: 0, misaligned2: 0 },
+            audienceScenarios: audienceData.audienceScenarios,
+            personaReaction: prev?.personaReaction,
+          }));
+        })
+        .catch((error) => {
+          console.error("Audience scenarios error:", error);
+          // Use fallback reactions if audience fails
+          setAnalysis((prev) => ({
+            alignment: prev?.alignment ?? 0,
+            failures: prev?.failures ?? [],
+            genericSummary: prev?.genericSummary ?? "",
+            reactions: {
+              type: "mixed",
+              reactions: ["Interesting content", "Good insights"],
+            },
+            audienceEngagement: prev?.audienceEngagement ?? { aligned: 0, misaligned1: 0, misaligned2: 0 },
+            audienceScenarios: prev?.audienceScenarios,
+            personaReaction: prev?.personaReaction,
+          }));
+        });
     } catch (error) {
       console.error(error);
     } finally {

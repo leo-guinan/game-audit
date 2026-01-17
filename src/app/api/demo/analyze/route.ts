@@ -427,11 +427,17 @@ Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "r
     };
 
     // Only generate audience scenarios if we have a specific game selected
+    // Use timeout to avoid exceeding Vercel's 60s limit
     if (selectedGame && selectedGame !== "generic") {
       try {
-        const audienceSimulator = mastra.getAgentById('audience-simulator-agent');
-        
-        if (audienceSimulator) {
+        // Set a timeout for audience simulator (25s max to leave room for other processing)
+        const AUDIENCE_SIMULATOR_TIMEOUT = 25000;
+        const audienceSimulatorPromise = (async () => {
+          const audienceSimulator = mastra.getAgentById('audience-simulator-agent');
+          
+          if (!audienceSimulator) {
+            return null;
+          }
           const personas: Record<string, { name: string; problem: string; primaryGames: string[]; success: string }> = {
             "independent-author": {
               name: "The Independent Author",
@@ -474,67 +480,89 @@ Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "r
             ? `Focus on scenarios for ${currentPersona.name} - someone facing "${currentPersona.problem}". Their primary game orientation is ${currentPersona.primaryGames.join(", ")}, and success for them means: ${currentPersona.success}.`
             : "";
 
-          const simulatorPrompt = `Generate 2-3 realistic audience scenarios for people trying to solve problems in ${selectedGame} - ${gameDescriptions[selectedGame]}. ${personaContext}
+          // Optimize prompt - use shorter summary and be more concise to reduce processing time
+          const shortSummary = genericSummary.length > 500 
+            ? genericSummary.substring(0, 500) + '...'
+            : genericSummary;
+          
+          const simulatorPrompt = `Generate 2-3 audience scenarios for ${selectedGame} - ${gameDescriptions[selectedGame]}. ${personaContext}
 
-Episode Content Summary: ${genericSummary}
-Episode Alignment with ${selectedGame}: ${Math.round(alignment)}%
+Summary: ${shortSummary}
+Alignment: ${Math.round(alignment)}%
 
-Create authentic scenarios where people come to this episode looking for help with their ${selectedGame} problem. Show:
-1. Their specific problem/challenge
-2. Brief background about who they are
-3. How they react to the episode (be honest - positive if aligned, frustrated if misaligned)
-4. What specifically helped them (or "nothing concrete" if misaligned)
-5. What they needed but didn't get
-
-Return your response as JSON:
+Return JSON only:
 {
   "scenarios": [
     {
-      "problem": "specific problem they're trying to solve",
-      "background": "brief context about them",
-      "reaction": "their authentic reaction to the episode",
-      "helped": "what from the episode helped them",
-      "missed": "what they needed but didn't get"
+      "problem": "their problem",
+      "background": "brief context",
+      "reaction": "their reaction",
+      "helped": "what helped",
+      "missed": "what was missing"
     }
   ]
 }`;
 
-        const simulatorThreadId = `audience-${episodeId}-${selectedGame}`;
-        const simulatorResourceId = `episode-${episodeId}`;
-        
-        const simulatorStream = await audienceSimulator.stream([
-          { role: 'user' as const, content: simulatorPrompt },
-        ], {
-          memory: {
-            thread: simulatorThreadId,
-            resource: simulatorResourceId,
-          },
-        });
+          const simulatorThreadId = `audience-${episodeId}-${selectedGame}`;
+          const simulatorResourceId = `episode-${episodeId}`;
+          
+          const simulatorStream = await audienceSimulator.stream([
+            { role: 'user' as const, content: simulatorPrompt },
+          ], {
+            memory: {
+              thread: simulatorThreadId,
+              resource: simulatorResourceId,
+            },
+          });
 
-        let simulatorText = '';
-        for await (const chunk of simulatorStream.textStream) {
-          simulatorText += chunk;
-        }
-
-        // Parse scenarios from response
-        try {
-          const jsonMatch = simulatorText.match(/\{[\s\S]*\}/);
-          if (jsonMatch) {
-            const parsed = JSON.parse(jsonMatch[0]);
-            if (parsed.scenarios && Array.isArray(parsed.scenarios)) {
-              audienceScenarios = parsed.scenarios;
-              
-              // Generate reaction snippets from scenarios
-              reactions = {
-                type: alignment > 50 ? `${selectedGame}-aligned` : `${selectedGame}-misaligned`,
-                reactions: audienceScenarios.map(s => s.reaction).slice(0, 3),
-              };
-            }
+          let simulatorText = '';
+          for await (const chunk of simulatorStream.textStream) {
+            simulatorText += chunk;
           }
-        } catch (parseError) {
-          console.error('Failed to parse audience simulator response:', parseError);
+
+          // Parse scenarios from response
+          try {
+            const jsonMatch = simulatorText.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+              const parsed = JSON.parse(jsonMatch[0]);
+              if (parsed.scenarios && Array.isArray(parsed.scenarios)) {
+                return parsed.scenarios;
+              }
+            }
+          } catch (parseError) {
+            console.error('Failed to parse audience simulator response:', parseError);
+          }
+          return null;
+        })();
+
+        // Race against timeout - return what we have if simulator takes too long
+        const timeoutPromise = new Promise<null>((resolve) => 
+          setTimeout(() => {
+            console.warn('Audience simulator timeout - skipping scenarios');
+            resolve(null);
+          }, AUDIENCE_SIMULATOR_TIMEOUT)
+        );
+
+        const scenariosResult = await Promise.race([
+          audienceSimulatorPromise,
+          timeoutPromise,
+        ]);
+
+        if (scenariosResult && scenariosResult.length > 0) {
+          audienceScenarios = scenariosResult;
+          // Generate reaction snippets from scenarios
+          reactions = {
+            type: alignment > 50 ? `${selectedGame}-aligned` : `${selectedGame}-misaligned`,
+            reactions: audienceScenarios.map(s => s.reaction).slice(0, 3),
+          };
+          console.log(`Generated ${audienceScenarios.length} audience scenarios`);
+        } else {
+          console.warn('No audience scenarios generated - using fallback reactions');
+          reactions = audienceReactions[episodeId]?.[selectedGame] || {
+            type: "mixed",
+            reactions: ["Interesting content", "Good insights"],
+          };
         }
-      }
       } catch (error) {
         console.error('Audience simulator error:', error);
         // Fallback to hardcoded reactions
