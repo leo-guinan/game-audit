@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mastra } from "@/mastra";
+import { sql } from "@vercel/postgres";
 import fs from "fs";
 import path from "path";
 
@@ -63,6 +64,23 @@ export async function POST(request: NextRequest) {
 
     let genericSummary = "";
 
+    // Try to fetch from database first
+    try {
+      const cached = await sql`
+        SELECT generic_summary FROM demo_generic_summaries
+        WHERE episode_id = ${episodeId}
+      `;
+      
+      if (cached.rows.length > 0 && cached.rows[0].generic_summary) {
+        genericSummary = cached.rows[0].generic_summary;
+        console.log(`Using cached generic summary for ${episodeId}`);
+        return NextResponse.json({ genericSummary });
+      }
+    } catch (dbError) {
+      console.warn('Database fetch failed, falling back to generation:', dbError);
+    }
+
+    // If not in cache, generate it
     try {
       const genericAgent = mastra.getAgentById('generic-agent');
       
@@ -70,9 +88,11 @@ export async function POST(request: NextRequest) {
         throw new Error('Generic agent not found');
       }
 
-      if (content && content.length >= 100) {
+      if (!content || content.length < 100) {
+        console.warn('Content too short for generic summary, using fallback summary');
+        genericSummary = genericSummaries[episodeId] || "This episode explores key themes and insights relevant to creators and entrepreneurs.";
+      } else {
         console.log(`Calling generic agent with content length: ${content.length} characters`);
-        
         const contentToAnalyze = content.length > 20000 
           ? content.substring(0, 20000) + '\n\n[... transcript continues, focusing analysis on themes established in first section ...]'
           : content;
@@ -105,6 +125,19 @@ Provide a clear, specific summary that captures the main themes and insights. Be
         
         console.log(`Generic agent processed ${chunkCount} chunks, returned summary length: ${summaryText.length} characters`);
         genericSummary = summaryText.trim();
+        
+        // Cache the result (fire and forget)
+        try {
+          await sql`
+            INSERT INTO demo_generic_summaries (episode_id, generic_summary, updated_at)
+            VALUES (${episodeId}, ${genericSummary}, NOW())
+            ON CONFLICT (episode_id) DO UPDATE
+            SET generic_summary = EXCLUDED.generic_summary, updated_at = NOW()
+          `;
+          console.log(`Cached generic summary for ${episodeId}`);
+        } catch (cacheError) {
+          console.warn('Failed to cache generic summary:', cacheError);
+        }
       }
     } catch (error) {
       console.error('Generic agent error:', error);

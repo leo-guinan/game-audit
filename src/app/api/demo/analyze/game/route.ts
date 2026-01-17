@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mastra } from "@/mastra";
+import { sql } from "@vercel/postgres";
 import fs from "fs";
 import path from "path";
 
@@ -69,6 +70,40 @@ export async function POST(request: NextRequest) {
       }
     } catch (error) {
       console.error('Error loading episode content:', error);
+    }
+
+    // Try to fetch from database first
+    try {
+      const cached = await sql`
+        SELECT alignment_score, alignment_reasons, game_aligned_summary
+        FROM demo_analysis_cache
+        WHERE episode_id = ${episodeId} AND game_id = ${selectedGame}
+      `;
+      
+      if (cached.rows.length > 0) {
+        const row = cached.rows[0];
+        const alignment = row.alignment_score || 0;
+        const failures = Array.isArray(row.alignment_reasons) ? row.alignment_reasons : [];
+        const gameAlignedSummary = row.game_aligned_summary || undefined;
+        
+        console.log(`Using cached analysis for ${episodeId} × ${selectedGame}`);
+        
+        const alignmentScore = alignment / 100;
+        const audienceEngagement = {
+          aligned: Math.round(alignmentScore * 100),
+          misaligned1: Math.round((1 - alignmentScore) * 0.4 * 100),
+          misaligned2: Math.round((1 - alignmentScore) * 0.6 * 100),
+        };
+        
+        return NextResponse.json({
+          alignment: Math.round(alignment),
+          failures,
+          gameAlignedSummary,
+          audienceEngagement,
+        });
+      }
+    } catch (dbError) {
+      console.warn('Database fetch failed, falling back to generation:', dbError);
     }
 
     let alignment = 0.42;
@@ -213,6 +248,40 @@ Be specific and concrete. Show how the episode content aligns with ${selectedGam
     }
 
     alignment = Math.min(100, Math.max(0, alignment));
+    
+    // Cache the result (fire and forget)
+    try {
+      // Get generic summary for caching
+      let genericSummaryForCache = "";
+      try {
+        const genericCached = await sql`
+          SELECT generic_summary FROM demo_generic_summaries WHERE episode_id = ${episodeId}
+        `;
+        if (genericCached.rows.length > 0 && genericCached.rows[0].generic_summary) {
+          genericSummaryForCache = genericCached.rows[0].generic_summary;
+        }
+      } catch (e) {
+        // Ignore if we can't fetch generic summary
+      }
+
+      await sql`
+        INSERT INTO demo_analysis_cache (
+          episode_id, game_id, generic_summary, alignment_score,
+          alignment_reasons, game_aligned_summary, updated_at
+        ) VALUES (
+          ${episodeId}, ${selectedGame}, ${genericSummaryForCache || null}, ${alignment},
+          ${JSON.stringify(failures)}::jsonb, ${gameAlignedSummary || null}, NOW()
+        )
+        ON CONFLICT (episode_id, game_id) DO UPDATE
+        SET alignment_score = EXCLUDED.alignment_score,
+            alignment_reasons = EXCLUDED.alignment_reasons,
+            game_aligned_summary = EXCLUDED.game_aligned_summary,
+            updated_at = NOW()
+      `;
+      console.log(`Cached analysis for ${episodeId} × ${selectedGame}`);
+    } catch (cacheError) {
+      console.warn('Failed to cache analysis:', cacheError);
+    }
     
     const alignmentScore = alignment / 100;
     const audienceEngagement = {
