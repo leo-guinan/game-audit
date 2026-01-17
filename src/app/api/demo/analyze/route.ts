@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mastra } from "@/mastra";
 
+// Increase timeout for this route (up to 60s on Vercel free plan)
+// Multiple agent calls can take 10-30+ seconds
+export const maxDuration = 60;
+
 // Game alignment scores (simulated - can be replaced with real Mastra analysis)
 const gameAlignmentScores: Record<string, Record<string, number>> = {
   "bill-gates": {
