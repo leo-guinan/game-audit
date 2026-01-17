@@ -73,9 +73,11 @@ export async function POST(request: NextRequest) {
 
     let alignment = 0.42;
     let failures: string[] = [];
+    let gameAlignedSummary = "";
 
     try {
       const gameAnalyzerAgent = mastra.getAgentById('game-analyzer-agent');
+      const genericAgent = mastra.getAgentById('generic-agent');
       
       if (!gameAnalyzerAgent) {
         throw new Error('Game analyzer agent not found');
@@ -144,6 +146,48 @@ Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "r
         } catch (parseError) {
           console.error('Failed to parse game analyzer response:', parseError);
         }
+
+        // Generate game-aligned summary using generic agent with game-specific prompt
+        if (genericAgent) {
+          try {
+            const summaryContent = content.length > 20000
+              ? content.substring(0, 20000) + '\n\n[... transcript continues ...]'
+              : content;
+
+            const gameAlignedPrompt = `Rewrite this podcast episode summary specifically for ${selectedGame} - ${gameDescriptions[selectedGame]}.
+
+Original Episode Content:
+${summaryContent}
+
+Create a 2-3 sentence summary that:
+- Focuses on how this content serves ${selectedGame}
+- Highlights the specific value this game extracts from the episode
+- Uses language and framing appropriate for ${selectedGame}
+
+Be specific and concrete. Show how the episode content aligns with ${selectedGame}'s purpose.`;
+
+            const summaryThreadId = `rewrite-${episodeId}-${selectedGame}`;
+            const summaryResourceId = `episode-${episodeId}`;
+
+            const summaryStream = await genericAgent.stream([
+              { role: 'user' as const, content: gameAlignedPrompt },
+            ], {
+              memory: {
+                thread: summaryThreadId,
+                resource: summaryResourceId,
+              },
+            });
+
+            let summaryText = '';
+            for await (const chunk of summaryStream.textStream) {
+              summaryText += chunk;
+            }
+            gameAlignedSummary = summaryText.trim();
+            console.log(`Generated game-aligned summary: ${gameAlignedSummary.length} characters`);
+          } catch (summaryError) {
+            console.error('Failed to generate game-aligned summary:', summaryError);
+          }
+        }
       } else {
         // Use fallback data
         console.warn('Content too short for game analysis, using fallback data');
@@ -181,6 +225,7 @@ Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "r
       alignment: Math.round(alignment),
       failures,
       audienceEngagement,
+      gameAlignedSummary: gameAlignedSummary || undefined,
     });
   } catch (error) {
     console.error('API route error:', error);

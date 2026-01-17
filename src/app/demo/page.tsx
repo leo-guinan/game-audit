@@ -15,6 +15,7 @@ type Analysis = {
   alignment: number;
   failures: string[];
   genericSummary: string;
+  gameAlignedSummary?: string;
   audienceEngagement: {
     aligned: number;
     misaligned1: number;
@@ -97,8 +98,13 @@ export default function DemoPage() {
     }
   }, [selectedEpisode?.id, preloadedSummary, preloadingSummary]);
 
-  const handleEpisodeSelect = async (episode: Episode) => {
+  const handleEpisodeSelect = (episode: Episode) => {
+    // Just select the episode, don't auto-advance
     setSelectedEpisode(episode);
+  };
+
+  const handleContinueToBaseline = async () => {
+    if (!selectedEpisode) return;
     
     // If we already have preloaded summary, use it immediately
     if (preloadedSummary) {
@@ -116,7 +122,7 @@ export default function DemoPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          episodeId: episode.id,
+          episodeId: selectedEpisode.id,
         }),
       });
       const data = await response.json();
@@ -149,6 +155,7 @@ export default function DemoPage() {
         alignment: gameData.alignment ?? prev?.alignment ?? 0,
         failures: Array.isArray(gameData.failures) ? gameData.failures : (prev?.failures || []),
         genericSummary: prev?.genericSummary || "",
+        gameAlignedSummary: gameData.gameAlignedSummary,
         audienceEngagement: gameData.audienceEngagement || prev?.audienceEngagement || { aligned: 0, misaligned1: 0, misaligned2: 0 },
       }));
 
@@ -162,11 +169,8 @@ export default function DemoPage() {
   };
 
   const getGameFitIndicator = (gameId: string): "high" | "medium" | "low" => {
-    if (!analysis || !selectedGame) return "medium";
-    if (gameId === selectedGame) {
-      return analysis.alignment > 50 ? "high" : "low";
-    }
-    // For other games, we could calculate based on episode's native games
+    // On Screen 2, always use episode's native games (don't depend on selectedGame)
+    // This gives consistent fit indicators before selection
     const episodeNativeGames = selectedEpisode?.nativeGames || [];
     return episodeNativeGames.includes(gameId) ? "high" : "medium";
   };
@@ -200,7 +204,11 @@ export default function DemoPage() {
                 <button
                   key={episode.id}
                   onClick={() => handleEpisodeSelect(episode)}
-                  className="p-6 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left"
+                  className={`p-6 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left ${
+                    selectedEpisode?.id === episode.id
+                      ? "border-primary bg-primary/10"
+                      : ""
+                  }`}
                 >
                   <h3 className="text-xl font-bold text-foreground mb-2">
                     {episode.title}
@@ -213,6 +221,17 @@ export default function DemoPage() {
                 </button>
               ))}
             </div>
+            {selectedEpisode && (
+              <div className="text-center pt-6 border-t">
+                <button
+                  onClick={handleContinueToBaseline}
+                  disabled={loading}
+                  className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+                >
+                  Continue →
+                </button>
+              </div>
+            )}
           </div>
         )}
 
@@ -345,13 +364,15 @@ export default function DemoPage() {
                 Game-Aligned Summary
               </h3>
               <div className="space-y-4 text-lg leading-8 text-foreground">
-                <p className="italic text-muted-foreground">
-                  {selectedGame === "G1"
-                    ? "Bill Gates as founder archetype: what sacrifice and focus actually cost, and why most people can't sustain it. This isn't inspiration — it's lineage. The episode traces how fanatical commitment shapes not just success, but identity. Who you become matters more than what you achieve."
-                    : selectedGame === "G2"
-                    ? "Extractable plays from Gates's approach: (1) Define measures of success that align with your strengths, (2) Use constraints as advantages, (3) Build systems that reward your obsessive focus. Each tactical move is reproducible — if you're willing to pay the cost."
-                    : "The underlying model: Focus compounds when it matches your innate strengths. Gates's system wasn't about discipline — it was about designing a company that naturally rewarded his obsessive personality. The constraint → leverage loop applies beyond tech."}
-                </p>
+                {analysis.gameAlignedSummary ? (
+                  <p className="italic text-muted-foreground">
+                    "{analysis.gameAlignedSummary}"
+                  </p>
+                ) : (
+                  <p className="italic text-muted-foreground">
+                    Generating game-aligned summary...
+                  </p>
+                )}
               </div>
             </div>
 
