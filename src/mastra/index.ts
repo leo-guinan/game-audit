@@ -15,10 +15,21 @@ import {
 } from '@mastra/observability';
 
 // Shared PostgreSQL storage for all agents
-const postgresStorage = new PostgresStore({
-  id: 'mastra-storage',
-  connectionString: process.env.POSTGRES_URL || process.env.DATABASE_URL || '',
-} as any);
+// Only initialize PostgresStore if connection string is available
+const connectionString = process.env.POSTGRES_URL || process.env.DATABASE_URL || '';
+
+let postgresStorage: PostgresStore | undefined;
+if (connectionString) {
+  try {
+    postgresStorage = new PostgresStore({
+      id: 'mastra-storage',
+      connectionString,
+    } as any);
+  } catch (error) {
+    console.error('Failed to initialize PostgresStore:', error);
+    // Continue without storage - agents will still work, just without persistence
+  }
+}
 
 export const mastra = new Mastra({
   workflows: { weatherWorkflow },
@@ -29,7 +40,7 @@ export const mastra = new Mastra({
     audienceSimulatorAgent
   },
 
-  storage: postgresStorage,
+  storage: postgresStorage, // undefined if connection string missing, Mastra will handle gracefully
   logger: new PinoLogger({
     name: 'Mastra',
     level: 'info',

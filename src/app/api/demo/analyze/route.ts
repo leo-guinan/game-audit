@@ -142,27 +142,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Return generic summary if requested
-    if (selectedGame === "generic") {
-      const genericSummaries: Record<string, string> = {
-        "bill-gates":
-          "This episode discusses the importance of focus, long-term thinking, and disciplined execution as key drivers of sustained success. It explores how Bill Gates's early obsession with programming led to building Microsoft through relentless dedication and strategic decision-making.",
-        "jenny":
-          "This episode breaks down the tactical frameworks for creating viral short-form content, including hook optimization, retention strategies, and visual-first storytelling approaches that drive engagement on platforms like YouTube Shorts.",
-        "paul-millerd":
-          "This episode examines the distinction between distribution strategies and leverage mechanisms in creator businesses, analyzing how different approaches to audience building create different types of value and long-term sustainability.",
-        "james-dyson":
-          "This episode explores innovation through persistence, examining how James Dyson's thousands of prototypes and refusal to compromise led to breakthrough products that transformed entire industries.",
-        "tommy":
-          "This episode analyzes viral content strategies and distribution tactics, breaking down what makes certain content travel while similar pieces fail to gain traction.",
-      };
-
-      return NextResponse.json({
-        genericSummary:
-          genericSummaries[episodeId] ||
-          "This episode explores key themes and insights relevant to creators and entrepreneurs.",
-      });
-    }
-
     if (!selectedGame) {
       return NextResponse.json(
         { error: "Missing selectedGame" },
@@ -171,20 +150,39 @@ export async function POST(request: NextRequest) {
     }
 
     // Load episode content for analysis
-    const episodeResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/demo/episodes?id=${episodeId}`
-    );
-    const episodeData = await episodeResponse.json();
-    // Use fullContent for proper analysis, fallback to content if fullContent not available
-    const content = episodeData.fullContent || episodeData.content || "";
-    
-    if (!content || content.length < 100) {
-      console.error('Episode content is too short or missing:', {
-        episodeId,
-        contentLength: content?.length || 0,
-        hasFullContent: !!episodeData.fullContent,
-        hasContent: !!episodeData.content,
-      });
+    let content = "";
+    try {
+      const episodeResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/demo/episodes?id=${episodeId}`
+      );
+      
+      if (!episodeResponse.ok) {
+        console.error('Failed to fetch episode:', {
+          status: episodeResponse.status,
+          statusText: episodeResponse.statusText,
+          episodeId,
+        });
+        throw new Error(`Failed to fetch episode: ${episodeResponse.status} ${episodeResponse.statusText}`);
+      }
+      
+      const episodeData = await episodeResponse.json();
+      
+      // Use fullContent for proper analysis, fallback to content if fullContent not available
+      content = episodeData.fullContent || episodeData.content || "";
+      
+      if (!content || content.length < 100) {
+        console.error('Episode content is too short or missing:', {
+          episodeId,
+          contentLength: content?.length || 0,
+          hasFullContent: !!episodeData.fullContent,
+          hasContent: !!episodeData.content,
+        });
+        // Don't throw here, we'll use fallback summaries
+      }
+    } catch (error) {
+      console.error('Error loading episode content:', error);
+      // Continue with empty content - we'll use fallback summaries
+      content = "";
     }
 
     // Fallback generic summaries (define early for use in try block)
@@ -262,22 +260,23 @@ Provide a clear, specific summary that captures the main themes and insights. Be
         genericSummary = summaryText.trim() || genericSummaries[episodeId] || "This episode explores key themes and insights relevant to creators and entrepreneurs.";
       }
 
-      // Analyze alignment with selected game
-      const gameDescriptions: Record<string, string> = {
-        G1: "Identity/Canon: Builds lineage, shapes taste, creates belonging through heroes/archetypes/norms",
-        G2: "Idea/Play Mining: Extracts actionable insights from history/stories, translates to modern tactical plays",
-        G3: "Model/Understanding: Builds mental frameworks, explains systems, reduces confusion through transferable models",
-        G4: "Performance/Coaching: Focuses on execution, skill development, measurable outcomes and improvement",
-        G5: "Meaning/Sensemaking: Helps people make sense of change, identity, values, and uncertainty",
-        G6: "Network/Coordination: Orchestrates people, creates connections, builds trust networks and relationships",
-      };
+      // Analyze alignment with selected game (only for specific games, not "generic")
+      if (selectedGame && selectedGame !== "generic") {
+        const gameDescriptions: Record<string, string> = {
+          G1: "Identity/Canon: Builds lineage, shapes taste, creates belonging through heroes/archetypes/norms",
+          G2: "Idea/Play Mining: Extracts actionable insights from history/stories, translates to modern tactical plays",
+          G3: "Model/Understanding: Builds mental frameworks, explains systems, reduces confusion through transferable models",
+          G4: "Performance/Coaching: Focuses on execution, skill development, measurable outcomes and improvement",
+          G5: "Meaning/Sensemaking: Helps people make sense of change, identity, values, and uncertainty",
+          G6: "Network/Coordination: Orchestrates people, creates connections, builds trust networks and relationships",
+        };
 
-      // Use substantial content for game analysis (up to 15000 chars)
-      const analysisContent = content.length > 15000
-        ? content.substring(0, 15000) + '\n\n[... analyzing key sections for game alignment ...]'
-        : content;
-      
-      const analysisPrompt = `Analyze this podcast episode content and score its alignment (0-100) with ${selectedGame} - ${gameDescriptions[selectedGame]}.
+        // Use substantial content for game analysis (up to 15000 chars)
+        const analysisContent = content.length > 15000
+          ? content.substring(0, 15000) + '\n\n[... analyzing key sections for game alignment ...]'
+          : content;
+        
+        const analysisPrompt = `Analyze this podcast episode content and score its alignment (0-100) with ${selectedGame} - ${gameDescriptions[selectedGame]}.
 
 Provide:
 1. Alignment score (0-100 as a number)
@@ -288,57 +287,61 @@ ${analysisContent}
 
 Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "reason2", "reason3"] }`;
 
-      // Analyze with game-specific thread for persistence
-      const analysisThreadId = `analysis-${episodeId}-${selectedGame}`;
-      const analysisResourceId = `episode-${episodeId}`;
-      
-      const analysisStream = await gameAnalyzerAgent.stream([
-        { role: 'user' as const, content: analysisPrompt },
-      ], {
-        memory: {
-          thread: analysisThreadId,
-          resource: analysisResourceId,
-        },
-      });
-      
-      let analysisText = '';
-      for await (const chunk of analysisStream.textStream) {
-        analysisText += chunk;
-      }
-      
-      // Try to parse JSON from response
-      try {
-        const jsonMatch = analysisText.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          const parsed = JSON.parse(jsonMatch[0]);
-          let rawAlignment = parsed.alignment || 0.42;
-          
-          // Normalize alignment to 0-100 range
-          // If value is > 1, assume it's already 0-100, otherwise assume 0-1
-          if (rawAlignment > 1) {
-            alignment = Math.min(100, Math.max(0, rawAlignment));
-          } else {
-            alignment = Math.min(100, Math.max(0, rawAlignment * 100));
+        // Analyze with game-specific thread for persistence
+        const analysisThreadId = `analysis-${episodeId}-${selectedGame}`;
+        const analysisResourceId = `episode-${episodeId}`;
+        
+        const analysisStream = await gameAnalyzerAgent.stream([
+          { role: 'user' as const, content: analysisPrompt },
+        ], {
+          memory: {
+            thread: analysisThreadId,
+            resource: analysisResourceId,
+          },
+        });
+        
+        let analysisText = '';
+        for await (const chunk of analysisStream.textStream) {
+          analysisText += chunk;
+        }
+        
+        // Try to parse JSON from response
+        try {
+          const jsonMatch = analysisText.match(/\{[\s\S]*\}/);
+          if (jsonMatch) {
+            const parsed = JSON.parse(jsonMatch[0]);
+            let rawAlignment = parsed.alignment || 0.42;
+            
+            // Normalize alignment to 0-100 range
+            // If value is > 1, assume it's already 0-100, otherwise assume 0-1
+            if (rawAlignment > 1) {
+              alignment = Math.min(100, Math.max(0, rawAlignment));
+            } else {
+              alignment = Math.min(100, Math.max(0, rawAlignment * 100));
+            }
+            failures = parsed.reasons || [];
           }
-          failures = parsed.reasons || [];
+        } catch {
+          // Fallback: extract alignment from text
+          const alignmentMatch = analysisText.match(/(\d+)%/);
+          if (alignmentMatch) {
+            alignment = Math.min(100, Math.max(0, parseInt(alignmentMatch[1])));
+          }
+          // Extract failure reasons
+          failures = analysisText.split('\n').filter(line => 
+            line.includes('•') || line.includes('-') || line.match(/^\d+\./)
+          ).slice(0, 3);
         }
-      } catch {
-        // Fallback: extract alignment from text
-        const alignmentMatch = analysisText.match(/(\d+)%/);
-        if (alignmentMatch) {
-          alignment = Math.min(100, Math.max(0, parseInt(alignmentMatch[1])));
-        }
-        // Extract failure reasons
-        failures = analysisText.split('\n').filter(line => 
-          line.includes('•') || line.includes('-') || line.match(/^\d+\./)
-        ).slice(0, 3);
       }
     } catch (error) {
       console.error('Mastra analysis error:', error);
-      // Fallback to simulated data
-      const scores = gameAlignmentScores[episodeId] || gameAlignmentScores.default;
-      alignment = scores[selectedGame] || 0.42;
-      failures = gameFailures[episodeId]?.[selectedGame] || [];
+      // Fallback to simulated data (only for specific games, not "generic")
+      if (selectedGame && selectedGame !== "generic") {
+        const scores = gameAlignmentScores[episodeId] || gameAlignmentScores.default;
+        alignment = scores[selectedGame] || 0.42;
+        failures = gameFailures[episodeId]?.[selectedGame] || [];
+      }
+      // For "generic", alignment stays at default (0.42)
     }
 
     if (!genericSummary) {
@@ -504,8 +507,16 @@ Return your response as JSON:
       audienceScenarios: audienceScenarios.length > 0 ? audienceScenarios : undefined,
     });
   } catch (error) {
+    console.error('API route error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorStack = error instanceof Error ? error.stack : undefined;
+    
     return NextResponse.json(
-      { error: "Failed to analyze" },
+      { 
+        error: "Failed to analyze",
+        message: errorMessage,
+        ...(process.env.NODE_ENV === 'development' && { stack: errorStack })
+      },
       { status: 500 }
     );
   }
