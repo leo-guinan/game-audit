@@ -266,8 +266,11 @@ Provide a clear, specific summary that captures the main themes and insights. Be
 
       // Analyze alignment with selected game (only for specific games, not "generic")
       if (selectedGame && selectedGame !== "generic") {
+        console.log(`Starting game analysis for ${selectedGame}, content length: ${content?.length || 0}`);
+        
         // Only analyze if we have sufficient content
         if (content && content.length >= 100) {
+          console.log(`Calling game analyzer agent for ${selectedGame}`);
           const gameDescriptions: Record<string, string> = {
             G1: "Identity/Canon: Builds lineage, shapes taste, creates belonging through heroes/archetypes/norms",
             G2: "Idea/Play Mining: Extracts actionable insights from history/stories, translates to modern tactical plays",
@@ -312,11 +315,15 @@ Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "r
           }
           
           // Try to parse JSON from response
+          console.log(`Game analyzer response length: ${analysisText.length}, preview: ${analysisText.substring(0, 200)}`);
+          
           try {
             const jsonMatch = analysisText.match(/\{[\s\S]*\}/);
             if (jsonMatch) {
               const parsed = JSON.parse(jsonMatch[0]);
-              let rawAlignment = parsed.alignment || 0.42;
+              let rawAlignment = parsed.alignment ?? 0.42;
+              
+              console.log(`Parsed alignment: ${rawAlignment}, reasons count: ${parsed.reasons?.length || 0}`);
               
               // Normalize alignment to 0-100 range
               // If value is > 1, assume it's already 0-100, otherwise assume 0-1
@@ -326,8 +333,22 @@ Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "r
                 alignment = Math.min(100, Math.max(0, rawAlignment * 100));
               }
               failures = parsed.reasons || [];
+              
+              console.log(`Final alignment: ${alignment}%, failures: ${failures.length}`);
+            } else {
+              console.warn('No JSON found in game analyzer response, trying text extraction');
+              // Fallback: extract alignment from text
+              const alignmentMatch = analysisText.match(/(\d+)%/);
+              if (alignmentMatch) {
+                alignment = Math.min(100, Math.max(0, parseInt(alignmentMatch[1])));
+              }
+              // Extract failure reasons
+              failures = analysisText.split('\n').filter(line => 
+                line.includes('•') || line.includes('-') || line.match(/^\d+\./)
+              ).slice(0, 3);
             }
-          } catch {
+          } catch (parseError) {
+            console.error('Failed to parse game analyzer response:', parseError);
             // Fallback: extract alignment from text
             const alignmentMatch = analysisText.match(/(\d+)%/);
             if (alignmentMatch) {
@@ -337,24 +358,45 @@ Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "r
             failures = analysisText.split('\n').filter(line => 
               line.includes('•') || line.includes('-') || line.match(/^\d+\./)
             ).slice(0, 3);
+            
+            // If still empty, use fallback data
+            if (failures.length === 0) {
+              failures = gameFailures[episodeId]?.[selectedGame] || [];
+            }
           }
         } else {
           // Content missing - use fallback data
-          console.warn('Content too short for game analysis, using fallback data');
+          console.warn(`Content too short for game analysis (length: ${content?.length || 0}), using fallback data for ${selectedGame}`);
           const scores = gameAlignmentScores[episodeId] || gameAlignmentScores.default;
-          alignment = scores[selectedGame] || 0.42;
+          alignment = scores[selectedGame] ?? 0.42;
           failures = gameFailures[episodeId]?.[selectedGame] || [];
+          console.log(`Using fallback alignment: ${alignment}%, failures: ${failures.length}`);
         }
+      } else {
+        // selectedGame is "generic" or null - skip game analysis
+        console.log(`Skipping game analysis for selectedGame: ${selectedGame}`);
       }
     } catch (error) {
       console.error('Mastra analysis error:', error);
       // Fallback to simulated data (only for specific games, not "generic")
       if (selectedGame && selectedGame !== "generic") {
+        console.log(`Using error fallback for ${selectedGame}`);
         const scores = gameAlignmentScores[episodeId] || gameAlignmentScores.default;
-        alignment = scores[selectedGame] || 0.42;
+        alignment = scores[selectedGame] ?? 0.42;
         failures = gameFailures[episodeId]?.[selectedGame] || [];
+        console.log(`Error fallback alignment: ${alignment}%, failures: ${failures.length}`);
       }
       // For "generic", alignment stays at default (0.42)
+    }
+
+    // Ensure we have values even if something went wrong
+    if (selectedGame && selectedGame !== "generic" && (!failures || failures.length === 0)) {
+      console.warn(`No failures array for ${selectedGame}, using fallback`);
+      failures = gameFailures[episodeId]?.[selectedGame] || [
+        "Content analysis in progress",
+        "Check back shortly for detailed alignment assessment",
+        "Analysis may take a moment to complete"
+      ];
     }
 
     if (!genericSummary) {
