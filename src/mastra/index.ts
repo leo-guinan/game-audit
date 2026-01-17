@@ -1,8 +1,7 @@
 
 import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
-import { weatherWorkflow } from './workflows/weather-workflow';
-import { weatherAgent } from './agents/weather-agent';
+
 import { gameAnalyzerAgent } from './agents/game-analyzer-agent';
 import { genericAgent } from './agents/generic-agent';
 import { audienceSimulatorAgent } from './agents/audience-simulator-agent';
@@ -32,9 +31,8 @@ if (connectionString) {
 }
 
 export const mastra = new Mastra({
-  workflows: { weatherWorkflow },
+  workflows: {},
   agents: { 
-    weatherAgent, 
     gameAnalyzerAgent,
     genericAgent,
     audienceSimulatorAgent
