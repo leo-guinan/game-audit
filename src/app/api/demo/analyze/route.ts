@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mastra } from "@/mastra";
+import fs from "fs";
+import path from "path";
 
 // Increase timeout for this route (up to 60s on Vercel free plan)
 // Multiple agent calls can take 10-30+ seconds
@@ -153,35 +155,42 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Load episode content for analysis
+    // Load episode content for analysis (read directly from filesystem)
     let content = "";
     try {
-      const episodeResponse = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/demo/episodes?id=${episodeId}`
+      // Episode metadata - same structure as episodes route
+      const episodes: Record<string, { category: string; file: string }> = {
+        "bill-gates": { category: "founders", file: "bill_gates.md" },
+        "james-dyson": { category: "founders", file: "james_dyson.md" },
+        "jenny": { category: "creator_science", file: "jenny.md" },
+        "paul-millerd": { category: "creator_science", file: "paul_millerd.md" },
+        "tommy": { category: "creator_science", file: "tommy.md" },
+      };
+
+      const episode = episodes[episodeId];
+      if (!episode) {
+        console.error('Episode not found:', episodeId);
+        throw new Error(`Episode not found: ${episodeId}`);
+      }
+
+      const filePath = path.join(
+        process.cwd(),
+        "src/app/api/intake/data",
+        episode.category,
+        episode.file
       );
       
-      if (!episodeResponse.ok) {
-        console.error('Failed to fetch episode:', {
-          status: episodeResponse.status,
-          statusText: episodeResponse.statusText,
-          episodeId,
-        });
-        throw new Error(`Failed to fetch episode: ${episodeResponse.status} ${episodeResponse.statusText}`);
-      }
-      
-      const episodeData = await episodeResponse.json();
-      
-      // Use fullContent for proper analysis, fallback to content if fullContent not available
-      content = episodeData.fullContent || episodeData.content || "";
+      content = fs.readFileSync(filePath, "utf-8");
       
       if (!content || content.length < 100) {
         console.error('Episode content is too short or missing:', {
           episodeId,
           contentLength: content?.length || 0,
-          hasFullContent: !!episodeData.fullContent,
-          hasContent: !!episodeData.content,
+          filePath,
         });
         // Don't throw here, we'll use fallback summaries
+      } else {
+        console.log(`Loaded episode content: ${content.length} characters from ${filePath}`);
       }
     } catch (error) {
       console.error('Error loading episode content:', error);
