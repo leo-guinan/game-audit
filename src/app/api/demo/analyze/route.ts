@@ -266,21 +266,23 @@ Provide a clear, specific summary that captures the main themes and insights. Be
 
       // Analyze alignment with selected game (only for specific games, not "generic")
       if (selectedGame && selectedGame !== "generic") {
-        const gameDescriptions: Record<string, string> = {
-          G1: "Identity/Canon: Builds lineage, shapes taste, creates belonging through heroes/archetypes/norms",
-          G2: "Idea/Play Mining: Extracts actionable insights from history/stories, translates to modern tactical plays",
-          G3: "Model/Understanding: Builds mental frameworks, explains systems, reduces confusion through transferable models",
-          G4: "Performance/Coaching: Focuses on execution, skill development, measurable outcomes and improvement",
-          G5: "Meaning/Sensemaking: Helps people make sense of change, identity, values, and uncertainty",
-          G6: "Network/Coordination: Orchestrates people, creates connections, builds trust networks and relationships",
-        };
+        // Only analyze if we have sufficient content
+        if (content && content.length >= 100) {
+          const gameDescriptions: Record<string, string> = {
+            G1: "Identity/Canon: Builds lineage, shapes taste, creates belonging through heroes/archetypes/norms",
+            G2: "Idea/Play Mining: Extracts actionable insights from history/stories, translates to modern tactical plays",
+            G3: "Model/Understanding: Builds mental frameworks, explains systems, reduces confusion through transferable models",
+            G4: "Performance/Coaching: Focuses on execution, skill development, measurable outcomes and improvement",
+            G5: "Meaning/Sensemaking: Helps people make sense of change, identity, values, and uncertainty",
+            G6: "Network/Coordination: Orchestrates people, creates connections, builds trust networks and relationships",
+          };
 
-        // Use substantial content for game analysis (up to 15000 chars)
-        const analysisContent = content.length > 15000
-          ? content.substring(0, 15000) + '\n\n[... analyzing key sections for game alignment ...]'
-          : content;
-        
-        const analysisPrompt = `Analyze this podcast episode content and score its alignment (0-100) with ${selectedGame} - ${gameDescriptions[selectedGame]}.
+          // Use substantial content for game analysis (up to 15000 chars)
+          const analysisContent = content.length > 15000
+            ? content.substring(0, 15000) + '\n\n[... analyzing key sections for game alignment ...]'
+            : content;
+          
+          const analysisPrompt = `Analyze this podcast episode content and score its alignment (0-100) with ${selectedGame} - ${gameDescriptions[selectedGame]}.
 
 Provide:
 1. Alignment score (0-100 as a number)
@@ -291,50 +293,57 @@ ${analysisContent}
 
 Return your response as JSON: { "alignment": <number>, "reasons": ["reason1", "reason2", "reason3"] }`;
 
-        // Analyze with game-specific thread for persistence
-        const analysisThreadId = `analysis-${episodeId}-${selectedGame}`;
-        const analysisResourceId = `episode-${episodeId}`;
-        
-        const analysisStream = await gameAnalyzerAgent.stream([
-          { role: 'user' as const, content: analysisPrompt },
-        ], {
-          memory: {
-            thread: analysisThreadId,
-            resource: analysisResourceId,
-          },
-        });
-        
-        let analysisText = '';
-        for await (const chunk of analysisStream.textStream) {
-          analysisText += chunk;
-        }
-        
-        // Try to parse JSON from response
-        try {
-          const jsonMatch = analysisText.match(/\{[\s\S]*\}/);
-          if (jsonMatch) {
-            const parsed = JSON.parse(jsonMatch[0]);
-            let rawAlignment = parsed.alignment || 0.42;
-            
-            // Normalize alignment to 0-100 range
-            // If value is > 1, assume it's already 0-100, otherwise assume 0-1
-            if (rawAlignment > 1) {
-              alignment = Math.min(100, Math.max(0, rawAlignment));
-            } else {
-              alignment = Math.min(100, Math.max(0, rawAlignment * 100));
+          // Analyze with game-specific thread for persistence
+          const analysisThreadId = `analysis-${episodeId}-${selectedGame}`;
+          const analysisResourceId = `episode-${episodeId}`;
+          
+          const analysisStream = await gameAnalyzerAgent.stream([
+            { role: 'user' as const, content: analysisPrompt },
+          ], {
+            memory: {
+              thread: analysisThreadId,
+              resource: analysisResourceId,
+            },
+          });
+          
+          let analysisText = '';
+          for await (const chunk of analysisStream.textStream) {
+            analysisText += chunk;
+          }
+          
+          // Try to parse JSON from response
+          try {
+            const jsonMatch = analysisText.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+              const parsed = JSON.parse(jsonMatch[0]);
+              let rawAlignment = parsed.alignment || 0.42;
+              
+              // Normalize alignment to 0-100 range
+              // If value is > 1, assume it's already 0-100, otherwise assume 0-1
+              if (rawAlignment > 1) {
+                alignment = Math.min(100, Math.max(0, rawAlignment));
+              } else {
+                alignment = Math.min(100, Math.max(0, rawAlignment * 100));
+              }
+              failures = parsed.reasons || [];
             }
-            failures = parsed.reasons || [];
+          } catch {
+            // Fallback: extract alignment from text
+            const alignmentMatch = analysisText.match(/(\d+)%/);
+            if (alignmentMatch) {
+              alignment = Math.min(100, Math.max(0, parseInt(alignmentMatch[1])));
+            }
+            // Extract failure reasons
+            failures = analysisText.split('\n').filter(line => 
+              line.includes('•') || line.includes('-') || line.match(/^\d+\./)
+            ).slice(0, 3);
           }
-        } catch {
-          // Fallback: extract alignment from text
-          const alignmentMatch = analysisText.match(/(\d+)%/);
-          if (alignmentMatch) {
-            alignment = Math.min(100, Math.max(0, parseInt(alignmentMatch[1])));
-          }
-          // Extract failure reasons
-          failures = analysisText.split('\n').filter(line => 
-            line.includes('•') || line.includes('-') || line.match(/^\d+\./)
-          ).slice(0, 3);
+        } else {
+          // Content missing - use fallback data
+          console.warn('Content too short for game analysis, using fallback data');
+          const scores = gameAlignmentScores[episodeId] || gameAlignmentScores.default;
+          alignment = scores[selectedGame] || 0.42;
+          failures = gameFailures[episodeId]?.[selectedGame] || [];
         }
       }
     } catch (error) {

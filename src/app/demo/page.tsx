@@ -128,6 +128,8 @@ export default function DemoPage() {
   const [selectedGame, setSelectedGame] = useState<string | null>(null);
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
   const [loading, setLoading] = useState(false);
+  const [preloadingSummary, setPreloadingSummary] = useState(false);
+  const [preloadedSummary, setPreloadedSummary] = useState<Analysis | null>(null);
 
   useEffect(() => {
     // Load episodes
@@ -136,6 +138,49 @@ export default function DemoPage() {
       .then((data) => setEpisodes(data))
       .catch(console.error);
   }, []);
+
+  // Optimistically preload generic summary when both episode and persona are selected
+  useEffect(() => {
+    if (selectedEpisode && selectedPersona && !preloadedSummary && !preloadingSummary) {
+      setPreloadingSummary(true);
+      
+      // Start fetching generic summary in background
+      fetch("/api/demo/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          episodeId: selectedEpisode.id,
+          selectedGame: "generic",
+          personaId: selectedPersona.id,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setPreloadedSummary(data);
+          setPreloadingSummary(false);
+        })
+        .catch((error) => {
+          console.error("Preload error:", error);
+          setPreloadingSummary(false);
+        });
+    }
+  }, [selectedEpisode?.id, selectedPersona?.id, preloadedSummary, preloadingSummary]);
+
+  // Clear preloaded data when episode/persona changes
+  useEffect(() => {
+    if (step === 0) {
+      setPreloadedSummary(null);
+      setPreloadingSummary(false);
+    }
+  }, [selectedEpisode?.id, selectedPersona?.id]);
+
+  // Use preloaded summary if it becomes available while we're waiting on step 1
+  useEffect(() => {
+    if (step === 1 && loading && preloadedSummary && !analysis) {
+      setAnalysis(preloadedSummary);
+      setLoading(false);
+    }
+  }, [step, loading, preloadedSummary, analysis]);
 
   const handleEpisodeSelect = (episode: Episode) => {
     setSelectedEpisode(episode);
@@ -149,10 +194,21 @@ export default function DemoPage() {
 
   const handleEpisodePersonaContinue = async () => {
     if (!selectedEpisode || !selectedPersona) return;
+    
+    // If we already have preloaded summary, use it immediately (instant transition!)
+    if (preloadedSummary) {
+      setAnalysis(preloadedSummary);
+      setStep(1);
+      setLoading(false);
+      return;
+    }
+    
+    // Otherwise, show step 1 and fetch it
+    // If preload completes during fetch, useEffect will intercept and use it instead
     setLoading(true);
     setStep(1);
     
-    // Load generic summary (persona-agnostic)
+    // Fetch the summary (preload useEffect will handle if it completes first)
     try {
       const response = await fetch("/api/demo/analyze", {
         method: "POST",
@@ -160,11 +216,14 @@ export default function DemoPage() {
         body: JSON.stringify({
           episodeId: selectedEpisode.id,
           selectedGame: "generic",
-          personaId: selectedPersona.id, // Pass persona for context
+          personaId: selectedPersona.id,
         }),
       });
       const data = await response.json();
-      setAnalysis(data);
+      // Only set if we're still loading (preload might have already set it)
+      if (loading) {
+        setAnalysis(data);
+      }
     } catch (error) {
       console.error(error);
     } finally {
@@ -234,10 +293,10 @@ export default function DemoPage() {
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Episode</h3>
                 <div className="space-y-3">
-                  {episodes.map((episode) => (
-                    <button
-                      key={episode.id}
-                      onClick={() => handleEpisodeSelect(episode)}
+              {episodes.map((episode) => (
+                <button
+                  key={episode.id}
+                  onClick={() => handleEpisodeSelect(episode)}
                       className={`w-full p-4 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left ${
                         selectedEpisode?.id === episode.id
                           ? "border-primary bg-primary/10"
@@ -246,7 +305,7 @@ export default function DemoPage() {
                     >
                       <div className="flex items-start justify-between mb-2">
                         <h4 className="text-lg font-semibold text-foreground">
-                          {episode.title}
+                    {episode.title}
                         </h4>
                       </div>
                       {episode.nativeGames && episode.nativeGames.length > 0 && (
@@ -255,7 +314,7 @@ export default function DemoPage() {
                         </p>
                       )}
                       {episode.premise && (
-                        <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                           {episode.premise}
                         </p>
                       )}
@@ -292,10 +351,10 @@ export default function DemoPage() {
                       </p>
                       <p className="text-xs text-muted-foreground">
                         Success: {persona.success}
-                      </p>
-                    </button>
-                  ))}
-                </div>
+                  </p>
+                </button>
+              ))}
+            </div>
               </div>
             </div>
 
@@ -306,13 +365,23 @@ export default function DemoPage() {
                   <p className="text-sm text-foreground font-medium">
                     Simulating how <span className="font-semibold">{selectedPersona.name}</span> experiences <span className="font-semibold">{selectedEpisode.title}</span>
                   </p>
+                  {preloadingSummary && (
+                    <p className="text-xs text-muted-foreground mt-2">
+                      ⚡ Preloading summary in the background...
+                    </p>
+                  )}
+                  {preloadedSummary && (
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-2">
+                      ✓ Summary ready!
+                    </p>
+                  )}
                 </div>
                 <button
                   onClick={handleEpisodePersonaContinue}
                   disabled={loading}
                   className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
                 >
-                  Continue →
+                  {preloadedSummary ? "Continue →" : loading || preloadingSummary ? "Loading..." : "Continue →"}
                 </button>
               </div>
             )}
@@ -371,18 +440,18 @@ export default function DemoPage() {
               {games.map((game) => {
                 const fit = getGameFitForPersona(game.id);
                 return (
-                  <button
-                    key={game.id}
-                    onClick={() => handleGameSelect(game.id)}
-                    disabled={loading}
+                <button
+                  key={game.id}
+                  onClick={() => handleGameSelect(game.id)}
+                  disabled={loading}
                     className={`p-6 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left disabled:opacity-50 ${
                       fit === "high" ? "border-green-500/50 bg-green-500/5" : ""
                     }`}
-                  >
+                >
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-bold text-foreground">
-                        {game.id} — {game.name}
-                      </h3>
+                    {game.id} — {game.name}
+                  </h3>
                       {fit === "high" && (
                         <span className="text-green-600 font-semibold text-sm">
                           ✓✓ High fit
@@ -394,10 +463,10 @@ export default function DemoPage() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      {game.description}
-                    </p>
-                  </button>
+                  <p className="text-sm text-muted-foreground">
+                    {game.description}
+                  </p>
+                </button>
                 );
               })}
             </div>
@@ -616,20 +685,20 @@ export default function DemoPage() {
                   ))}
                 </div>
               ) : (
-                <div className="space-y-3">
-                  {analysis.reactions.reactions.map((reaction, i) => (
-                    <div
-                      key={i}
-                      className={`p-4 rounded-lg ${
-                        analysis.reactions.type.includes("aligned")
-                          ? "bg-primary/10 border border-primary/20"
-                          : "bg-muted"
-                      }`}
-                    >
-                      <p className="text-foreground">{reaction}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="space-y-3">
+                {analysis.reactions.reactions.map((reaction, i) => (
+                  <div
+                    key={i}
+                    className={`p-4 rounded-lg ${
+                      analysis.reactions.type.includes("aligned")
+                        ? "bg-primary/10 border border-primary/20"
+                        : "bg-muted"
+                    }`}
+                  >
+                    <p className="text-foreground">{reaction}</p>
+                  </div>
+                ))}
+              </div>
               )}
             </div>
 
