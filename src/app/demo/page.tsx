@@ -256,7 +256,6 @@ export default function DemoPage() {
     if (!selectedEpisode || !selectedPersona) return;
     setSelectedGame(gameId);
     setLoading(true);
-    setStep(4); // Show step 4 immediately (optimistic UI)
 
     try {
       // Fetch game analysis (separate endpoint)
@@ -271,16 +270,19 @@ export default function DemoPage() {
       });
       const gameData = await gameResponse.json();
       
-      // Merge with existing analysis
+      // Merge with existing analysis - ensure all fields are present and properly typed
       setAnalysis((prev) => ({
         alignment: gameData.alignment ?? prev?.alignment ?? 0,
-        failures: gameData.failures ?? prev?.failures ?? [],
-        genericSummary: prev?.genericSummary ?? "",
-        reactions: prev?.reactions ?? { type: "mixed", reactions: [] },
-        audienceEngagement: gameData.audienceEngagement ?? prev?.audienceEngagement ?? { aligned: 0, misaligned1: 0, misaligned2: 0 },
+        failures: Array.isArray(gameData.failures) ? gameData.failures : (prev?.failures || []),
+        genericSummary: prev?.genericSummary || "",
+        reactions: prev?.reactions || { type: "mixed", reactions: [] },
+        audienceEngagement: gameData.audienceEngagement || prev?.audienceEngagement || { aligned: 0, misaligned1: 0, misaligned2: 0 },
         audienceScenarios: prev?.audienceScenarios,
         personaReaction: prev?.personaReaction,
       }));
+
+      // Navigate to step 4 after we have the data
+      setStep(4);
 
       // Preload audience scenarios in background (optimistic)
       fetch("/api/demo/analyze/audience", {
@@ -582,7 +584,7 @@ export default function DemoPage() {
                 Why this {analysis.alignment < 50 ? "struggles" : "works"} for {games.find((g) => g.id === selectedGame)?.name}
               </h3>
               <ul className="space-y-2 pl-6 list-disc text-foreground">
-                {analysis.failures.map((failure, i) => (
+                {(analysis.failures || []).map((failure, i) => (
                   <li key={i}>{failure}</li>
                 ))}
               </ul>
