@@ -149,7 +149,7 @@ export default function Home() {
             <br />
             Just pattern recognition from real audits.
           </p>
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center space-y-4">
             <Link
               href="/quiz"
               className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-xl hover:bg-primary/90 transition-colors"
@@ -159,6 +159,15 @@ export default function Home() {
             <p className="mt-4 text-sm text-muted-foreground">
               3 minutes · Multiple choice · No trick questions
             </p>
+            <div className="pt-4 border-t">
+              <p className="text-sm text-muted-foreground mb-3">Or try the interactive demo:</p>
+              <Link
+                href="/demo"
+                className="inline-block px-6 py-3 border border-border rounded-lg font-medium hover:border-primary hover:bg-primary/5 transition-colors"
+              >
+                See Alignment Simulator →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

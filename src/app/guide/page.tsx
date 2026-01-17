@@ -338,14 +338,25 @@ export default function GuidePage() {
         </section>
 
         {/* CTA */}
-        <section className="text-center pt-8 border-t">
-          <Link
-            href="/quiz"
-            className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-xl hover:bg-primary/90 transition-colors mb-4"
-          >
-            👉 Find Your Game
-          </Link>
-          <p className="text-sm text-muted-foreground">
+        <section className="text-center pt-8 border-t space-y-6">
+          <div>
+            <Link
+              href="/quiz"
+              className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-xl hover:bg-primary/90 transition-colors mb-4"
+            >
+              👉 Find Your Game
+            </Link>
+          </div>
+          <div className="pt-4 border-t">
+            <p className="text-sm text-muted-foreground mb-3">Or see it in action:</p>
+            <Link
+              href="/demo"
+              className="inline-block px-6 py-3 border border-border rounded-lg font-medium hover:border-primary hover:bg-primary/5 transition-colors"
+            >
+              Try the Alignment Simulator →
+            </Link>
+          </div>
+          <p className="text-sm text-muted-foreground pt-4">
             Or <Link href="/" className="text-primary hover:underline">return to home</Link>
           </p>
         </section>
