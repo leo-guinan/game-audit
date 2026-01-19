@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Header from "@/components/header";
 
 // Fathom tracking helper
 declare global {
@@ -279,7 +280,8 @@ export default function QuizPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-3xl px-6 py-12 sm:px-8">
+      <Header />
+      <div className="container mx-auto max-w-3xl px-6 py-12 sm:px-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Game Identification Diagnostic
@@ -292,17 +294,19 @@ export default function QuizPage() {
         </div>
 
         <div className="mb-8">
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
-            <span>Section {currentSection + 1} of {questions.length}</span>
-            <span>
+          <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
+            <span className="step-counter">
+              Section <span className="current">{currentSection + 1}</span> of {questions.length}
+            </span>
+            <span className="font-mono text-xs uppercase tracking-wider">
               {questions.reduce((acc, section) => 
                 acc + section.items.filter((item) => answers[item.id]).length, 0
               )} / {questions.reduce((acc, section) => acc + section.items.length, 0)} answered
             </span>
           </div>
-          <div className="mt-2 h-2 w-full bg-muted rounded-full overflow-hidden">
+          <div className="progress-container">
             <div
-              className="h-full bg-primary transition-all duration-300"
+              className="progress-bar"
               style={{
                 width: `${((currentSection + 1) / questions.length) * 100}%`,
               }}
@@ -312,24 +316,24 @@ export default function QuizPage() {
 
         <div className="space-y-8">
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">
+            <div className="section-label mb-6">
               {currentSectionData.section}
+            </div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">
+              {currentSectionData.sectionTitle}
             </h2>
-            <p className="text-muted-foreground mb-8">{currentSectionData.sectionTitle}</p>
 
             {currentSectionData.items.map((item) => (
-              <div key={item.id} className="mb-10">
-                <h3 className="text-lg font-semibold text-foreground mb-4">
+              <div key={item.id} className="question-card mb-6">
+                <h3 className="text-lg font-semibold text-foreground mb-6">
                   {item.question}
                 </h3>
                 <div className="space-y-3">
                   {item.options.map((option) => (
                     <label
                       key={option.value}
-                      className={`flex items-start p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                        answers[item.id] === option.value
-                          ? "border-primary bg-primary/5"
-                          : "border-border hover:border-primary/50"
+                      className={`option-container flex items-start ${
+                        answers[item.id] === option.value ? "selected" : ""
                       }`}
                     >
                       <input
@@ -338,7 +342,7 @@ export default function QuizPage() {
                         value={option.value}
                         checked={answers[item.id] === option.value}
                         onChange={() => handleAnswer(item.id, option.value)}
-                        className="mt-1 mr-3 h-4 w-4 text-primary"
+                        className="mt-1"
                       />
                       <span className="flex-1 text-foreground">{option.label}</span>
                     </label>
@@ -348,14 +352,12 @@ export default function QuizPage() {
             ))}
           </div>
 
-          <div className="flex items-center justify-between pt-8 border-t">
+          <div className="flex items-center justify-between pt-8 border-t border-border">
             <button
               onClick={prevSection}
               disabled={isFirstSection}
-              className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-                isFirstSection
-                  ? "bg-muted text-muted-foreground cursor-not-allowed"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+              className={`button secondary ${
+                isFirstSection ? "opacity-40 cursor-not-allowed" : ""
               }`}
             >
               Previous
@@ -365,11 +367,7 @@ export default function QuizPage() {
               <button
                 onClick={handleSubmit}
                 disabled={!currentSectionComplete}
-                className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                  currentSectionComplete
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-muted text-muted-foreground cursor-not-allowed"
-                }`}
+                className={`button ${!currentSectionComplete ? "opacity-40 cursor-not-allowed" : ""}`}
               >
                 See Your Result
               </button>
@@ -377,11 +375,7 @@ export default function QuizPage() {
               <button
                 onClick={nextSection}
                 disabled={!currentSectionComplete}
-                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-                  currentSectionComplete
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-muted text-muted-foreground cursor-not-allowed"
-                }`}
+                className={`button ${!currentSectionComplete ? "opacity-40 cursor-not-allowed" : ""}`}
               >
                 Next Section
               </button>

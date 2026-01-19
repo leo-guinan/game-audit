@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Header from "@/components/header";
 
 const gameResults: Record<string, any> = {
   G1: {
@@ -274,6 +275,7 @@ function ResultContent() {
   if (!result) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
+        <Header />
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Result not found</h1>
           <Link href="/quiz" className="text-primary hover:underline">
@@ -286,7 +288,8 @@ function ResultContent() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-3xl px-6 py-12 sm:px-8">
+      <Header />
+      <div className="container mx-auto max-w-3xl px-6 py-12 sm:px-8">
         {/* Headline */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4 sm:text-5xl">
@@ -296,7 +299,7 @@ function ResultContent() {
         </div>
 
         {/* What This Means */}
-        <section className="mb-16">
+        <section className="mb-16 question-card">
           <h2 className="text-2xl font-bold text-foreground mb-6">What This Means</h2>
           <div className="space-y-6 text-lg leading-8 text-foreground">
             <p className="whitespace-pre-line">{result.whatThisMeans.main}</p>
@@ -367,7 +370,7 @@ function ResultContent() {
         </section>
 
         {/* Failure Mode */}
-        <section className="mb-16">
+        <section className="mb-16 question-card">
           <h2 className="text-2xl font-bold text-foreground mb-6">Your Most Likely Failure Mode</h2>
           <div className="space-y-6 text-lg leading-8 text-foreground">
             <p className="text-xl font-semibold">{result.failureMode.title}</p>
@@ -384,7 +387,7 @@ function ResultContent() {
         </section>
 
         {/* What Won't Fix This */}
-        <section className="mb-16">
+        <section className="mb-16 question-card">
           <h2 className="text-2xl font-bold text-foreground mb-6">What Won't Fix This</h2>
           <div className="space-y-4 text-lg leading-8 text-foreground">
             <ul className="space-y-2 pl-6 list-disc">
@@ -397,7 +400,7 @@ function ResultContent() {
         </section>
 
         {/* What Will Fix This */}
-        <section className="mb-16">
+        <section className="mb-16 question-card">
           <h2 className="text-2xl font-bold text-foreground mb-6">What Will Fix This</h2>
           <div className="space-y-4 text-lg leading-8 text-foreground">
             <ul className="space-y-2 pl-6 list-disc">
@@ -409,13 +412,13 @@ function ResultContent() {
         </section>
 
         {/* Conditional CTA */}
-        <section className="mt-16 p-8 border-2 border-primary rounded-lg bg-primary/5">
+        <section className="result-card mt-16">
           <div className="space-y-6">
             <div>
               <p className="text-lg font-semibold text-foreground mb-4">Recommended next step:</p>
               <Link
                 href={`/intake?type=${encodeURIComponent(result.auditName)}`}
-                className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-xl hover:bg-primary/90 transition-colors"
+                className="button"
               >
                 👉 Request a {result.auditName}
               </Link>
@@ -436,7 +439,7 @@ function ResultContent() {
 
         {/* Secondary Game (if applicable) */}
         {secondaryResult && (
-          <div className="mt-16 p-6 border rounded-lg bg-muted/50">
+          <div className="mt-16 question-card">
             <h2 className="text-2xl font-bold text-foreground mb-2">Your Secondary Game</h2>
             <p className="text-lg text-muted-foreground mb-4">{secondaryResult.headline}</p>
             <p className="text-foreground">{secondaryResult.subheadline}</p>
@@ -468,6 +471,7 @@ export default function ResultPage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen bg-background flex items-center justify-center">
+        <Header />
         <div className="text-center">
           <p className="text-muted-foreground">Loading...</p>
         </div>
