@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Header from "@/components/header";
 
 type Episode = {
   id: string;
@@ -177,7 +178,8 @@ export default function DemoPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-4xl px-6 py-12 sm:px-8">
+      <Header />
+      <div className="container mx-auto max-w-4xl px-6 py-12 sm:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4 sm:text-5xl">
@@ -204,11 +206,15 @@ export default function DemoPage() {
                 <button
                   key={episode.id}
                   onClick={() => handleEpisodeSelect(episode)}
-                  className={`p-6 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left ${
+                  className={`question-card text-left lift-on-hover ${
                     selectedEpisode?.id === episode.id
-                      ? "border-primary bg-primary/10"
+                      ? ""
                       : ""
                   }`}
+                  style={selectedEpisode?.id === episode.id ? {
+                    borderColor: 'var(--gold)',
+                    background: 'rgba(212, 175, 55, 0.08)'
+                  } : {}}
                 >
                   <h3 className="text-xl font-bold text-foreground mb-2">
                     {episode.title}
@@ -222,11 +228,11 @@ export default function DemoPage() {
               ))}
             </div>
             {selectedEpisode && (
-              <div className="text-center pt-6 border-t">
+              <div className="text-center pt-6 border-t border-border">
                 <button
                   onClick={handleContinueToBaseline}
                   disabled={loading}
-                  className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+                  className="button"
                 >
                   Continue →
                 </button>
@@ -243,15 +249,17 @@ export default function DemoPage() {
                 Here's what happens when you don't specify a game
               </h2>
             </div>
-            <div className="p-8 border rounded-lg bg-muted/30">
+            <div className="question-card">
               {loading ? (
-                <p className="text-muted-foreground">Loading...</p>
+                <div>
+                  <p className="text-muted-foreground">Loading...</p>
+                </div>
               ) : (
                 <div className="space-y-4 text-lg leading-8 text-foreground">
                   <p className="italic text-muted-foreground">
                     "{analysis?.genericSummary || "This episode discusses the importance of focus, long-term thinking, and disciplined execution as key drivers of sustained success."}"
                   </p>
-                  <p className="text-sm text-muted-foreground pt-4">
+                  <p className="text-sm text-muted-foreground pt-4 font-mono uppercase tracking-wider">
                     This is what AI produces by default.
                   </p>
                 </div>
@@ -261,7 +269,7 @@ export default function DemoPage() {
               <button
                 onClick={() => setStep(2)}
                 disabled={loading}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+                className="button"
               >
                 Continue →
               </button>
@@ -288,22 +296,26 @@ export default function DemoPage() {
                     key={game.id}
                     onClick={() => handleGameSelect(game.id)}
                     disabled={loading}
-                    className={`p-6 border rounded-lg bg-card hover:border-primary hover:bg-primary/5 transition-all text-left disabled:opacity-50 ${
-                      fit === "high" ? "border-green-500/50 bg-green-500/5" : 
-                      fit === "low" ? "border-red-500/50 bg-red-500/5" : ""
-                    }`}
+                    className="question-card text-left lift-on-hover"
+                    style={
+                      fit === "high"
+                        ? { borderColor: "var(--gold)", background: "rgba(212, 175, 55, 0.08)" }
+                        : fit === "low"
+                        ? { borderColor: "var(--red)", background: "rgba(196, 30, 58, 0.08)" }
+                        : {}
+                    }
                   >
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-bold text-foreground">
                         {game.id} — {game.name}
                       </h3>
                       {fit === "high" && (
-                        <span className="text-green-600 font-semibold text-sm">
+                        <span className="font-semibold text-sm font-mono uppercase tracking-wider" style={{ color: "var(--gold)" }}>
                           ✓ High Fit
                         </span>
                       )}
                       {fit === "low" && (
-                        <span className="text-red-600 font-semibold text-sm">
+                        <span className="font-semibold text-sm font-mono uppercase tracking-wider" style={{ color: "var(--red)" }}>
                           ✗ Mismatch
                         </span>
                       )}
@@ -334,12 +346,12 @@ export default function DemoPage() {
 
             {/* Fit Check */}
             {analysis.alignment > 0 && (
-              <div className="p-8 border rounded-lg bg-card text-center">
+              <div className="question-card text-center">
                 <div className="mb-4">
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="text-sm text-muted-foreground mb-2 font-mono uppercase tracking-wider">
                     Alignment with {games.find((g) => g.id === selectedGame)?.name}
                   </p>
-                  <p className="text-6xl font-bold text-foreground">
+                  <p className="text-6xl font-bold text-foreground" style={{ color: 'var(--gold)' }}>
                     {analysis.alignment}%
                   </p>
                 </div>
@@ -359,7 +371,7 @@ export default function DemoPage() {
             )}
 
             {/* Rewritten Summary */}
-            <div className="p-8 border rounded-lg bg-card">
+            <div className="question-card">
               <h3 className="text-xl font-semibold text-foreground mb-4">
                 Game-Aligned Summary
               </h3>
@@ -377,7 +389,7 @@ export default function DemoPage() {
             </div>
 
             {/* Callout */}
-            <div className="p-8 border-2 border-primary rounded-lg bg-primary/5 text-center">
+            <div className="result-card text-center">
               <p className="text-xl font-semibold text-foreground">
                 "This version attracts fewer people — and the right ones."
               </p>
@@ -386,7 +398,7 @@ export default function DemoPage() {
             <div className="text-center">
               <button
                 onClick={() => setStep(4)}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
+                className="button"
               >
                 See the Insight →
               </button>
@@ -403,14 +415,14 @@ export default function DemoPage() {
               </h2>
             </div>
 
-            <div className="p-8 border-l-4 border-primary bg-primary/5 rounded-r-lg">
+            <div className="question-card" style={{ borderLeft: '4px solid var(--gold)' }}>
               <p className="text-2xl font-semibold text-foreground mb-6">
                 "Most creators don't fail because they lack quality.<br />
                 They fail because they let the wrong game leak into their system."
               </p>
             </div>
 
-            <div className="p-8 border rounded-lg bg-card">
+            <div className="question-card">
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 What the Game Audit Does
               </h3>
@@ -425,16 +437,16 @@ export default function DemoPage() {
             <div className="text-center space-y-6">
               <Link
                 href="/quiz"
-                className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-xl hover:bg-primary/90 transition-colors"
+                className="button"
               >
                 Get Your Game Audit
               </Link>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground font-mono uppercase tracking-wider">
                 No pressure. The demo already sold it.
               </p>
             </div>
 
-            <div className="text-center pt-8 border-t">
+            <div className="text-center pt-8 border-t border-border">
               <Link
                 href="/"
                 className="text-muted-foreground hover:text-foreground transition-colors"
