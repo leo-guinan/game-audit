@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getGameConfig, getGameContent } from "@/lib/games";
 import {
   ForkSelector,
+  GameTracker,
   MarkdownWithRoutes,
   PathBreadcrumb,
 } from "@/components/games";
@@ -27,43 +28,46 @@ export default async function GameIntroPage({
   ];
 
   return (
-    <article>
-      <PathBreadcrumb items={breadcrumbs} className="mb-6" />
-      <header className="mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
-          {config.essay_title}
-        </h1>
-        <p className="text-lg text-muted-foreground italic">{config.subtitle}</p>
-        <p className="mt-4 text-muted-foreground font-medium">{config.core_question}</p>
-      </header>
+    <GameTracker gameNumber={gameNumber} nodeType="intro">
+      <article>
+        <PathBreadcrumb items={breadcrumbs} className="mb-6" />
+        <header className="mb-10">
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+            {config.essay_title}
+          </h1>
+          <p className="text-lg text-muted-foreground italic">{config.subtitle}</p>
+          <p className="mt-4 text-muted-foreground font-medium">{config.core_question}</p>
+        </header>
 
-      {content ? (
-        <MarkdownWithRoutes
-          content={content}
-          gameNumber={gameNumber}
-          config={config}
-        />
-      ) : (
-        <div className="insight-box p-8">
-          <p className="text-muted-foreground mb-4">Content for this game is coming soon.</p>
-          <Link href={`${base}/fork`} className="font-mono text-sm text-primary hover:underline">
-            Go to fork →
-          </Link>
-        </div>
-      )}
+        {content ? (
+          <MarkdownWithRoutes
+            content={content}
+            gameNumber={gameNumber}
+            config={config}
+            fromNodeType="intro"
+          />
+        ) : (
+          <div className="insight-box p-8">
+            <p className="text-muted-foreground mb-4">Content for this game is coming soon.</p>
+            <Link href={`${base}/fork`} className="font-mono text-sm text-primary hover:underline">
+              Go to fork →
+            </Link>
+          </div>
+        )}
 
-      <section className="mt-12 pt-10 border-t border-border">
-        <h2 className="text-xl font-semibold text-foreground mb-2">
-          Ready to choose your entry point?
-        </h2>
-        <p className="text-muted-foreground mb-6">
-          Three doors. Pick the one that resonates.
-        </p>
-        <ForkSelector
-          gameNumber={gameNumber}
-          options={config.fork_options}
-        />
-      </section>
-    </article>
+        <section className="mt-12 pt-10 border-t border-border">
+          <h2 className="text-xl font-semibold text-foreground mb-2">
+            Ready to choose your entry point?
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Three doors. Pick the one that resonates.
+          </p>
+          <ForkSelector
+            gameNumber={gameNumber}
+            options={config.fork_options}
+          />
+        </section>
+      </article>
+    </GameTracker>
   );
 }

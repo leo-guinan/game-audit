@@ -40,6 +40,9 @@ interface MarkdownWithRoutesProps {
   gameNumber: number;
   config: GameConfig | null;
   className?: string;
+  /** Current node context for tracking "from" state */
+  fromNodeType?: "intro" | "fork" | "path" | "shared" | "ending";
+  fromNodeId?: string;
 }
 
 /**
@@ -51,6 +54,8 @@ export function MarkdownWithRoutes({
   gameNumber,
   config,
   className = "",
+  fromNodeType,
+  fromNodeId,
 }: MarkdownWithRoutesProps) {
   const parts = parseRouteMarkers(content);
 
@@ -104,6 +109,8 @@ export function MarkdownWithRoutes({
                 target={p.target}
                 label={p.label}
                 config={config}
+                fromNodeType={fromNodeType}
+                fromNodeId={fromNodeId}
               />
             </div>
           );
@@ -115,6 +122,8 @@ export function MarkdownWithRoutes({
               target={p.target}
               label={p.label}
               config={config}
+              fromNodeType={fromNodeType}
+              fromNodeId={fromNodeId}
             />
           </span>
         );

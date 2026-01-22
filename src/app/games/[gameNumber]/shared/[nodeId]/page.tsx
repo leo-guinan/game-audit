@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getGameConfig, getGameContent } from "@/lib/games";
-import { MarkdownWithRoutes, PathBreadcrumb } from "@/components/games";
+import { GameTracker, MarkdownWithRoutes, PathBreadcrumb } from "@/components/games";
 import { gameBasePath } from "@/lib/games/routes";
 
 const VALID_NODE_IDS = ["core_problem", "cycle"] as const;
@@ -30,32 +30,36 @@ export default async function GameSharedNodePage({
   ];
 
   return (
-    <article>
-      <PathBreadcrumb items={breadcrumbs} className="mb-6" />
-      <header className="mb-8">
-        <div className="font-mono text-xs uppercase tracking-wider text-primary mb-2">
-          {config.game_name} · Shared node
-        </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-          {nodeConfig.title}
-        </h1>
-        <p className="text-muted-foreground italic mt-1">{nodeConfig.subtitle}</p>
-      </header>
+    <GameTracker gameNumber={gameNumber} nodeType="shared" nodeId={nodeId}>
+      <article>
+        <PathBreadcrumb items={breadcrumbs} className="mb-6" />
+        <header className="mb-8">
+          <div className="font-mono text-xs uppercase tracking-wider text-primary mb-2">
+            {config.game_name} · Shared node
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+            {nodeConfig.title}
+          </h1>
+          <p className="text-muted-foreground italic mt-1">{nodeConfig.subtitle}</p>
+        </header>
 
-      {content ? (
-        <MarkdownWithRoutes
-          content={content}
-          gameNumber={gameNumber}
-          config={config}
-        />
-      ) : (
-        <div className="insight-box p-8">
-          <p className="text-muted-foreground mb-4">Content for this node is coming soon.</p>
-          <Link href={`${base}/fork`} className="font-mono text-sm text-primary hover:underline">
-            ← Back to fork
-          </Link>
-        </div>
-      )}
-    </article>
+        {content ? (
+          <MarkdownWithRoutes
+            content={content}
+            gameNumber={gameNumber}
+            config={config}
+            fromNodeType="shared"
+            fromNodeId={nodeId}
+          />
+        ) : (
+          <div className="insight-box p-8">
+            <p className="text-muted-foreground mb-4">Content for this node is coming soon.</p>
+            <Link href={`${base}/fork`} className="font-mono text-sm text-primary hover:underline">
+              ← Back to fork
+            </Link>
+          </div>
+        )}
+      </article>
+    </GameTracker>
   );
 }

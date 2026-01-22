@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getGameConfig, getGameContent } from "@/lib/games";
-import { MarkdownWithRoutes, PathBreadcrumb } from "@/components/games";
+import { GameTracker, MarkdownWithRoutes, PathBreadcrumb } from "@/components/games";
 import { gameBasePath } from "@/lib/games/routes";
 
 const VALID_PATH_IDS = ["path_a", "path_b", "path_c"] as const;
@@ -31,31 +31,35 @@ export default async function GamePathPage({
   ];
 
   return (
-    <article>
-      <PathBreadcrumb items={breadcrumbs} className="mb-6" />
-      <header className="mb-8">
-        <div className="font-mono text-xs uppercase tracking-wider text-primary mb-2">
-          {config.game_name} · Path
-        </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-          {pathConfig.title}
-        </h1>
-      </header>
+    <GameTracker gameNumber={gameNumber} nodeType="path" nodeId={pathId}>
+      <article>
+        <PathBreadcrumb items={breadcrumbs} className="mb-6" />
+        <header className="mb-8">
+          <div className="font-mono text-xs uppercase tracking-wider text-primary mb-2">
+            {config.game_name} · Path
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+            {pathConfig.title}
+          </h1>
+        </header>
 
-      {content ? (
-        <MarkdownWithRoutes
-          content={content}
-          gameNumber={gameNumber}
-          config={config}
-        />
-      ) : (
-        <div className="insight-box p-8">
-          <p className="text-muted-foreground mb-4">Content for this path is coming soon.</p>
-          <Link href={`${base}/fork`} className="font-mono text-sm text-primary hover:underline">
-            ← Back to fork
-          </Link>
-        </div>
-      )}
-    </article>
+        {content ? (
+          <MarkdownWithRoutes
+            content={content}
+            gameNumber={gameNumber}
+            config={config}
+            fromNodeType="path"
+            fromNodeId={pathId}
+          />
+        ) : (
+          <div className="insight-box p-8">
+            <p className="text-muted-foreground mb-4">Content for this path is coming soon.</p>
+            <Link href={`${base}/fork`} className="font-mono text-sm text-primary hover:underline">
+              ← Back to fork
+            </Link>
+          </div>
+        )}
+      </article>
+    </GameTracker>
   );
 }

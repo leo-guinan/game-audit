@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { trackFathomEvent, GameEvents } from "@/lib/analytics/fathom";
+import { addPathStep } from "@/lib/analytics/path-tracker";
 import type { ForkOption } from "@/lib/games/types";
 
 interface ForkSelectorProps {
@@ -14,6 +16,15 @@ export function ForkSelector({
   options,
   className = "",
 }: ForkSelectorProps) {
+  const handlePathClick = (pathId: string) => {
+    trackFathomEvent(GameEvents.pathClick(gameNumber, "fork", `path_${pathId}`));
+    addPathStep({
+      gameNumber,
+      nodeType: "path",
+      nodeId: pathId,
+    });
+  };
+
   return (
     <div className={`grid gap-4 sm:grid-cols-3 ${className}`}>
       {options.map((opt) => {
@@ -24,6 +35,11 @@ export function ForkSelector({
           <Link
             key={opt.id}
             href={href}
+            onClick={() => {
+              if (opt.id.startsWith("path_")) {
+                handlePathClick(opt.id);
+              }
+            }}
             className="group block p-6 border border-border bg-muted/30 hover:border-primary/50 hover:bg-primary/5 transition-all lift-on-hover"
           >
             <div className="font-mono text-xs uppercase tracking-wider text-primary mb-2">

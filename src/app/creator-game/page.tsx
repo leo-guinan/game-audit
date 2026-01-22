@@ -88,6 +88,7 @@ export default function CreatorGamePage() {
                 loadingLabel="Sending…"
                 successMessage="Check your inbox for Day 1."
                 ctaUppercase={false}
+                source="creator_game"
               />
             </div>
           </div>
@@ -141,6 +142,7 @@ export default function CreatorGamePage() {
                 showReassurance
                 reassurance="No spam. Unsubscribe anytime."
                 ctaUppercase={false}
+                source="creator_game"
               />
             </div>
           </div>

@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { trackFathomEvent, GameEvents } from "@/lib/analytics/fathom";
+import { getPathSummary, getFullJourney } from "@/lib/analytics/path-tracker";
+import { analyzePath } from "@/lib/analytics/path-analyzer";
 
 interface SignupFormProps {
   variant?: "inline" | "stacked";
@@ -18,6 +21,8 @@ interface SignupFormProps {
   reassurance?: string;
   /** If false, button label is not uppercased (e.g. "Get the course →"). Default: true */
   ctaUppercase?: boolean;
+  /** Source identifier for tracking (e.g. "coordination_game", "creator_game") */
+  source?: string;
 }
 
 export function SignupForm({
@@ -30,6 +35,7 @@ export function SignupForm({
   successMessage = "Thanks! Check your inbox to confirm.",
   reassurance,
   ctaUppercase = true,
+  source = "coordination_game",
 }: SignupFormProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -41,26 +47,55 @@ export function SignupForm({
     setStatus("loading");
     setMessage("");
 
+    // Track attempt
+    trackFathomEvent(GameEvents.subscribeAttempt(source));
+
+    // Get path data
+    const pathSummary = getPathSummary();
+    const pathString = pathSummary.pathString;
+    const pathSignature = pathSummary.pathSignature;
+    const gamesPlayed = pathSummary.games.join(",");
+    const lastNode = pathSummary.lastStep
+      ? `${pathSummary.lastStep.nodeType}${pathSummary.lastStep.nodeId ? `_${pathSummary.lastStep.nodeId}` : ""}`
+      : "";
+
+    // Get full journey for detailed tracking
+    const fullJourney = getFullJourney(false);
+    const interpretation = analyzePath(fullJourney);
+
     try {
       const res = await fetch(apiPath, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim() }),
+        body: JSON.stringify({
+          email: email.trim(),
+          path: pathString,
+          path_signature: pathSignature,
+          games_played: gamesPlayed,
+          last_node: lastNode,
+          primary_game: interpretation.primaryGame,
+          entry_position: interpretation.entryPosition,
+          engagement_pattern: interpretation.engagementPattern,
+          journey_data: fullJourney, // Full journey for detailed analysis
+        }),
       });
       const data = await res.json();
 
       if (!res.ok) {
         setStatus("error");
         setMessage(data.error ?? "Something went wrong.");
+        trackFathomEvent(GameEvents.subscribeError(source));
         return;
       }
 
       setStatus("success");
       setMessage(successMessage);
       setEmail("");
+      trackFathomEvent(GameEvents.subscribeSuccess(source));
     } catch {
       setStatus("error");
       setMessage("Could not subscribe. Try again later.");
+      trackFathomEvent(GameEvents.subscribeError(source));
     }
   }
 
