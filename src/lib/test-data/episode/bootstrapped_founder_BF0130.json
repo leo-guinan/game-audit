@@ -1,0 +1,43 @@
+{
+  "episode": {
+    "id": "bootstrapped_founder:BF0130",
+    "podcast_id": "bootstrapped_founder",
+    "title": "130: Entrepreneurial Anti-Patterns — What to Avoid When You're Starting a Business",
+    "published_at": "Fri, 01 Apr 2022 09:00:00 -0400",
+    "duration_seconds": 878
+  },
+  "classification": {
+    "episode_id": "bootstrapped_founder:BF0130",
+    "game_top1": "G2",
+    "game_top2": "G4",
+    "confidence_top1": 0.6792903271569732,
+    "confidence_top2": 0.1384320878194733
+  },
+  "geometry": {
+    "episode_id": "bootstrapped_founder:BF0130",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9495712382569648,
+      "G2": 0.32070967284302676,
+      "G3": 0.9470197032781844,
+      "G4": 0.8615679121805266,
+      "G5": 0.9924488492796647,
+      "G6": 0.9286826241616327
+    }
+  },
+  "experience": {
+    "episode_id": "bootstrapped_founder:BF0130",
+    "experience_score": 38,
+    "rolling_entropy": 1.5406875756810823,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

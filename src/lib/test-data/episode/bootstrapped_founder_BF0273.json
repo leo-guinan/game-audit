@@ -1,0 +1,43 @@
+{
+  "episode": {
+    "id": "bootstrapped_founder:BF0273",
+    "podcast_id": "bootstrapped_founder",
+    "title": "273: Freedom vs. Autonomy",
+    "published_at": "Fri, 01 Dec 2023 09:00:00 -0500",
+    "duration_seconds": 871
+  },
+  "classification": {
+    "episode_id": "bootstrapped_founder:BF0273",
+    "game_top1": "G4",
+    "game_top2": "G2",
+    "confidence_top1": 0.5731471190060085,
+    "confidence_top2": 0.22109546723900925
+  },
+  "geometry": {
+    "episode_id": "bootstrapped_founder:BF0273",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G4",
+    "secondary_game": "G2",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9568052002905691,
+      "G2": 0.7789045327609907,
+      "G3": 0.9481811736517789,
+      "G4": 0.42685288099399155,
+      "G5": 0.9216683876750278,
+      "G6": 0.9675878246276419
+    }
+  },
+  "experience": {
+    "episode_id": "bootstrapped_founder:BF0273",
+    "experience_score": 28,
+    "rolling_entropy": 1.806884381946832,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

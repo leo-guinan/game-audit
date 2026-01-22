@@ -1,0 +1,43 @@
+{
+  "episode": {
+    "id": "bootstrapped_founder:BF0143",
+    "podcast_id": "bootstrapped_founder",
+    "title": "143: Permission to Follow Up",
+    "published_at": "Fri, 01 Jul 2022 09:00:00 -0400",
+    "duration_seconds": 645
+  },
+  "classification": {
+    "episode_id": "bootstrapped_founder:BF0143",
+    "game_top1": "G2",
+    "game_top2": "G4",
+    "confidence_top1": 0.4777759202304727,
+    "confidence_top2": 0.3383418031311694
+  },
+  "geometry": {
+    "episode_id": "bootstrapped_founder:BF0143",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9666686089454888,
+      "G2": 0.5222240797695272,
+      "G3": 0.9227251017624034,
+      "G4": 0.6616581968688307,
+      "G5": 0.9873751559634786,
+      "G6": 0.9393488566902713
+    }
+  },
+  "experience": {
+    "episode_id": "bootstrapped_founder:BF0143",
+    "experience_score": 28,
+    "rolling_entropy": 1.8119575661704694,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

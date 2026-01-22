@@ -1,0 +1,44 @@
+{
+  "episode": {
+    "id": "creator_science:TPG6785063951",
+    "podcast_id": "creator_science",
+    "title": "#4: Ash Ambirge – Humble beginnings, the Middle Finger moment, setbacks, and the unexpected impact Rihanna had on her life",
+    "episode_number": 4,
+    "published_at": "Tue, 14 Apr 2020 07:00:00 -0000",
+    "duration_seconds": 3138
+  },
+  "classification": {
+    "episode_id": "creator_science:TPG6785063951",
+    "game_top1": "G2",
+    "game_top2": "G4",
+    "confidence_top1": 0.7059821095353779,
+    "confidence_top2": 0.167224155128641
+  },
+  "geometry": {
+    "episode_id": "creator_science:TPG6785063951",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9882744935677027,
+      "G2": 0.2940178904646221,
+      "G3": 0.95738967828955,
+      "G4": 0.832775844871359,
+      "G5": 0.9897423859444429,
+      "G6": 0.9377997068623233
+    }
+  },
+  "experience": {
+    "episode_id": "creator_science:TPG6785063951",
+    "experience_score": 45,
+    "rolling_entropy": 1.372280922556945,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

@@ -1,0 +1,44 @@
+{
+  "episode": {
+    "id": "creator_alchemy:CA0001",
+    "podcast_id": "creator_alchemy",
+    "title": "#1 - [SOLO] 3 Mistakes That Guarantee You'll Die Filled with Regret",
+    "episode_number": 1,
+    "published_at": "Sat, 19 Apr 2025 09:00:00 -0600",
+    "duration_seconds": 470
+  },
+  "classification": {
+    "episode_id": "creator_alchemy:CA0001",
+    "game_top1": "G5",
+    "game_top2": "G4",
+    "confidence_top1": 0.6132505971094495,
+    "confidence_top2": 0.19175896496161943
+  },
+  "geometry": {
+    "episode_id": "creator_alchemy:CA0001",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G5",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9711648634774765,
+      "G2": 0.8840287974352178,
+      "G3": 0.9667264540520852,
+      "G4": 0.8082410350383806,
+      "G5": 0.3867494028905505,
+      "G6": 0.9830894471062894
+    }
+  },
+  "experience": {
+    "episode_id": "creator_alchemy:CA0001",
+    "experience_score": 34,
+    "rolling_entropy": 1.6603787102219283,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

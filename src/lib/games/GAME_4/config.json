@@ -1,0 +1,22 @@
+{
+  "game_number": 4,
+  "game_name": "Performance / Coaching",
+  "essay_title": "The Mirror and the Window",
+  "subtitle": "A Guide to Choosing Your Path When Mastery Doesn't Transfer",
+  "core_question": "How do you get better results?",
+  "fork_options": [
+    { "id": "path_a", "label": "Inspires but doesn't enable", "description": "I'm good at this but can't help others get good." },
+    { "id": "path_b", "label": "Diagnoses but doesn't transform", "description": "People admire me but don't learn from me." },
+    { "id": "path_c", "label": "Transforms but can't scale", "description": "I help one at a time and burn out." }
+  ],
+  "paths": {
+    "path_a": { "title": "All Window, No Mirror", "sections": ["the_demo", "the_danger", "the_trap", "when_to_reflect"], "routes_to": ["core_problem", "path_b", "cycle"] },
+    "path_b": { "title": "All Mirror, No Window", "sections": ["how_you_got_here", "the_trap", "the_death"], "routes_to": ["core_problem", "path_a", "cycle"] },
+    "path_c": { "title": "The Bottleneck Coach", "sections": ["transfer_problem", "mastery_performing_teaching", "choosing_your_game"], "routes_to": ["path_a", "path_b", "cycle"] }
+  },
+  "shared_nodes": {
+    "core_problem": { "title": "The Transfer Problem", "subtitle": "Showing vs. teaching" },
+    "cycle": { "title": "The Cycle", "subtitle": "Mastery → Demonstration → Coaching → Systematization → Obsolescence" }
+  },
+  "connections": { "related_games": [3, 5, 6], "email_course_link": "email_04_performance" }
+}

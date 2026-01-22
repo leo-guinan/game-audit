@@ -1,0 +1,42 @@
+{
+  "episode": {
+    "id": "founders:F0002",
+    "podcast_id": "founders",
+    "title": "#2 Walt Disney",
+    "episode_number": 2
+  },
+  "classification": {
+    "episode_id": "founders:F0002",
+    "game_top1": "G3",
+    "game_top2": "G4",
+    "confidence_top1": 0.3060924304284893,
+    "confidence_top2": 0.2934556216548177
+  },
+  "geometry": {
+    "episode_id": "founders:F0002",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G3",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.8671832048630069,
+      "G2": 0.8463795995683264,
+      "G3": 0.6939075695715107,
+      "G4": 0.7065443783451824,
+      "G5": 0.9168719960180782,
+      "G6": 0.9691132516338953
+    }
+  },
+  "experience": {
+    "episode_id": "founders:F0002",
+    "experience_score": 8,
+    "rolling_entropy": 2.297111096019358,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

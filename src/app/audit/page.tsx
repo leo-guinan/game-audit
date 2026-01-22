@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/header";
+
+export const metadata: Metadata = {
+  title: "MetaSPN – The Game Audit",
+  description: "Identify the game you're actually playing — and why it's not working yet. Then lock that game in with guardrails your AI, VAs, and systems can't drift from.",
+};
 
 export default function AuditPage() {
   return (

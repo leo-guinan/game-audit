@@ -1,0 +1,22 @@
+{
+  "game_number": 3,
+  "game_name": "Model / Understanding",
+  "essay_title": "The Cartographer's Curse",
+  "subtitle": "A Guide to Choosing Your Path When You See the Map But Can't Travel",
+  "core_question": "How does this actually work?",
+  "fork_options": [
+    { "id": "path_a", "label": "Understands, doesn't act", "description": "I understand everything but can't do anything." },
+    { "id": "path_b", "label": "Frameworks nobody uses", "description": "I see patterns nobody else sees but can't communicate them." },
+    { "id": "path_c", "label": "Sees connections, can't communicate", "description": "My maps are illegible to everyone else." }
+  ],
+  "paths": {
+    "path_a": { "title": "The Armchair Cartographer", "sections": ["the_map", "the_danger", "the_trap", "when_to_travel"], "routes_to": ["core_problem", "path_b", "cycle"] },
+    "path_b": { "title": "The Map Without Travelers", "sections": ["how_you_got_here", "the_trap", "the_death"], "routes_to": ["core_problem", "path_a", "cycle"] },
+    "path_c": { "title": "The Illegible Map", "sections": ["abstraction_problem", "maps_performing_travel", "choosing_your_game"], "routes_to": ["path_a", "path_b", "cycle"] }
+  },
+  "shared_nodes": {
+    "core_problem": { "title": "The Abstraction Problem", "subtitle": "Mapping vs. traveling" },
+    "cycle": { "title": "The Cycle", "subtitle": "Explore → Map → Refine → Ossify → Remap" }
+  },
+  "connections": { "related_games": [2, 4, 5], "email_course_link": "email_03_model" }
+}

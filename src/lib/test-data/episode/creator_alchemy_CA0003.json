@@ -1,0 +1,44 @@
+{
+  "episode": {
+    "id": "creator_alchemy:CA0003",
+    "podcast_id": "creator_alchemy",
+    "title": "#3 - [SOLO] What's Hiding Behind Your Self-Sabotaging Behaviors?",
+    "episode_number": 3,
+    "published_at": "Sat, 19 Apr 2025 09:02:00 -0600",
+    "duration_seconds": 442
+  },
+  "classification": {
+    "episode_id": "creator_alchemy:CA0003",
+    "game_top1": "G3",
+    "game_top2": "G5",
+    "confidence_top1": 0.6233481247042805,
+    "confidence_top2": 0.23094779760296918
+  },
+  "geometry": {
+    "episode_id": "creator_alchemy:CA0003",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G3",
+    "secondary_game": "G5",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9916462681291036,
+      "G2": 0.9433844101123525,
+      "G3": 0.37665187529571953,
+      "G4": 0.9231312392488579,
+      "G5": 0.7690522023970308,
+      "G6": 0.9961340048169358
+    }
+  },
+  "experience": {
+    "episode_id": "creator_alchemy:CA0003",
+    "experience_score": 39,
+    "rolling_entropy": 1.5210820303191555,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

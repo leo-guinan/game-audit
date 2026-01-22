@@ -1,0 +1,43 @@
+{
+  "episode": {
+    "id": "bootstrapped_founder:BF0064",
+    "podcast_id": "bootstrapped_founder",
+    "title": "64: Motivation Will Eventually Go Away: Build Accountability Systems Instead",
+    "published_at": "Fri, 01 Jan 2021 07:00:00 -0500",
+    "duration_seconds": 712
+  },
+  "classification": {
+    "episode_id": "bootstrapped_founder:BF0064",
+    "game_top1": "G4",
+    "game_top2": "G3",
+    "confidence_top1": 0.4317177571759066,
+    "confidence_top2": 0.29055011535371705
+  },
+  "geometry": {
+    "episode_id": "bootstrapped_founder:BF0064",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G4",
+    "secondary_game": "G3",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9643755493471113,
+      "G2": 0.9032777581088056,
+      "G3": 0.7094498846462829,
+      "G4": 0.5682822428240935,
+      "G5": 0.8885943230830705,
+      "G6": 0.9660202419906362
+    }
+  },
+  "experience": {
+    "episode_id": "bootstrapped_founder:BF0064",
+    "experience_score": 18,
+    "rolling_entropy": 2.057123626260579,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

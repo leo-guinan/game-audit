@@ -1,0 +1,44 @@
+{
+  "episode": {
+    "id": "creator_alchemy:CA0002",
+    "podcast_id": "creator_alchemy",
+    "title": "#2 - [SOLO] The 4 Horsemen of Fear: The Most Common Limiting Beliefs Holding You Back",
+    "episode_number": 2,
+    "published_at": "Sat, 19 Apr 2025 09:01:00 -0600",
+    "duration_seconds": 411
+  },
+  "classification": {
+    "episode_id": "creator_alchemy:CA0002",
+    "game_top1": "G4",
+    "game_top2": "G3",
+    "confidence_top1": 0.464456400188067,
+    "confidence_top2": 0.1911998508073146
+  },
+  "geometry": {
+    "episode_id": "creator_alchemy:CA0002",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G4",
+    "secondary_game": "G3",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9600459257819856,
+      "G2": 0.8890049480870263,
+      "G3": 0.8088001491926854,
+      "G4": 0.535543599811933,
+      "G5": 0.8428249128680043,
+      "G6": 0.963780464258365
+    }
+  },
+  "experience": {
+    "episode_id": "creator_alchemy:CA0002",
+    "experience_score": 16,
+    "rolling_entropy": 2.1008265579167165,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

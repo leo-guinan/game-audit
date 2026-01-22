@@ -1,0 +1,1166 @@
+{
+  "podcast": {
+    "id": "creator_alchemy",
+    "title": "Creator Alchemy",
+    "image_url": null
+  },
+  "metrics": {
+    "podcast_id": "creator_alchemy",
+    "dominant_game": "G4",
+    "experience_type": "Boundary",
+    "experience_score_final": 18,
+    "margin_mean": 0.5,
+    "entropy_mean": 1.88374842652278,
+    "phase_count": 1,
+    "game_distribution": {
+      "G1": 4.545454545454546,
+      "G2": 27.272727272727273,
+      "G3": 11.363636363636363,
+      "G4": 43.18181818181818,
+      "G5": 11.363636363636363,
+      "G6": 2.272727272727273
+    }
+  },
+  "episodes_geometry": [
+    {
+      "episode_id": "creator_alchemy:CA0001",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G5",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9711648634774765,
+        "G2": 0.8840287974352178,
+        "G3": 0.9667264540520852,
+        "G4": 0.8082410350383806,
+        "G5": 0.3867494028905505,
+        "G6": 0.9830894471062894
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0002",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9600459257819856,
+        "G2": 0.8890049480870263,
+        "G3": 0.8088001491926854,
+        "G4": 0.535543599811933,
+        "G5": 0.8428249128680043,
+        "G6": 0.963780464258365
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0003",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G3",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9916462681291036,
+        "G2": 0.9433844101123525,
+        "G3": 0.37665187529571953,
+        "G4": 0.9231312392488579,
+        "G5": 0.7690522023970308,
+        "G6": 0.9961340048169358
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0004",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9816706658713881,
+        "G2": 0.6365937827519824,
+        "G3": 0.8275475941150052,
+        "G4": 0.8015711402429638,
+        "G5": 0.7621987406312793,
+        "G6": 0.990418076387381
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0005",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9859807493215852,
+        "G2": 0.8634990491386643,
+        "G3": 0.8825248744161448,
+        "G4": 0.530035122114837,
+        "G5": 0.7538118269828269,
+        "G6": 0.9841483780259418
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0006",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9869677341797849,
+        "G2": 0.8433737894371541,
+        "G3": 0.9088622231566514,
+        "G4": 0.33375392062404785,
+        "G5": 0.9453684219924555,
+        "G6": 0.9816739106099063
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0007",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9726606336978263,
+        "G2": 0.7967477776237816,
+        "G3": 0.8810597893324557,
+        "G4": 0.6015842368775359,
+        "G5": 0.7623712746123589,
+        "G6": 0.9855762878560418
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0008",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G3",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9919091786478396,
+        "G2": 0.8438961559103034,
+        "G3": 0.5054855261093109,
+        "G4": 0.7069435129731292,
+        "G5": 0.9670599922684536,
+        "G6": 0.9847056340909632
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0009",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G1",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.5121021805119461,
+        "G2": 0.7882409110275967,
+        "G3": 0.946547743362227,
+        "G4": 0.9218889924095468,
+        "G5": 0.8604048790578006,
+        "G6": 0.9708152936308828
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0010",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9682944318039085,
+        "G2": 0.3685322277507369,
+        "G3": 0.9792902242095077,
+        "G4": 0.7972900617715806,
+        "G5": 0.9705685116717376,
+        "G6": 0.9160245427925287
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0011",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9953920069616037,
+        "G2": 0.9628537638545791,
+        "G3": 0.9554120092924486,
+        "G4": 0.13252898291823478,
+        "G5": 0.9612577139711255,
+        "G6": 0.9925555230020082
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0012",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9929940067387621,
+        "G2": 0.8074379372739091,
+        "G3": 0.6779037041924743,
+        "G4": 0.6234630840079678,
+        "G5": 0.9049213533111116,
+        "G6": 0.9932799144757753
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0013",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G3",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9922523831369103,
+        "G2": 0.671505651622851,
+        "G3": 0.6035341934218736,
+        "G4": 0.8045787949715769,
+        "G5": 0.9367280453067575,
+        "G6": 0.9914009315400306
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0014",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.988432793094116,
+        "G2": 0.8086581353491626,
+        "G3": 0.7624954523216334,
+        "G4": 0.5276621388820119,
+        "G5": 0.926491989413676,
+        "G6": 0.9862594909394001
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0015",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9783740960065255,
+        "G2": 0.8747559997239289,
+        "G3": 0.7920652939020113,
+        "G4": 0.5858603099654207,
+        "G5": 0.7786590348175432,
+        "G6": 0.9902852655845704
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0016",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9831850469239509,
+        "G2": 0.8226002976294999,
+        "G3": 0.9190570831450257,
+        "G4": 0.535975351555204,
+        "G5": 0.7599231138785144,
+        "G6": 0.979259106867805
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0017",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9178796847586007,
+        "G2": 0.9305457482728557,
+        "G3": 0.7996402507261979,
+        "G4": 0.6682481235888923,
+        "G5": 0.7295245918390472,
+        "G6": 0.9541616008144059
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0018",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G5",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9877071951458394,
+        "G2": 0.7940506763534033,
+        "G3": 0.7446132520905451,
+        "G4": 0.7749759124348417,
+        "G5": 0.7140462940569274,
+        "G6": 0.984606669918443
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0019",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9629984604997183,
+        "G2": 0.5058148041979734,
+        "G3": 0.7524347097398064,
+        "G4": 0.9409790530203284,
+        "G5": 0.8717497966918609,
+        "G6": 0.9660231758503126
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0020",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.965548219394615,
+        "G2": 0.4420349550747317,
+        "G3": 0.7905414631252989,
+        "G4": 0.9109545865717534,
+        "G5": 0.9231623308791641,
+        "G6": 0.9677584449544369
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0021",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G3",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9798551769584612,
+        "G2": 0.8997418551031222,
+        "G3": 0.26843102152172904,
+        "G4": 0.9060222292697803,
+        "G5": 0.9556281746817894,
+        "G6": 0.9903215424651179
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0022",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G3",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9819509968564308,
+        "G2": 0.7870113821864401,
+        "G3": 0.5634436149133151,
+        "G4": 0.7417700367707394,
+        "G5": 0.9687212220146586,
+        "G6": 0.9571027472584163
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0023",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.972963925935148,
+        "G2": 0.5085308172143386,
+        "G3": 0.8648522829465239,
+        "G4": 0.8077146306141771,
+        "G5": 0.8718415249121961,
+        "G6": 0.9740968183776164
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0024",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G1",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.7068097352694753,
+        "G2": 0.7225525225557548,
+        "G3": 0.9848011761467947,
+        "G4": 0.6998016618651001,
+        "G5": 0.9225055086375499,
+        "G6": 0.9635293955253253
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0025",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9883606959448196,
+        "G2": 0.8892934903650704,
+        "G3": 0.9407571525797133,
+        "G4": 0.465980513002765,
+        "G5": 0.7399312508012822,
+        "G6": 0.9756768973063495
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0026",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9537384106758235,
+        "G2": 0.85939351856667,
+        "G3": 0.9837302866014147,
+        "G4": 0.3484285227678118,
+        "G5": 0.9480600103758732,
+        "G6": 0.9066492510124067
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0027",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9432343307639822,
+        "G2": 0.34137094582945504,
+        "G3": 0.9811746696719958,
+        "G4": 0.9118896829665935,
+        "G5": 0.9578418448884956,
+        "G6": 0.8644885258794779
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0028",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G5",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.8862955945733841,
+        "G2": 0.8724426600979809,
+        "G3": 0.9634545175410894,
+        "G4": 0.7960269120739567,
+        "G5": 0.5538945126285323,
+        "G6": 0.9278858030850569
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0029",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9362378047954162,
+        "G2": 0.6877819834441139,
+        "G3": 0.7248955287309237,
+        "G4": 0.8051294261288225,
+        "G5": 0.8708455973956515,
+        "G6": 0.9751096595050721
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0030",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G5",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9530874860883097,
+        "G2": 0.8675042542815804,
+        "G3": 0.9040642593363366,
+        "G4": 0.7461876363921647,
+        "G5": 0.630243344576461,
+        "G6": 0.8989130193251476
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0031",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9117826711312614,
+        "G2": 0.9002416889625902,
+        "G3": 0.8394670749357891,
+        "G4": 0.4903598411297344,
+        "G5": 0.9014947296091801,
+        "G6": 0.9566539942314449
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0032",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9517549543760914,
+        "G2": 0.6814085827589944,
+        "G3": 0.8273869043896442,
+        "G4": 0.6131662094427057,
+        "G5": 0.966967349950926,
+        "G6": 0.9593159990816383
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0033",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9158963072484524,
+        "G2": 0.6695228494551702,
+        "G3": 0.880687664187016,
+        "G4": 0.8947709559410091,
+        "G5": 0.7869743788622594,
+        "G6": 0.8521478443060929
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0034",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9682794162760126,
+        "G2": 0.938316562108882,
+        "G3": 0.9673082701273522,
+        "G4": 0.31516787852396844,
+        "G5": 0.8276063608735591,
+        "G6": 0.9833215120902258
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0035",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9702795010152656,
+        "G2": 0.5155815788614206,
+        "G3": 0.9454025195041734,
+        "G4": 0.8201337219241969,
+        "G5": 0.7653689190839439,
+        "G6": 0.9832337596109995
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0036",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9935514773507047,
+        "G2": 0.5207419899081059,
+        "G3": 0.8661675448218903,
+        "G4": 0.6423544092473684,
+        "G5": 0.9856864198538755,
+        "G6": 0.9914981588180548
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0037",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G6",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9643454525678237,
+        "G2": 0.8639015581514315,
+        "G3": 0.9375547749647608,
+        "G4": 0.7483820420574401,
+        "G5": 0.9734474348329198,
+        "G6": 0.512368737425624
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0038",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.991561070912082,
+        "G2": 0.8624492000479844,
+        "G3": 0.7328386413851139,
+        "G4": 0.5239874321280173,
+        "G5": 0.960998580664318,
+        "G6": 0.9281650748624845
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0039",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G1",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.541518510641759,
+        "G2": 0.7474286884900774,
+        "G3": 0.9553830303252834,
+        "G4": 0.9423501699712814,
+        "G5": 0.9303749912014978,
+        "G6": 0.8829446093701009
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0040",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9837560191330461,
+        "G2": 0.6484731743300267,
+        "G3": 0.9166730869399821,
+        "G4": 0.5294756417568562,
+        "G5": 0.9568352081440596,
+        "G6": 0.9647868696960291
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0041",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9655041256030252,
+        "G2": 0.2288192026056256,
+        "G3": 0.9678592010694967,
+        "G4": 0.9679034275691996,
+        "G5": 0.9425551975016002,
+        "G6": 0.9273588456510526
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0042",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9825827517402399,
+        "G2": 0.78430813572257,
+        "G3": 0.673759048127011,
+        "G4": 0.6634315944281046,
+        "G5": 0.9494196254034882,
+        "G6": 0.9464988445785864
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0043",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.991062528069287,
+        "G2": 0.3601911850852316,
+        "G3": 0.8279884235376282,
+        "G4": 0.8752663013360753,
+        "G5": 0.9946326232201057,
+        "G6": 0.950858938751672
+      }
+    },
+    {
+      "episode_id": "creator_alchemy:CA0044",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G5",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.944248540289075,
+        "G2": 0.8036406688222083,
+        "G3": 0.9041846454306586,
+        "G4": 0.7519556464674737,
+        "G5": 0.6573276002128134,
+        "G6": 0.9386428987777711
+      }
+    }
+  ],
+  "episodes_experience": [
+    {
+      "episode_id": "creator_alchemy:CA0001",
+      "experience_score": 34,
+      "rolling_entropy": 1.6603787102219283,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0002",
+      "experience_score": 16,
+      "rolling_entropy": 2.1008265579167165,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0003",
+      "experience_score": 39,
+      "rolling_entropy": 1.5210820303191555,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0004",
+      "experience_score": 16,
+      "rolling_entropy": 2.093757588291047,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0005",
+      "experience_score": 22,
+      "rolling_entropy": 1.946008285535699,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0006",
+      "experience_score": 38,
+      "rolling_entropy": 1.5406802068129943,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0007",
+      "experience_score": 17,
+      "rolling_entropy": 2.0843460767080133,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0008",
+      "experience_score": 30,
+      "rolling_entropy": 1.7502448645302224,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0009",
+      "experience_score": 18,
+      "rolling_entropy": 2.0379135726199933,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0010",
+      "experience_score": 36,
+      "rolling_entropy": 1.6090722648161426,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0011",
+      "experience_score": 67,
+      "rolling_entropy": 0.824567318519866,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0012",
+      "experience_score": 23,
+      "rolling_entropy": 1.9360926449074782,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0013",
+      "experience_score": 25,
+      "rolling_entropy": 1.8823377450460754,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0014",
+      "experience_score": 24,
+      "rolling_entropy": 1.8964377026723511,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0015",
+      "experience_score": 18,
+      "rolling_entropy": 2.0393508607808903,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0016",
+      "experience_score": 22,
+      "rolling_entropy": 1.9594485862731996,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0017",
+      "experience_score": 9,
+      "rolling_entropy": 2.2702631368521917,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0018",
+      "experience_score": 14,
+      "rolling_entropy": 2.1438034190654496,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0019",
+      "experience_score": 21,
+      "rolling_entropy": 1.9638855729373321,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0020",
+      "experience_score": 25,
+      "rolling_entropy": 1.864382491075367,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0021",
+      "experience_score": 46,
+      "rolling_entropy": 1.3608353455143525,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0022",
+      "experience_score": 22,
+      "rolling_entropy": 1.9573919230507617,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0023",
+      "experience_score": 20,
+      "rolling_entropy": 2.0085007682443186,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0024",
+      "experience_score": 16,
+      "rolling_entropy": 2.1052798016068652,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0025",
+      "experience_score": 29,
+      "rolling_entropy": 1.7868790382031314,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0026",
+      "experience_score": 34,
+      "rolling_entropy": 1.6434223836779505,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0027",
+      "experience_score": 35,
+      "rolling_entropy": 1.63175022084951,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0028",
+      "experience_score": 13,
+      "rolling_entropy": 2.170970848617885,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0029",
+      "experience_score": 9,
+      "rolling_entropy": 2.2635443854870845,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0030",
+      "experience_score": 9,
+      "rolling_entropy": 2.2848967787785788,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0031",
+      "experience_score": 17,
+      "rolling_entropy": 2.0856368304553503,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0032",
+      "experience_score": 18,
+      "rolling_entropy": 2.0547129801872313,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0033",
+      "experience_score": 3,
+      "rolling_entropy": 2.419049121329704,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0034",
+      "experience_score": 41,
+      "rolling_entropy": 1.4769238643436422,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0035",
+      "experience_score": 23,
+      "rolling_entropy": 1.9211365245277152,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0036",
+      "experience_score": 35,
+      "rolling_entropy": 1.6204905446999645,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0037",
+      "experience_score": 22,
+      "rolling_entropy": 1.958093048964768,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0038",
+      "experience_score": 23,
+      "rolling_entropy": 1.925760000078228,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0039",
+      "experience_score": 17,
+      "rolling_entropy": 2.0846281970843914,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0040",
+      "experience_score": 28,
+      "rolling_entropy": 1.802971158259707,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0041",
+      "experience_score": 49,
+      "rolling_entropy": 1.2868668185994956,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0042",
+      "experience_score": 17,
+      "rolling_entropy": 2.078819045305951,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0043",
+      "experience_score": 38,
+      "rolling_entropy": 1.5385343235730973,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_alchemy:CA0044",
+      "experience_score": 8,
+      "rolling_entropy": 2.292957179660518,
+      "rolling_margin_median": 0.5
+    }
+  ],
+  "centroids": {
+    "G1": {
+      "centroid": {
+        "pc1": -2,
+        "pc2": -1
+      }
+    },
+    "G2": {
+      "centroid": {
+        "pc1": 0,
+        "pc2": -2
+      }
+    },
+    "G3": {
+      "centroid": {
+        "pc1": 2,
+        "pc2": -1
+      }
+    },
+    "G4": {
+      "centroid": {
+        "pc1": -1,
+        "pc2": 1
+      }
+    },
+    "G5": {
+      "centroid": {
+        "pc1": 1,
+        "pc2": 1
+      }
+    },
+    "G6": {
+      "centroid": {
+        "pc1": 0,
+        "pc2": 2
+      }
+    }
+  }
+}

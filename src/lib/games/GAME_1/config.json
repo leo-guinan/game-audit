@@ -1,0 +1,55 @@
+{
+  "game_number": 1,
+  "game_name": "Identity / Canon",
+  "essay_title": "On the Internet, Nobody Knows You're a Dog",
+  "subtitle": "A Guide to Choosing Your Path When Identity Is Malleable",
+  "core_question": "Who should people become—and who should they study?",
+  "fork_options": [
+    {
+      "id": "path_a",
+      "label": "I'm invisible",
+      "description": "Nobody knows who I am online, and I'm not sure if that's a problem or a gift."
+    },
+    {
+      "id": "path_b",
+      "label": "I'm frozen",
+      "description": "I've built something. People follow me, expect things from me. But I feel more trapped than powerful."
+    },
+    {
+      "id": "path_c",
+      "label": "I'm in between",
+      "description": "I have some presence, but I'm not sure whether to grow it or burn it down."
+    }
+  ],
+  "paths": {
+    "path_a": {
+      "title": "The Dog's Path",
+      "sections": ["the_gift", "the_danger", "the_trap", "when_to_emerge"],
+      "routes_to": ["core_problem", "path_b_trap", "cycle"]
+    },
+    "path_b": {
+      "title": "The Frozen God",
+      "sections": ["how_you_got_here", "the_trap", "the_death"],
+      "routes_to": ["core_problem", "path_a", "elevation"]
+    },
+    "path_c": {
+      "title": "The Crossroads",
+      "sections": ["validation_problem", "dogs_performing_godhood", "choosing_your_game"],
+      "routes_to": ["path_a", "path_b", "cycle"]
+    }
+  },
+  "shared_nodes": {
+    "core_problem": {
+      "title": "The Validation Problem",
+      "subtitle": "Why we can't tell dogs from gods"
+    },
+    "cycle": {
+      "title": "The Cycle",
+      "subtitle": "Identity is malleable"
+    }
+  },
+  "connections": {
+    "related_games": [2, 3, 6],
+    "email_course_link": "email_01_identity"
+  }
+}

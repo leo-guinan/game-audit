@@ -1,0 +1,6141 @@
+{
+  "podcast": {
+    "id": "creator_science",
+    "title": "Creator Science",
+    "image_url": null
+  },
+  "metrics": {
+    "podcast_id": "creator_science",
+    "dominant_game": "G2",
+    "experience_type": "Convergent",
+    "experience_score_final": 40,
+    "margin_mean": 0.5,
+    "entropy_mean": 1.4632692270994871,
+    "phase_count": 1,
+    "game_distribution": {
+      "G1": 0.411522633744856,
+      "G2": 95.06172839506173,
+      "G3": 0,
+      "G4": 4.11522633744856,
+      "G5": 0,
+      "G6": 0.411522633744856
+    }
+  },
+  "episodes_geometry": [
+    {
+      "episode_id": "creator_science:TPG1981321443",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5448607555",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9818825569",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6785063951",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9882744935677027,
+        "G2": 0.2940178904646221,
+        "G3": 0.95738967828955,
+        "G4": 0.832775844871359,
+        "G5": 0.9897423859444429,
+        "G6": 0.9377997068623233
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3092203193",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1651205276",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3291976559",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2930083241",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9909073166294394,
+        "G2": 0.3000587388276388,
+        "G3": 0.9477211537412706,
+        "G4": 0.827013664590901,
+        "G5": 0.9919972931960073,
+        "G6": 0.9423018330147428
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8972781173",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5736260567",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9882744935677027,
+        "G2": 0.2940178904646221,
+        "G3": 0.95738967828955,
+        "G4": 0.832775844871359,
+        "G5": 0.9897423859444429,
+        "G6": 0.9377997068623233
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2991899638",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4489137814",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5252960605",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5801024306",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8005192155",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4263507808",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7637780857",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7933914371",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5890790996",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1944048839",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5214572180",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1251644505",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9884568454690675,
+        "G2": 0.30285692311461465,
+        "G3": 0.9510418633476092,
+        "G4": 0.8316601427702324,
+        "G5": 0.990848513286444,
+        "G6": 0.9351357120120323
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5172686781",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4045219147",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5205733184",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4156417927",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6272570285",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2207596733",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6536247293",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7185363203",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5634186690",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6520462069",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2028382444",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6454821311",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9701419342533938,
+        "G2": 0.9439110171052468,
+        "G3": 0.9617060105786902,
+        "G4": 0.5159650982394339,
+        "G5": 0.7146201273062802,
+        "G6": 0.893655812516955
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6286572871",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6567197253",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1063163287",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6370193286",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7384619990",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8952058808",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9294035153",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5463033690",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6444918009",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1560107574",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3659355208",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1213503083",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3271677989",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9351578236",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9924788866",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6472828624",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6978732780",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9093029386",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8705961394",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7465188216",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5923624759",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7101279014",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7139984330",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2935674989",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6732510177",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5941825025",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7938272634",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7554296097",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9755813914",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5385290650",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3336027316",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3354326384",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6693090069",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5490655902",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2401130513",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4372241839",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2511095272",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2594677151",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9586658263",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9882744935677027,
+        "G2": 0.2940178904646221,
+        "G3": 0.95738967828955,
+        "G4": 0.832775844871359,
+        "G5": 0.9897423859444429,
+        "G6": 0.9377997068623233
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4922624253",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1021539894",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5796202215",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2683056956",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5118126242",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7532971586",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4588181191",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8045084965",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7128900755",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3793891755",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.988999346552028,
+        "G2": 0.2988157713021017,
+        "G3": 0.9515175102474495,
+        "G4": 0.8355238477419644,
+        "G5": 0.9907252994090445,
+        "G6": 0.9344182247474121
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9238248408",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7879351680",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3506794659",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9542013107",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8540346510",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1780098224",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1240079674",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2312096008",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8792925382",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9417681130",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2138002955",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1362313291",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4134292782",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5522574901",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7072570493",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5805514100",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9882744935677027,
+        "G2": 0.2940178904646221,
+        "G3": 0.95738967828955,
+        "G4": 0.832775844871359,
+        "G5": 0.9897423859444429,
+        "G6": 0.9377997068623233
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5802752551",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7355358397",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4846707659",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9292554973",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7708392029",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5375235052",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1170663205",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6166818867",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9776655708",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9200373547",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4983413237",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7674812958",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3079764864",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5993139845",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5126163420",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2378723988",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9480960803",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.988999346552028,
+        "G2": 0.2988157713021017,
+        "G3": 0.9515175102474495,
+        "G4": 0.8355238477419644,
+        "G5": 0.9907252994090445,
+        "G6": 0.9344182247474121
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8910423515",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8045326812",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5828580844",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2031931656",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8795788649",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2149853718",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3426649591",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9756625915598655,
+        "G2": 0.6672635297964165,
+        "G3": 0.9563285700178275,
+        "G4": 0.5689712662304818,
+        "G5": 0.8600040670784015,
+        "G6": 0.9717699753170073
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6786730151",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9810203753",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4419328908",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9185602359",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1572537209",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4624859424",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7506506519",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8831001663",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8445475993",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4734500804",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9846078975881253,
+        "G2": 0.4831409009514681,
+        "G3": 0.9114085059726716,
+        "G4": 0.6740844759122747,
+        "G5": 0.9887389812241372,
+        "G6": 0.958019238351323
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6289052451",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9409649090",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8074795673",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7849620739",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2884446618",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3639214284",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.8828486735834993,
+        "G2": 0.5819892344463646,
+        "G3": 0.935512209665805,
+        "G4": 0.8575765656406524,
+        "G5": 0.9321117702747057,
+        "G6": 0.8099615463889729
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9367968145",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9202699720",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3137813373",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G1",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.5596791857808765,
+        "G2": 0.7901149536993298,
+        "G3": 0.8884022498539758,
+        "G4": 0.9475434034727563,
+        "G5": 0.9522334886244994,
+        "G6": 0.8620267185685621
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7052050154",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4808250410",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5763348791",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7127697487",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1401698322",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5051139718",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4317123851",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9765672700",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2610110205",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3928708660",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7066531812",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8879163402",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3818759240",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1103609009",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6002159621",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6703825909",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8257211076",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8193964138",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7258102261",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7801741110",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9890873530572022,
+        "G2": 0.31300141067159537,
+        "G3": 0.9509539544692311,
+        "G4": 0.8234292432067756,
+        "G5": 0.9905912332056817,
+        "G6": 0.9329368053895141
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4833047562",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1743691905",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9844798392",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8205701495",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1122659074",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1400704988",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7048496941",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6982467815",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8216150866",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2130052808",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9685361970986879,
+        "G2": 0.49117565744491,
+        "G3": 0.9264978311406731,
+        "G4": 0.7863830659864723,
+        "G5": 0.9005746760776319,
+        "G6": 0.9268325722516249
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4850571514",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9604159105",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5894013013",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1366362340",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC7265495982",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC3039856955",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9334031582530055,
+        "G2": 0.6257168454614432,
+        "G3": 0.94265157493862,
+        "G4": 0.6813263136561489,
+        "G5": 0.9861901055818071,
+        "G6": 0.8307120021089753
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC5618036226",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC5842289295",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9586420625111195,
+        "G2": 0.8091704172706748,
+        "G3": 0.9141591550093832,
+        "G4": 0.4219021188307619,
+        "G5": 0.9521272919503166,
+        "G6": 0.9439989544277441
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC3449613375",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC5131380750",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC4740162202",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC4573268881",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC4102659583",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9897803665416591,
+        "G2": 0.30045966332949203,
+        "G3": 0.9507646021276932,
+        "G4": 0.8311679622008796,
+        "G5": 0.9909337694339062,
+        "G6": 0.9368936363663696
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC1899373334",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC4406899916",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC3650438526",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC2457419778",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC7205674005",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9235851042671456,
+        "G2": 0.7164759515699795,
+        "G3": 0.8373560561689204,
+        "G4": 0.8218633343054036,
+        "G5": 0.9667316411582282,
+        "G6": 0.7339879125303228
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC9205948776",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9747594693629678,
+        "G2": 0.45720932658445146,
+        "G3": 0.9346902151653539,
+        "G4": 0.853957102856691,
+        "G5": 0.9851856644112226,
+        "G6": 0.7941982216193133
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC9186810376",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC1228588570",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G6",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9796999745148176,
+        "G2": 0.6581760122745759,
+        "G3": 0.973804739611879,
+        "G4": 0.7926496825393372,
+        "G5": 0.9834269928949799,
+        "G6": 0.6122425981644104
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC6521668801",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9596763579213519,
+        "G2": 0.47460759210185177,
+        "G3": 0.9042122989221073,
+        "G4": 0.8039972929220878,
+        "G5": 0.9560024038443443,
+        "G6": 0.901504054288257
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC3094848944",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC2110473832",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9472765149513672,
+        "G2": 0.6405856581252389,
+        "G3": 0.9843562452863847,
+        "G4": 0.6788804109091189,
+        "G5": 0.9841517384372042,
+        "G6": 0.7647494322906863
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC6798522427",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9884568454690675,
+        "G2": 0.30285692311461465,
+        "G3": 0.9510418633476092,
+        "G4": 0.8316601427702324,
+        "G5": 0.990848513286444,
+        "G6": 0.9351357120120323
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC1484242916",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC4464570238",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC1695040150",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8471043155",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9708807128947045,
+        "G2": 0.4537368916122737,
+        "G3": 0.9644430391053922,
+        "G4": 0.7235659691358427,
+        "G5": 0.9870226730238577,
+        "G6": 0.9003507142279291
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4588308516",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9527038945843405,
+        "G2": 0.6598768576360011,
+        "G3": 0.8687335822055806,
+        "G4": 0.7535270545635698,
+        "G5": 0.9206801805683854,
+        "G6": 0.8444784304421225
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5782984878",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9584545778083158,
+        "G2": 0.4416888201602901,
+        "G3": 0.9699869151009739,
+        "G4": 0.7414253811730469,
+        "G5": 0.9766330488807563,
+        "G6": 0.911811256876617
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1183105514",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9290199659905725,
+        "G2": 0.6974816048439745,
+        "G3": 0.9395488488097576,
+        "G4": 0.6396076576509742,
+        "G5": 0.9576259984144472,
+        "G6": 0.8367159242902742
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3253248881",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9607042757304953,
+        "G2": 0.7704766304589995,
+        "G3": 0.983328432699227,
+        "G4": 0.6664352667650926,
+        "G5": 0.8888134108211431,
+        "G6": 0.7302419835250427
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3334719336",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9658056371184297,
+        "G2": 0.5279469631877269,
+        "G3": 0.9533724126371376,
+        "G4": 0.7995659149156062,
+        "G5": 0.9554151530960026,
+        "G6": 0.7978939190450969
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2943158765",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9402956858928166,
+        "G2": 0.32735581348289966,
+        "G3": 0.9531173473758143,
+        "G4": 0.8981155666954698,
+        "G5": 0.9533391584399615,
+        "G6": 0.9277764281130382
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9646318598",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9879906733962226,
+        "G2": 0.28401706884570455,
+        "G3": 0.9763134379457392,
+        "G4": 0.8740872145048153,
+        "G5": 0.9873039208747716,
+        "G6": 0.8902876844327469
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7731235555",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9627667378895597,
+        "G2": 0.4658272207850751,
+        "G3": 0.9758419446658606,
+        "G4": 0.8336378779401077,
+        "G5": 0.9885364066217865,
+        "G6": 0.7733898120976105
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3765157647",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8424387300",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9933511862314374,
+        "G2": 0.2684077736205184,
+        "G3": 0.9533316991648116,
+        "G4": 0.8312568737213105,
+        "G5": 0.9928661456892629,
+        "G6": 0.9607863215726591
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4754993243",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8136356333",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G5",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9521621784043307,
+        "G2": 0.8605932220566513,
+        "G3": 0.9806464176767139,
+        "G4": 0.546207247234971,
+        "G5": 0.7103343462547007,
+        "G6": 0.9500565883726323
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1471122237",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9184868821673905,
+        "G2": 0.671685137767389,
+        "G3": 0.9410762015892741,
+        "G4": 0.7441835540153142,
+        "G5": 0.9160445291182402,
+        "G6": 0.808523695342392
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8989749218",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.987691096046379,
+        "G2": 0.45080226700940595,
+        "G3": 0.977591039832776,
+        "G4": 0.7530530073718579,
+        "G5": 0.9969905504108961,
+        "G6": 0.8338720393286851
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG5864153125",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3743458796",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9510141958038248,
+        "G2": 0.45422508996475264,
+        "G3": 0.9241170686694831,
+        "G4": 0.7394005423313175,
+        "G5": 0.9906344055957836,
+        "G6": 0.9406086976348382
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1870201306",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9745971305083713,
+        "G2": 0.4854970639037428,
+        "G3": 0.9211547660402863,
+        "G4": 0.7443759462385822,
+        "G5": 0.9732244894577604,
+        "G6": 0.901150603851257
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1759737431",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9895906456857557,
+        "G2": 0.2974814567409728,
+        "G3": 0.9539778272273237,
+        "G4": 0.8258108751120838,
+        "G5": 0.9912029298741883,
+        "G6": 0.9419362653596757
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6214532074",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9828932890764374,
+        "G2": 0.9552276818615203,
+        "G3": 0.9345722455752263,
+        "G4": 0.19889148852389316,
+        "G5": 0.9788241762249301,
+        "G6": 0.9495911187379928
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8241388534",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9739392337317476,
+        "G2": 0.7826283341182211,
+        "G3": 0.9622910037350965,
+        "G4": 0.36653070710917,
+        "G5": 0.9521538736215964,
+        "G6": 0.9624568476841686
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG3995437422",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9893702553614216,
+        "G2": 0.29386398303888206,
+        "G3": 0.950863850806514,
+        "G4": 0.8392973088378243,
+        "G5": 0.9908930056576843,
+        "G6": 0.9357115962976739
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG2448747734",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9809400321535087,
+        "G2": 0.3165041799238164,
+        "G3": 0.9691801859641332,
+        "G4": 0.8777242324529322,
+        "G5": 0.9749826213333329,
+        "G6": 0.8806687481722766
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8234241072",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9414451097956492,
+        "G2": 0.6215188985356391,
+        "G3": 0.9004166044010845,
+        "G4": 0.6673469696175376,
+        "G5": 0.942510327207391,
+        "G6": 0.9267620904426984
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9053676375",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9492810682725504,
+        "G2": 0.29516330084219045,
+        "G3": 0.975244656752857,
+        "G4": 0.9224741685524837,
+        "G5": 0.9841574056749124,
+        "G6": 0.8736793999050061
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6759125025",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9390828227890903,
+        "G2": 0.4244893368524023,
+        "G3": 0.8908137146612948,
+        "G4": 0.8200442851833072,
+        "G5": 0.980262709377198,
+        "G6": 0.9453071311367075
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4015476201",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9802231643544871,
+        "G2": 0.3862611219728753,
+        "G3": 0.9342831718903026,
+        "G4": 0.7607274833725973,
+        "G5": 0.9869646594767894,
+        "G6": 0.9515403989329483
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1119244339",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.8744050819338328,
+        "G2": 0.4325310255458127,
+        "G3": 0.9736947356509512,
+        "G4": 0.919187157387126,
+        "G5": 0.9486573853511572,
+        "G6": 0.8515246141311201
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8426094996",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9947573887184785,
+        "G2": 0.20846660458424804,
+        "G3": 0.9849320489278944,
+        "G4": 0.8657268261838303,
+        "G5": 0.9948311080730766,
+        "G6": 0.951286023512472
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7615816846",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9926068740768489,
+        "G2": 0.4634901489489166,
+        "G3": 0.9474355790550346,
+        "G4": 0.6390264204543024,
+        "G5": 0.9908173405117806,
+        "G6": 0.9666236369531169
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4929852571",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7395943924",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.8316482043532745,
+        "G2": 0.6723698619155118,
+        "G3": 0.9214716314951453,
+        "G4": 0.7273993118552704,
+        "G5": 0.9455632310807136,
+        "G6": 0.9015477593000845
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7590082769",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG7107827115",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9095791160658835,
+        "G2": 0.691109487786026,
+        "G3": 0.9492105946634555,
+        "G4": 0.7115989838204344,
+        "G5": 0.9456053385190786,
+        "G6": 0.7928964791451221
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG4676719608",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC9761372488",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9884568454690675,
+        "G2": 0.30285692311461465,
+        "G3": 0.9510418633476092,
+        "G4": 0.8316601427702324,
+        "G5": 0.990848513286444,
+        "G6": 0.9351357120120323
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG9262399353",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G2",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9665890418805962,
+        "G2": 0.8034732651565717,
+        "G3": 0.8221918493105519,
+        "G4": 0.6804904616311349,
+        "G5": 0.8037324575140613,
+        "G6": 0.9235229245070838
+      }
+    },
+    {
+      "episode_id": "creator_science:ULROC3870940646",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9898032175612117,
+        "G2": 0.29944904253777593,
+        "G3": 0.949819992661706,
+        "G4": 0.830902120186815,
+        "G5": 0.9912044777319826,
+        "G6": 0.9388211493205088
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6510786328",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9853205380363724,
+        "G2": 0.5314975233062458,
+        "G3": 0.9139296716929144,
+        "G4": 0.690195323011791,
+        "G5": 0.9849543206807204,
+        "G6": 0.894102623271956
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1252936337",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.990508764755002,
+        "G2": 0.29604184712138015,
+        "G3": 0.9516881571962893,
+        "G4": 0.8283838394682209,
+        "G5": 0.9912041148717995,
+        "G6": 0.9421732765873081
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG8053927920",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G6",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.8626208318086657,
+        "G2": 0.6296431484656175,
+        "G3": 0.9840359515859183,
+        "G4": 0.8940465071217675,
+        "G5": 0.9266060427357481,
+        "G6": 0.7030475182822831
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG1869640639",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G2",
+      "secondary_game": "G4",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9560820129130766,
+        "G2": 0.3468924441850071,
+        "G3": 0.9663837507801005,
+        "G4": 0.8654850991642384,
+        "G5": 0.9672179064088244,
+        "G6": 0.8979387865487531
+      }
+    },
+    {
+      "episode_id": "creator_science:TPG6198964688",
+      "pca": {
+        "pc1": 0,
+        "pc2": 0
+      },
+      "primary_game": "G4",
+      "secondary_game": "G3",
+      "margin": 0.5,
+      "boundary_flag": false,
+      "distances_to_manifolds": {
+        "G1": 0.9775691319348411,
+        "G2": 0.8330397857888795,
+        "G3": 0.8075242426850525,
+        "G4": 0.5114598597212712,
+        "G5": 0.9090818704536887,
+        "G6": 0.961325109416267
+      }
+    }
+  ],
+  "episodes_experience": [
+    {
+      "episode_id": "creator_science:TPG1981321443",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5448607555",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9818825569",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6785063951",
+      "experience_score": 45,
+      "rolling_entropy": 1.372280922556945,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3092203193",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1651205276",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3291976559",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2930083241",
+      "experience_score": 45,
+      "rolling_entropy": 1.3755612422960528,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8972781173",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5736260567",
+      "experience_score": 45,
+      "rolling_entropy": 1.372280922556945,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2991899638",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4489137814",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5252960605",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5801024306",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8005192155",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4263507808",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7637780857",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7933914371",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5890790996",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1944048839",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5214572180",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1251644505",
+      "experience_score": 44,
+      "rolling_entropy": 1.4009069951572606,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5172686781",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4045219147",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5205733184",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4156417927",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6272570285",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2207596733",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6536247293",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7185363203",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5634186690",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6520462069",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2028382444",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6454821311",
+      "experience_score": 23,
+      "rolling_entropy": 1.9313979414140219,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6286572871",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6567197253",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1063163287",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6370193286",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7384619990",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8952058808",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9294035153",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5463033690",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6444918009",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1560107574",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3659355208",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1213503083",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3271677989",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9351578236",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9924788866",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6472828624",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6978732780",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9093029386",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8705961394",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7465188216",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5923624759",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7101279014",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7139984330",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2935674989",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6732510177",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5941825025",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7938272634",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7554296097",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9755813914",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5385290650",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3336027316",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3354326384",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6693090069",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5490655902",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2401130513",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4372241839",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2511095272",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2594677151",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9586658263",
+      "experience_score": 45,
+      "rolling_entropy": 1.372280922556945,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4922624253",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1021539894",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5796202215",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2683056956",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5118126242",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7532971586",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4588181191",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8045084965",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7128900755",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3793891755",
+      "experience_score": 44,
+      "rolling_entropy": 1.3910719488520482,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9238248408",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7879351680",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3506794659",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9542013107",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8540346510",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1780098224",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1240079674",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2312096008",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8792925382",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9417681130",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2138002955",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1362313291",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4134292782",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5522574901",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7072570493",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5805514100",
+      "experience_score": 45,
+      "rolling_entropy": 1.372280922556945,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5802752551",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7355358397",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4846707659",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9292554973",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7708392029",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5375235052",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1170663205",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6166818867",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9776655708",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9200373547",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4983413237",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7674812958",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3079764864",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5993139845",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5126163420",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2378723988",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9480960803",
+      "experience_score": 44,
+      "rolling_entropy": 1.3910719488520482,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8910423515",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8045326812",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5828580844",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2031931656",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8795788649",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2149853718",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3426649591",
+      "experience_score": 23,
+      "rolling_entropy": 1.9216961926452365,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6786730151",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9810203753",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4419328908",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9185602359",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1572537209",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4624859424",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7506506519",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8831001663",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8445475993",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4734500804",
+      "experience_score": 33,
+      "rolling_entropy": 1.6866520298096783,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6289052451",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9409649090",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8074795673",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7849620739",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2884446618",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3639214284",
+      "experience_score": 9,
+      "rolling_entropy": 2.2626465172822003,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9367968145",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9202699720",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3137813373",
+      "experience_score": 13,
+      "rolling_entropy": 2.173787302235953,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7052050154",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4808250410",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5763348791",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7127697487",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1401698322",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5051139718",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4317123851",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9765672700",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2610110205",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3928708660",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7066531812",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8879163402",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3818759240",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1103609009",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6002159621",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6703825909",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8257211076",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8193964138",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7258102261",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7801741110",
+      "experience_score": 43,
+      "rolling_entropy": 1.4230527783258862,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4833047562",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1743691905",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9844798392",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8205701495",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1122659074",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1400704988",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7048496941",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6982467815",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8216150866",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2130052808",
+      "experience_score": 19,
+      "rolling_entropy": 2.0126555000431887,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4850571514",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9604159105",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5894013013",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1366362340",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC7265495982",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC3039856955",
+      "experience_score": 17,
+      "rolling_entropy": 2.0723305500747435,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC5618036226",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC5842289295",
+      "experience_score": 26,
+      "rolling_entropy": 1.8499802562415235,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC3449613375",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC5131380750",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC4740162202",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC4573268881",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC4102659583",
+      "experience_score": 44,
+      "rolling_entropy": 1.3884352055084848,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC1899373334",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC4406899916",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC3650438526",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC2457419778",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC7205674005",
+      "experience_score": 6,
+      "rolling_entropy": 2.340146278438459,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC9205948776",
+      "experience_score": 27,
+      "rolling_entropy": 1.8343012096869211,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC9186810376",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC1228588570",
+      "experience_score": 25,
+      "rolling_entropy": 1.8798148138574708,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC6521668801",
+      "experience_score": 21,
+      "rolling_entropy": 1.9872146796699397,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC3094848944",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC2110473832",
+      "experience_score": 22,
+      "rolling_entropy": 1.9604257346301128,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC6798522427",
+      "experience_score": 44,
+      "rolling_entropy": 1.4009069951572606,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC1484242916",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC4464570238",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC1695040150",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8471043155",
+      "experience_score": 31,
+      "rolling_entropy": 1.7219034972932956,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4588308516",
+      "experience_score": 7,
+      "rolling_entropy": 2.32747916074529,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5782984878",
+      "experience_score": 30,
+      "rolling_entropy": 1.7520854799718597,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1183105514",
+      "experience_score": 12,
+      "rolling_entropy": 2.188212991428753,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3253248881",
+      "experience_score": 14,
+      "rolling_entropy": 2.159916055782347,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3334719336",
+      "experience_score": 19,
+      "rolling_entropy": 2.015025740327625,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2943158765",
+      "experience_score": 34,
+      "rolling_entropy": 1.6503997001022364,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9646318598",
+      "experience_score": 46,
+      "rolling_entropy": 1.3558045501872087,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7731235555",
+      "experience_score": 29,
+      "rolling_entropy": 1.7794585904762619,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3765157647",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8424387300",
+      "experience_score": 50,
+      "rolling_entropy": 1.251573545304138,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4754993243",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8136356333",
+      "experience_score": 21,
+      "rolling_entropy": 1.9672283468013427,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1471122237",
+      "experience_score": 7,
+      "rolling_entropy": 2.322921186340382,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8989749218",
+      "experience_score": 35,
+      "rolling_entropy": 1.6294134804909923,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG5864153125",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3743458796",
+      "experience_score": 29,
+      "rolling_entropy": 1.7828863475826926,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1870201306",
+      "experience_score": 24,
+      "rolling_entropy": 1.8897516569909647,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1759737431",
+      "experience_score": 45,
+      "rolling_entropy": 1.3684955804594765,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6214532074",
+      "experience_score": 54,
+      "rolling_entropy": 1.149768247177178,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8241388534",
+      "experience_score": 36,
+      "rolling_entropy": 1.5988981840474017,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG3995437422",
+      "experience_score": 45,
+      "rolling_entropy": 1.3778821694478485,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG2448747734",
+      "experience_score": 40,
+      "rolling_entropy": 1.5086608306033813,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8234241072",
+      "experience_score": 14,
+      "rolling_entropy": 2.142967738720012,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9053676375",
+      "experience_score": 41,
+      "rolling_entropy": 1.463737160387696,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6759125025",
+      "experience_score": 26,
+      "rolling_entropy": 1.8398522418593506,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4015476201",
+      "experience_score": 36,
+      "rolling_entropy": 1.5892360654831612,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1119244339",
+      "experience_score": 24,
+      "rolling_entropy": 1.8996176982393407,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8426094996",
+      "experience_score": 58,
+      "rolling_entropy": 1.0384678244879897,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7615816846",
+      "experience_score": 39,
+      "rolling_entropy": 1.5141800889162302,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4929852571",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7395943924",
+      "experience_score": 7,
+      "rolling_entropy": 2.3174538520012185,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7590082769",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG7107827115",
+      "experience_score": 9,
+      "rolling_entropy": 2.271664277001504,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG4676719608",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC9761372488",
+      "experience_score": 44,
+      "rolling_entropy": 1.4009069951572606,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG9262399353",
+      "experience_score": 6,
+      "rolling_entropy": 2.3387763267348762,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:ULROC3870940646",
+      "experience_score": 45,
+      "rolling_entropy": 1.3840076612114678,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6510786328",
+      "experience_score": 25,
+      "rolling_entropy": 1.8642960093659082,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1252936337",
+      "experience_score": 45,
+      "rolling_entropy": 1.3657119380784895,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG8053927920",
+      "experience_score": 14,
+      "rolling_entropy": 2.159300622125473,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG1869640639",
+      "experience_score": 34,
+      "rolling_entropy": 1.6509649197574738,
+      "rolling_margin_median": 0.5
+    },
+    {
+      "episode_id": "creator_science:TPG6198964688",
+      "experience_score": 20,
+      "rolling_entropy": 2.012484526180322,
+      "rolling_margin_median": 0.5
+    }
+  ],
+  "centroids": {
+    "G1": {
+      "centroid": {
+        "pc1": -2,
+        "pc2": -1
+      }
+    },
+    "G2": {
+      "centroid": {
+        "pc1": 0,
+        "pc2": -2
+      }
+    },
+    "G3": {
+      "centroid": {
+        "pc1": 2,
+        "pc2": -1
+      }
+    },
+    "G4": {
+      "centroid": {
+        "pc1": -1,
+        "pc2": 1
+      }
+    },
+    "G5": {
+      "centroid": {
+        "pc1": 1,
+        "pc2": 1
+      }
+    },
+    "G6": {
+      "centroid": {
+        "pc1": 0,
+        "pc2": 2
+      }
+    }
+  }
+}

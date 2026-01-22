@@ -1,0 +1,42 @@
+{
+  "episode": {
+    "id": "founders:F0001",
+    "podcast_id": "founders",
+    "title": "#1 Elon Musk- Tesla, SpaceX, & the Quest for a Fantastic Future",
+    "episode_number": 1
+  },
+  "classification": {
+    "episode_id": "founders:F0001",
+    "game_top1": "G2",
+    "game_top2": "G4",
+    "confidence_top1": 0.5017127773871484,
+    "confidence_top2": 0.3418088320289399
+  },
+  "geometry": {
+    "episode_id": "founders:F0001",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9913799671088691,
+      "G2": 0.49828722261285163,
+      "G3": 0.9058898533207231,
+      "G4": 0.6581911679710601,
+      "G5": 0.9939545457245981,
+      "G6": 0.9522972432618981
+    }
+  },
+  "experience": {
+    "episode_id": "founders:F0001",
+    "experience_score": 33,
+    "rolling_entropy": 1.6625554482815723,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

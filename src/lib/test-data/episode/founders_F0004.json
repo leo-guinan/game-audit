@@ -1,0 +1,42 @@
+{
+  "episode": {
+    "id": "founders:F0004",
+    "podcast_id": "founders",
+    "title": "#4 The Remarkable Life and Turbulent Times of Joseph P. Kennedy",
+    "episode_number": 4
+  },
+  "classification": {
+    "episode_id": "founders:F0004",
+    "game_top1": "G4",
+    "game_top2": "G3",
+    "confidence_top1": 0.5134929891079402,
+    "confidence_top2": 0.13890001883864572
+  },
+  "geometry": {
+    "episode_id": "founders:F0004",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G4",
+    "secondary_game": "G3",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.913395313493163,
+      "G2": 0.9010463987479141,
+      "G3": 0.8610999811613542,
+      "G4": 0.48650701089205983,
+      "G5": 0.8694013124318463,
+      "G6": 0.9685499832736625
+    }
+  },
+  "experience": {
+    "episode_id": "founders:F0004",
+    "experience_score": 17,
+    "rolling_entropy": 2.0657203753148274,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

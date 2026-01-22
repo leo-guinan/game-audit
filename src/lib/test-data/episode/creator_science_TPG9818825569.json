@@ -1,0 +1,44 @@
+{
+  "episode": {
+    "id": "creator_science:TPG9818825569",
+    "podcast_id": "creator_science",
+    "title": "#3: Danielle Evans – The creator of food typography on earning a living, competition, and changing creative directions",
+    "episode_number": 3,
+    "published_at": "Tue, 07 Apr 2020 07:00:00 -0000",
+    "duration_seconds": 3318
+  },
+  "classification": {
+    "episode_id": "creator_science:TPG9818825569",
+    "game_top1": "G2",
+    "game_top2": "G4",
+    "confidence_top1": 0.7025185432590272,
+    "confidence_top2": 0.17418912488791619
+  },
+  "geometry": {
+    "episode_id": "creator_science:TPG9818825569",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9895906456857557,
+      "G2": 0.2974814567409728,
+      "G3": 0.9539778272273237,
+      "G4": 0.8258108751120838,
+      "G5": 0.9912029298741883,
+      "G6": 0.9419362653596757
+    }
+  },
+  "experience": {
+    "episode_id": "creator_science:TPG9818825569",
+    "experience_score": 45,
+    "rolling_entropy": 1.3684955804594765,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

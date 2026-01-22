@@ -1,0 +1,43 @@
+{
+  "episode": {
+    "id": "bootstrapped_founder:BF0406",
+    "podcast_id": "bootstrapped_founder",
+    "title": "406: Making Your Business Sellable (Even If You Never Plan to Sell)",
+    "published_at": "Fri, 01 Aug 2025 06:00:00 -0400",
+    "duration_seconds": 1342
+  },
+  "classification": {
+    "episode_id": "bootstrapped_founder:BF0406",
+    "game_top1": "G2",
+    "game_top2": "G4",
+    "confidence_top1": 0.5976875630218842,
+    "confidence_top2": 0.1875452366811294
+  },
+  "geometry": {
+    "episode_id": "bootstrapped_founder:BF0406",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9889676296976415,
+      "G2": 0.4023124369781158,
+      "G3": 0.8635401490980371,
+      "G4": 0.8124547633188706,
+      "G5": 0.99033862941943,
+      "G6": 0.9423863914879049
+    }
+  },
+  "experience": {
+    "episode_id": "bootstrapped_founder:BF0406",
+    "experience_score": 34,
+    "rolling_entropy": 1.6624027596393587,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

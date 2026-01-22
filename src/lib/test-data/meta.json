@@ -1,0 +1,12 @@
+{
+  "source": "podcast_data.db",
+  "dbPath": "/Users/leoguinan/founder_scraper/podcast_data.db",
+  "generatedAt": "2026-01-22T12:46:41.811Z",
+  "podcastIds": [
+    "founders",
+    "creator_science",
+    "creator_alchemy",
+    "bootstrapped_founder"
+  ],
+  "episodeCount": 20
+}

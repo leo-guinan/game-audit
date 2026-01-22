@@ -1,0 +1,44 @@
+{
+  "episode": {
+    "id": "creator_alchemy:CA0004",
+    "podcast_id": "creator_alchemy",
+    "title": "#4 - [SOLO] Fear Inoculation: How to Overcome Self-Doubt",
+    "episode_number": 4,
+    "published_at": "Sat, 19 Apr 2025 09:03:00 -0600",
+    "duration_seconds": 754
+  },
+  "classification": {
+    "episode_id": "creator_alchemy:CA0004",
+    "game_top1": "G2",
+    "game_top2": "G5",
+    "confidence_top1": 0.3634062172480176,
+    "confidence_top2": 0.23780125936872065
+  },
+  "geometry": {
+    "episode_id": "creator_alchemy:CA0004",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G5",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9816706658713881,
+      "G2": 0.6365937827519824,
+      "G3": 0.8275475941150052,
+      "G4": 0.8015711402429638,
+      "G5": 0.7621987406312793,
+      "G6": 0.990418076387381
+    }
+  },
+  "experience": {
+    "episode_id": "creator_alchemy:CA0004",
+    "experience_score": 16,
+    "rolling_entropy": 2.093757588291047,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

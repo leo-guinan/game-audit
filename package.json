@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed:demo": "tsx scripts/seed-demo-analysis.ts"
+    "seed:demo": "tsx scripts/seed-demo-analysis.ts",
+    "dump:podcast": "tsx scripts/dump-podcast-test-data.ts"
   },
   "dependencies": {
     "@ai-sdk/react": "^3.0.39",
@@ -36,6 +37,7 @@
     "@vercel/postgres": "^0.10.0",
     "@xyflow/react": "^12.10.0",
     "ai": "^6.0.37",
+    "better-sqlite3": "^12.6.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -47,6 +49,7 @@
     "next": "16.1.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
     "shiki": "^3.21.0",
     "streamdown": "^2.0.1",
     "tailwind-merge": "^3.4.0",
@@ -57,6 +60,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

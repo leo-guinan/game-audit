@@ -1,0 +1,42 @@
+{
+  "episode": {
+    "id": "founders:F0005",
+    "podcast_id": "founders",
+    "title": "#5 Steve Jobs",
+    "episode_number": 5
+  },
+  "classification": {
+    "episode_id": "founders:F0005",
+    "game_top1": "G2",
+    "game_top2": "G4",
+    "confidence_top1": 0.7285956912279916,
+    "confidence_top2": 0.17443712546107115
+  },
+  "geometry": {
+    "episode_id": "founders:F0005",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G2",
+    "secondary_game": "G4",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9868935390587305,
+      "G2": 0.2714043087720084,
+      "G3": 0.940213785980893,
+      "G4": 0.8255628745389288,
+      "G5": 0.9974211405695662,
+      "G6": 0.9785043510798732
+    }
+  },
+  "experience": {
+    "episode_id": "founders:F0005",
+    "experience_score": 50,
+    "rolling_entropy": 1.238468822659767,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

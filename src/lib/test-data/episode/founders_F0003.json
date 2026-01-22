@@ -1,0 +1,42 @@
+{
+  "episode": {
+    "id": "founders:F0003",
+    "podcast_id": "founders",
+    "title": "#3 The Wizard of Menlo Park- How Thomas Edison Invented The Modern World",
+    "episode_number": 3
+  },
+  "classification": {
+    "episode_id": "founders:F0003",
+    "game_top1": "G3",
+    "game_top2": "G2",
+    "confidence_top1": 0.3950244652143843,
+    "confidence_top2": 0.21997332012400247
+  },
+  "geometry": {
+    "episode_id": "founders:F0003",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G3",
+    "secondary_game": "G2",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.8579358188973256,
+      "G2": 0.7800266798759975,
+      "G3": 0.6049755347856157,
+      "G4": 0.8297886572951422,
+      "G5": 0.9850337469973782,
+      "G6": 0.9422395621485409
+    }
+  },
+  "experience": {
+    "episode_id": "founders:F0003",
+    "experience_score": 13,
+    "rolling_entropy": 2.173009337420088,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

@@ -1,0 +1,44 @@
+{
+  "episode": {
+    "id": "creator_alchemy:CA0005",
+    "podcast_id": "creator_alchemy",
+    "title": "#5 - [SOLO] How to Turn Fear into a Guide Toward Fulfillment",
+    "episode_number": 5,
+    "published_at": "Sat, 19 Apr 2025 09:04:00 -0600",
+    "duration_seconds": 483
+  },
+  "classification": {
+    "episode_id": "creator_alchemy:CA0005",
+    "game_top1": "G4",
+    "game_top2": "G5",
+    "confidence_top1": 0.46996487788516295,
+    "confidence_top2": 0.24618817301717316
+  },
+  "geometry": {
+    "episode_id": "creator_alchemy:CA0005",
+    "pca": {
+      "pc1": 0,
+      "pc2": 0
+    },
+    "primary_game": "G4",
+    "secondary_game": "G5",
+    "margin": 0.5,
+    "boundary_flag": false,
+    "distances_to_manifolds": {
+      "G1": 0.9859807493215852,
+      "G2": 0.8634990491386643,
+      "G3": 0.8825248744161448,
+      "G4": 0.530035122114837,
+      "G5": 0.7538118269828269,
+      "G6": 0.9841483780259418
+    }
+  },
+  "experience": {
+    "episode_id": "creator_alchemy:CA0005",
+    "experience_score": 22,
+    "rolling_entropy": 1.946008285535699,
+    "rolling_margin_median": 0.5
+  },
+  "segments": [],
+  "evidence": []
+}

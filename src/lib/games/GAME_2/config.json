@@ -1,0 +1,22 @@
+{
+  "game_number": 2,
+  "game_name": "Idea / Play Mining",
+  "essay_title": "The Prospector's Dilemma",
+  "subtitle": "A Guide to Choosing Your Path When Ideas Are Everywhere and Nowhere",
+  "core_question": "What can we extract and apply right now?",
+  "fork_options": [
+    { "id": "path_a", "label": "Ideas but no extraction", "description": "I keep having ideas but nothing compounds." },
+    { "id": "path_b", "label": "Value captured by others", "description": "I see my ideas everywhere but never get credit." },
+    { "id": "path_c", "label": "Finding but not developing", "description": "I find veins but can't mine them." }
+  ],
+  "paths": {
+    "path_a": { "title": "The Unmined Vein", "sections": ["the_ore", "the_danger", "the_trap", "when_to_extract"], "routes_to": ["core_problem", "path_b", "cycle"] },
+    "path_b": { "title": "The Stolen Claim", "sections": ["how_you_got_here", "the_trap", "the_death"], "routes_to": ["core_problem", "path_a", "cycle"] },
+    "path_c": { "title": "The Prospector's Loop", "sections": ["extraction_problem", "ore_without_refinement", "choosing_your_game"], "routes_to": ["path_a", "path_b", "cycle"] }
+  },
+  "shared_nodes": {
+    "core_problem": { "title": "The Extraction Problem", "subtitle": "Mining vs. being mined" },
+    "cycle": { "title": "The Cycle", "subtitle": "Raw Ore → Refined Concept → Applied Tactic → Depleted Mine → New Vein" }
+  },
+  "connections": { "related_games": [1, 3, 4], "email_course_link": "email_02_idea" }
+}
