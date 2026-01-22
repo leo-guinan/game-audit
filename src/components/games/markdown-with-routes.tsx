@@ -15,7 +15,11 @@ function parseRouteMarkers(content: string): Part[] {
     const start = m.index!;
     const end = start + m[0].length;
     if (start > lastEnd) {
-      parts.push({ type: "md", text: content.slice(lastEnd, start) });
+      const textBefore = content.slice(lastEnd, start).trimEnd();
+      // Only add markdown text if it's not empty (after trimming trailing whitespace)
+      if (textBefore) {
+        parts.push({ type: "md", text: textBefore });
+      }
     }
     const label = m[2]?.trim();
     const target = m[3];
@@ -23,7 +27,10 @@ function parseRouteMarkers(content: string): Part[] {
     lastEnd = end;
   }
   if (lastEnd < content.length) {
-    parts.push({ type: "md", text: content.slice(lastEnd) });
+    const remaining = content.slice(lastEnd).trimStart();
+    if (remaining) {
+      parts.push({ type: "md", text: remaining });
+    }
   }
   return parts;
 }
@@ -86,6 +93,19 @@ export function MarkdownWithRoutes({
             >
               {p.text}
             </ReactMarkdown>
+          );
+        }
+        // If there's a label (from **→ ...**), render as block; otherwise inline
+        if (p.label) {
+          return (
+            <div key={i} className="my-3">
+              <CrossLink
+                gameNumber={gameNumber}
+                target={p.target}
+                label={p.label}
+                config={config}
+              />
+            </div>
           );
         }
         return (

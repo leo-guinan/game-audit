@@ -38,10 +38,10 @@ The question isn't whether you can become a god. The internet proved that's poss
 
 ---
 
-**→ If you're wondering whether to stay hidden:** [path_a]
+**→ If you're wondering whether to stay hidden** [path_a]
 
-**→ If you're realizing your godhood might be performance:** [path_b]
+**→ If you're realizing your godhood might be performance** [path_b]
 
-**→ If you want to understand what happens next:** [cycle]
+**→ If you want to understand what happens next** [cycle]
 
-**→ Return to the fork:** [fork]
+**→ Return to the fork** [fork]
