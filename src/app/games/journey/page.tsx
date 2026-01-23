@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import JSZip from "jszip";
 import { getFullJourney, getPathSummary, type FullJourney } from "@/lib/analytics/path-tracker";
 import { analyzePath, type PathInterpretation } from "@/lib/analytics/path-analyzer";
 import { trackFathomEvent, GameEvents } from "@/lib/analytics/fathom";
@@ -67,12 +68,12 @@ export default function JourneyRevealPage() {
     }
   };
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     if (!journey || !interpretation) return;
     
     // Create export package
     const exportData = createExportPackage(journey, interpretation);
-    downloadAsZip(exportData);
+    await downloadAsZip(exportData);
     
     trackFathomEvent("journey_downloaded", 1);
   };
@@ -219,9 +220,9 @@ export default function JourneyRevealPage() {
             onClick={handleDownload}
             className="p-6 border border-border bg-muted/30 hover:bg-muted/50 transition-colors text-left"
           >
-            <div className="font-semibold mb-2">Download your data</div>
+            <div className="font-semibold mb-2">Download your data + prompts</div>
             <div className="text-sm text-muted-foreground">
-              Take your path signature. It's yours. Do what you want with it.
+              Get your journey data, my interpretation, and 5 prompts for LLM exploration. It's yours. Do what you want with it.
             </div>
           </button>
         </div>
@@ -241,6 +242,7 @@ export default function JourneyRevealPage() {
 }
 
 function createExportPackage(journey: FullJourney, interpretation: PathInterpretation) {
+  // Create comprehensive journey data with full details
   const journeyData = {
     your_journey: {
       path_signature: interpretation.pathSignature,
@@ -248,12 +250,24 @@ function createExportPackage(journey: FullJourney, interpretation: PathInterpret
       time_spent: `${Math.round(journey.totalTime / 1000 / 60)} minutes`,
       entry_point: interpretation.entryPosition,
       deepest_engagement: getDeepestEngagement(journey),
+      full_path: journey.gamesVisited.map((g) => ({
+        game: g.game,
+        game_name: GAME_NAMES[g.game],
+        entry_point: g.entryPoint,
+        nodes_visited: g.nodesVisited,
+        time_per_node: g.timePerNode,
+        exit_point: g.exitPoint,
+        completed: g.completed,
+      })),
     },
     my_interpretation: {
       primary_struggle: interpretation.interpretation.primaryStruggle,
       secondary_pattern: interpretation.interpretation.secondaryPattern,
       engagement_style: interpretation.interpretation.engagementStyle,
       predicted_interests: interpretation.interpretation.predictedInterests,
+      primary_game: interpretation.primaryGame ? GAME_NAMES[interpretation.primaryGame] : undefined,
+      secondary_game: interpretation.secondaryGame ? GAME_NAMES[interpretation.secondaryGame] : undefined,
+      engagement_pattern: interpretation.engagementPattern,
     },
     exported_at: new Date().toISOString(),
     this_data_belongs_to: "you",
@@ -304,7 +318,11 @@ ${interpretation.interpretation.predictedInterests.map((i) => `- ${i}`).join("\n
 
 function getPrompt(type: string): string {
   const prompts: Record<string, string> = {
-    mirror: `## Context
+    mirror: `# The Mirror
+
+Help me understand what my path reveals.
+
+## Context
 
 I just completed an interactive essay about "the 6 games" people play online—different ways of creating value (Identity, Ideas, Models, Performance, Meaning, Network).
 
@@ -322,7 +340,11 @@ Based on my path through this essay:
 4. What's one question I should ask myself based on this journey?
 
 Be direct. I can handle an honest reading.`,
-    gap: `## Context
+    gap: `# The Gap
+
+Help me see what I might be avoiding.
+
+## Context
 
 I completed an interactive essay about 6 games people play online.
 Here's my journey data:
@@ -346,7 +368,11 @@ Looking at which games I visited and which I avoided:
 2. Is there a game that might be relevant to my situation that I didn't explore?
 3. What's the shadow side of the path I took—what might I be blind to?
 4. If I were mixing games without realizing it, what combination does my path suggest?`,
-    integration: `## Context
+    integration: `# The Integration
+
+Help me connect this to my actual life.
+
+## Context
 
 I completed an interactive essay diagnosing which "game" I'm playing in my online/creative/professional life.
 
@@ -366,7 +392,11 @@ Given my path through the essay AND my actual situation:
 2. What's one concrete thing my path signature suggests I should try?
 3. What's one thing I should stop doing?
 4. If I could only focus on one game for the next 90 days, which one would give me the most leverage—and why?`,
-    comparison: `## Context
+    comparison: `# The Comparison
+
+Help me understand what my path says about me vs. others.
+
+## Context
 
 I completed an interactive essay with path tracking. 
 
@@ -385,7 +415,11 @@ The essay also told me:
 2. Is my uncommon path a strength or a potential blind spot?
 3. What do people who take the common path probably see that I might be missing?
 4. What do I probably see that they're missing?`,
-    conversation: `## Context
+    conversation: `# The Conversation
+
+Let's go deeper.
+
+## Context
 
 I just went through an interactive essay about the 6 games people play online. My journey data is below. 
 
@@ -413,28 +447,62 @@ This folder contains:
 ## How to use
 
 1. Open your preferred LLM (Claude, ChatGPT, etc.)
-2. Pick a prompt from /prompts
-3. Paste in your journey data from journey-data.json
+2. Pick a prompt from \`prompts/\`
+3. Paste in your journey data from \`journey-data.json\`
 4. Explore
 
 These prompts are starting points. Modify them. Go further. 
 The data is yours. The interpretation is yours to make.
 
-If you discover something interesting, I'd love to hear about it.
-[Reply link / email]
+## The Prompts
+
+- **01-the-mirror.md** — Understand what your path reveals
+- **02-the-gap.md** — See what you might be avoiding
+- **03-the-integration.md** — Connect insights to your actual life
+- **04-the-comparison.md** — Understand your divergence from others
+- **05-the-conversation.md** — Go deeper with a guided conversation
+
+## Optional: Share what you found
+
+If you use these prompts and discover something interesting, I'd love to hear about it.
+
+Not required. No data collected without consent. 
+I'm just curious what you see that I can't.
 
 — Leo
 `;
 }
 
-function downloadAsZip(files: Record<string, string>) {
-  // For now, create a simple download of the JSON
-  // In production, you'd use a library like JSZip
-  const blob = new Blob([files["journey-data.json"]], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "your-game-journey.json";
-  a.click();
-  URL.revokeObjectURL(url);
+async function downloadAsZip(files: Record<string, string>) {
+  try {
+    const zip = new JSZip();
+    
+    // Add all files to the ZIP
+    Object.entries(files).forEach(([path, content]) => {
+      zip.file(path, content);
+    });
+    
+    // Generate the ZIP file
+    const blob = await zip.generateAsync({ type: "blob" });
+    
+    // Create download link
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "your-game-journey.zip";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Failed to create ZIP file:", error);
+    // Fallback: download JSON only
+    const blob = new Blob([files["journey-data.json"]], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "your-game-journey.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
 }
