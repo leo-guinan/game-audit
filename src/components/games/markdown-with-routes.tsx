@@ -4,7 +4,10 @@ import ReactMarkdown from "react-markdown";
 import { CrossLink } from "./cross-link";
 import type { GameConfig } from "@/lib/games/types";
 
+// Match: **→ Label** [target] or [target] or **→ Label** ...text... [target]
 const ROUTE_MARKER = /(\*\*→\s*([^*]+)\*\*)?\s*\[([a-z_0-9]+)\]/g;
+// Also match labels that appear on a line before a link
+const LABEL_ON_LINE = /^\s*\*\*→\s*([^*]+)\*\*:/;
 
 type Part = 
   | { type: "md"; text: string } 
@@ -21,32 +24,72 @@ function parseRouteMarkers(content: string): Part[] {
     const start = m.index!;
     const end = start + m[0].length;
     
+    // Find the start of the current line
+    const lineStart = content.lastIndexOf('\n', start) + 1;
+    const lineEnd = content.indexOf('\n', end);
+    const lineContent = lineEnd > 0 
+      ? content.slice(lineStart, lineEnd)
+      : content.slice(lineStart);
+    
+    // Check if there's a label earlier on this line (before the link)
+    let labelFromLine: string | undefined;
+    const labelMatch = lineContent.match(LABEL_ON_LINE);
+    if (labelMatch && labelMatch.index! < (start - lineStart)) {
+      labelFromLine = labelMatch[1].trim();
+      // If we found a label on this line, don't include text between label and link as markdown
+      // It will be captured as trailing text instead
+      const labelEnd = lineStart + labelMatch.index! + labelMatch[0].length;
+      if (lastEnd < labelEnd) {
+        // Include text before the label as markdown
+        if (labelEnd > lastEnd) {
+          const textBeforeLabel = content.slice(lastEnd, lineStart + labelMatch.index!).trimEnd();
+          if (textBeforeLabel) {
+            parts.push({ type: "md", text: textBeforeLabel });
+          }
+        }
+        lastEnd = labelEnd;
+      }
+    }
+    
     if (start > lastEnd) {
       const textBefore = content.slice(lastEnd, start).trimEnd();
-      if (textBefore) {
+      // If there's a label on this line, the text between label and link is trailing text, not markdown
+      if (textBefore && !labelFromLine) {
         parts.push({ type: "md", text: textBefore });
       }
     }
     
-    const label = m[2]?.trim();
+    const label = m[2]?.trim() || labelFromLine;
     const target = m[3];
     
-    // Check for trailing text on the same line (text after the link before newline)
-    const lineEnd = content.indexOf('\n', end);
-    const trailingText = lineEnd > end 
-      ? content.slice(end, lineEnd).trim()
-      : content.slice(end).trim();
-    const hasTrailingText = trailingText && !trailingText.match(/^\s*[·•]\s*$/);
+    // Check if there's another link on the same line after this one
+    const nextMatch = matches[i + 1];
+    const hasNextLinkOnSameLine = nextMatch && 
+      (lineEnd < 0 || nextMatch.index! < lineEnd) &&
+      nextMatch.index! > end;
+    
+    // Extract trailing text (text between this link and next link, or end of line)
+    let trailingText: string | undefined;
+    if (hasNextLinkOnSameLine) {
+      // There's another link on this line - capture text between them
+      const textBetween = content.slice(end, nextMatch.index!).trim();
+      trailingText = textBetween || undefined;
+    } else {
+      // No more links on this line - capture remaining text
+      const remaining = lineEnd > 0 
+        ? content.slice(end, lineEnd).trim()
+        : content.slice(end).trim();
+      trailingText = remaining || undefined;
+    }
     
     // Check if this starts a link group (has label and next link is close with separator)
-    const nextMatch = matches[i + 1];
     const hasLabel = label !== undefined;
     const hasNextLink = nextMatch !== undefined;
-    const isClose = hasNextLink && (nextMatch.index! - end) < 15; // Links close together
-    const hasSeparator = hasNextLink && /^\s*[·•]\s*$/.test(content.slice(end, nextMatch.index!));
+    const isClose = hasNextLink && !hasNextLinkOnSameLine && (nextMatch.index! - end) < 15; // Links close together
+    const hasSeparator = hasNextLink && !hasNextLinkOnSameLine && /^\s*[·•]\s*$/.test(content.slice(end, nextMatch.index!));
     
-    // If this has a label and next link is part of a group, collect all links
-    if (hasLabel && hasNextLink && isClose && hasSeparator && !hasTrailingText) {
+    // If this has a label and next link is part of a group (not on same line), collect all links
+    if (hasLabel && hasNextLink && isClose && hasSeparator && !hasNextLinkOnSameLine && !trailingText) {
       const groupTargets = [target];
       let groupEnd = end;
       let j = i + 1;
@@ -75,9 +118,11 @@ function parseRouteMarkers(content: string): Part[] {
         type: "link", 
         label: label || undefined, 
         target,
-        trailingText: hasTrailingText ? trailingText : undefined
+        trailingText: trailingText || undefined
       });
-      lastEnd = hasTrailingText ? (lineEnd > 0 ? lineEnd : content.length) : end;
+      
+      // Advance to end of line or end of content
+      lastEnd = lineEnd > 0 ? lineEnd + 1 : content.length; // +1 to include the newline
     }
   }
   
@@ -187,6 +232,48 @@ export function MarkdownWithRoutes({
         
         // Single link with label - render as block
         if (p.type === "link" && p.label) {
+          // Check if trailing text contains another link marker
+          const hasLinkInTrailing = p.trailingText && /\[([a-z_0-9]+)\]/.test(p.trailingText);
+          
+          if (hasLinkInTrailing && p.trailingText) {
+            // Parse the trailing text to extract the link
+            const linkMatch = p.trailingText.match(/\[([a-z_0-9]+)\]/);
+            const trailingLinkTarget = linkMatch ? linkMatch[1] : null;
+            const textBeforeLink = linkMatch 
+              ? p.trailingText.slice(0, linkMatch.index).trim()
+              : p.trailingText;
+            
+            return (
+              <div key={i} className="my-4 first:mt-0">
+                <div className="text-muted-foreground mb-2 font-medium">{p.label}</div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <CrossLink
+                    gameNumber={gameNumber}
+                    target={p.target}
+                    config={config}
+                    fromNodeType={fromNodeType}
+                    fromNodeId={fromNodeId}
+                  />
+                  {textBeforeLink && (
+                    <span className="text-muted-foreground text-sm">{textBeforeLink}</span>
+                  )}
+                  {trailingLinkTarget && (
+                    <>
+                      <CrossLink
+                        gameNumber={gameNumber}
+                        target={trailingLinkTarget}
+                        config={config}
+                        fromNodeType={fromNodeType}
+                        fromNodeId={fromNodeId}
+                      />
+                    </>
+                  )}
+                </div>
+              </div>
+            );
+          }
+          
+          // Normal rendering with trailing text
           return (
             <div key={i} className="my-4 first:mt-0">
               <div className="text-muted-foreground mb-2 font-medium">{p.label}</div>
