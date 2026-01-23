@@ -1,8 +1,3 @@
-# The Cycle
-
-*Identity is malleable*
-
----
 
 Here's the map:
 

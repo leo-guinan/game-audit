@@ -1,5 +1,3 @@
-# The Reluctant Oracle
-
 You see it clearly.
 
 The pattern. The trajectory. What's actually happening beneath the surface. The interpretation that would make sense of the confusion everyone's feeling.

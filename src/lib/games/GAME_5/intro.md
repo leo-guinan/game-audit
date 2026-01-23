@@ -1,9 +1,3 @@
-# The Oracle's Trap
-
-*A Guide to Choosing Your Path When Interpretation Becomes Responsibility*
-
----
-
 People come to you to understand.
 
 Not for facts—they can find those anywhere. They come for interpretation. For context. For the answer to "what does this mean?"

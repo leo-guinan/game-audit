@@ -1,9 +1,3 @@
-# The Abstraction Problem
-
-*Mapping vs. traveling*
-
----
-
 Here's the core tension of the Model Game: **abstraction creates leverage and blindness simultaneously**.
 
 A model is an abstraction. It compresses reality into something manipulable. This is powerful—you can think about systems too complex to hold in your head directly. You can predict without simulating every detail. You can communicate structure without conveying all specifics.

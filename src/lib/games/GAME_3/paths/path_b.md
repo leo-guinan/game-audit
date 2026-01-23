@@ -1,5 +1,3 @@
-# The Map Without Travelers
-
 You built something good.
 
 A framework that actually explains the phenomenon. A model that makes predictions. A way of seeing that, if people used it, would genuinely help them navigate.

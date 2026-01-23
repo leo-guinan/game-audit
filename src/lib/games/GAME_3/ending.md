@@ -1,7 +1,3 @@
-# Resolution + Next Steps
-
----
-
 The Model Game is the most intellectually satisfying game and the most seductive trap.
 
 **Satisfying** because understanding feels like mastery. Because patterns are beautiful. Because the moment of "oh, that's how it works" is genuinely rewarding.

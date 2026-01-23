@@ -1,5 +1,3 @@
-# All Window, No Mirror
-
 You show them excellence.
 
 Your work. Your process. Your results. You're the living proof that it's possible. You demonstrate what mastery looks like, hoping they'll see the path.

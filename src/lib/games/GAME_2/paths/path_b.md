@@ -1,5 +1,3 @@
-# The Stolen Claim
-
 You did the work.
 
 You had the insight. You refined it. You put it into the world—a blog post, a tweet, a conversation, a presentation. You shared it generously because that's what you do with ideas.

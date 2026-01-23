@@ -1,7 +1,3 @@
-# Resolution + Next Steps
-
----
-
 All godhood is temporary.
 
 This isn't cynicism. It's physics. The domain shifts. The context changes. The world that made you relevant evolves into a world where your relevance fades. What was insight becomes common knowledge. What was edge becomes baseline. What was you becomes wallpaper.

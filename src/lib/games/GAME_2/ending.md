@@ -1,7 +1,3 @@
-# Resolution + Next Steps
-
----
-
 The Idea Game is the easiest to play and the hardest to win.
 
 **Easy** because everyone has ideas. Because sharing them feels productive. Because the dopamine of insight is readily available.

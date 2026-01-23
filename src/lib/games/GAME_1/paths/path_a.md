@@ -1,9 +1,3 @@
-# The Dog's Path
-
-*I'm Invisible*
-
----
-
 So nobody knows who you are.
 
 Maybe that's by design. You created a faceless account, a pseudonym, a version of yourself that can't be traced back to the person who pays rent and shows up to work. You wanted the freedom to explore without consequences.

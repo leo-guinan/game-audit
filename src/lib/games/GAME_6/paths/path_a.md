@@ -1,5 +1,3 @@
-# The Leaky Hub
-
 You're generous with introductions. You see potential synergies everywhere. You connect people freely, expecting... what, exactly?
 
 Maybe you expected reciprocity. If you introduce enough people, they'll introduce you to opportunities. The karma will balance.

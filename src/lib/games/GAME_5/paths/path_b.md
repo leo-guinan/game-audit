@@ -1,5 +1,3 @@
-# The Weaponized Frame
-
 You gave them meaning.
 
 A way of seeing the situation. An interpretation that made sense of the chaos. You thought you were helping—providing clarity in confusion.

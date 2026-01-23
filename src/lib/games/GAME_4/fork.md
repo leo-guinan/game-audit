@@ -1,9 +1,3 @@
-# The Fork
-
-Where do you find yourself?
-
----
-
 **→** "I demonstrate but people don't improve. They're inspired but nothing changes."
 
 **Go to:** [path_a]

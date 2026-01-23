@@ -1,9 +1,3 @@
-# The Crossroads
-
-*I'm Somewhere in Between*
-
----
-
 You're not invisible. Not exactly. You have some presence—a modest following, maybe. Some posts that got traction. People who recognize your name, at least in certain circles.
 
 But you're not captured either. Not yet. The freeze hasn't fully set in. You still feel like yourself when you post. The gap between who you are and who you're performing hasn't become unbearable.

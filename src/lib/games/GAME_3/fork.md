@@ -1,9 +1,3 @@
-# The Fork
-
-Where do you find yourself?
-
----
-
 **→** "I understand systems deeply but can't seem to act. I'm stuck in analysis."
 
 **Go to:** [path_a]

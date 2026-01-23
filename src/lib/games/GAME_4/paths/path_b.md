@@ -1,5 +1,3 @@
-# All Mirror, No Window
-
 You see them clearly.
 
 You can diagnose exactly what's going wrong. The habits holding them back. The mistakes they're making. The gaps between where they are and where they want to be.

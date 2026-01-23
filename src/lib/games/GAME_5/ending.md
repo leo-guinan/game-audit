@@ -1,7 +1,3 @@
-# Resolution + Next Steps
-
----
-
 The Meaning Game is the most powerful game and the most ethically complex.
 
 **Powerful** because meaning shapes reality. The person who interprets doesn't just describe the world—they construct how people see it, navigate it, respond to it.

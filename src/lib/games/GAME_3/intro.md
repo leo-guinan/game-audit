@@ -1,9 +1,3 @@
-# The Cartographer's Curse
-
-*A Guide to Choosing Your Path When You See the Map But Can't Travel*
-
----
-
 You understand things.
 
 That's your gift—or your curse. Where others see chaos, you see structure. Where others see disconnected events, you see systems. You can look at something complicated and explain how it actually works.

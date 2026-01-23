@@ -1,9 +1,3 @@
-# The Switchboard Operator
-
-*A Guide to Choosing Your Path When You Connect Everyone But Capture Nothing*
-
----
-
 You know people.
 
 That's always been your thing. You remember names, make introductions, see connections others miss. When someone needs something, you know who to call. When two people should meet, you're the one who makes it happen.

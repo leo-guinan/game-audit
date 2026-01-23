@@ -1,9 +1,3 @@
-# The Transfer Problem
-
-*Showing vs. teaching*
-
----
-
 Here's the core tension of the Performance Game: **expertise is hard to transfer**.
 
 You know how to do something. You want them to know how to do it. Seems simple—just tell them, show them, explain it.

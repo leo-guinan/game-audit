@@ -1,9 +1,3 @@
-# The Cycle
-
-*Mastery → Demonstration → Coaching → Systematization → Obsolescence*
-
----
-
 Here's the map of the Performance Game:
 
 ```

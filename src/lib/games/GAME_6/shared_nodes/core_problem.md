@@ -1,9 +1,3 @@
-# The Coordination Problem
-
-*Connecting vs. becoming the connection*
-
----
-
 Here's what makes the Network Game different from the others: **the value is inherently relational**.
 
 In the Identity Game, the value is in you—who you are, what you represent. In the Idea Game, the value is in the insight—extractable and transmissible. In the Model Game, the value is in the map—useful even without the mapmaker.

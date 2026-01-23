@@ -1,5 +1,3 @@
-# The Isolated Connector
-
 You see the value in networks. You understand—intellectually—that connection is power. You want to be a hub.
 
 But **you're not connected enough to connect others**.

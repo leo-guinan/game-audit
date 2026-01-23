@@ -1,9 +1,3 @@
-# The Validation Problem
-
-*Why we can't tell dogs from gods*
-
----
-
 Here's the problem with the internet's promise: **verification doesn't scale**.
 
 When someone in your village claims to be a healer, you can check. You know who they've treated. You've seen the results. The community holds shared memory of their successes and failures. Reputation is earned through observable outcomes over time.

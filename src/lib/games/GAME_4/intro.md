@@ -1,9 +1,3 @@
-# The Mirror and the Window
-
-*A Guide to Choosing Your Path When Mastery Doesn't Transfer*
-
----
-
 You're good at something.
 
 Good enough that people notice. Good enough that they ask how you do it. Good enough that you've started to wonder if you could help others get good too.

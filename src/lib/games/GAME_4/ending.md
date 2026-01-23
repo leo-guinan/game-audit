@@ -1,7 +1,3 @@
-# Resolution + Next Steps
-
----
-
 The Performance Game is the most direct way to help others and the easiest to play poorly.
 
 **Direct** because you're trying to create actual capability. Not just ideas (Game 2) or understanding (Game 3)—the ability to do something they couldn't do before.

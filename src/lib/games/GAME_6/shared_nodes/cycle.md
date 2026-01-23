@@ -1,9 +1,3 @@
-# The Cycle
-
-*Isolated → Valuable Node → Hub → Leaky / Trapped / Builder → Elevation / Exit*
-
----
-
 Here's the map of the Network Game:
 
 ```

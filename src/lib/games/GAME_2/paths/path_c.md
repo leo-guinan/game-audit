@@ -1,5 +1,3 @@
-# The Prospector's Loop
-
 You're not bad at finding ideas. You're good at it. Maybe too good.
 
 You find a vein. You get excited. You start digging. And then—another vein, over there. Shinier. More interesting. Unexplored.

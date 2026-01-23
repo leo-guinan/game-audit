@@ -1,9 +1,3 @@
-# The Prospector's Dilemma
-
-*A Guide to Choosing Your Path When Ideas Are Everywhere and Nowhere*
-
----
-
 You have ideas.
 
 That's never been the problem. You see connections others miss. You stumble across insights in the shower, while walking, in the middle of unrelated conversations. Your notes app is a graveyard of half-formed brilliance. Your voice memos are full of "oh, what if—"

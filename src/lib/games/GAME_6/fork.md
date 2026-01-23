@@ -1,9 +1,3 @@
-# The Fork
-
-Where do you find yourself?
-
----
-
 **→** "I connect people constantly but never seem to benefit. The value I create evaporates."
 
 **Go to:** [path_a]

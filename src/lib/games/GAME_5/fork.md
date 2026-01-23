@@ -1,9 +1,3 @@
-# The Fork
-
-Where do you find yourself?
-
----
-
 **→** "I can see what's happening but I'm afraid to say it. Speaking would have too many consequences."
 
 **Go to:** [path_a]

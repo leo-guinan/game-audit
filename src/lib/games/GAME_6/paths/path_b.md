@@ -1,5 +1,3 @@
-# The Indispensable Node
-
 Congratulations. You did it.
 
 You built the network. You're the hub everyone routes through. When people need connections, they come to you. When coordination needs to happen, you're in the room. You're essential.

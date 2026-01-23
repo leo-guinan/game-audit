@@ -1,7 +1,3 @@
-# Resolution + Next Steps
-
----
-
 The Network Game is the most generous game and the most easily exploited.
 
 **Generous** because the value you create benefits others by design. You're building bridges. You're reducing friction. You're making possible things that couldn't happen without you.

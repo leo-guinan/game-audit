@@ -1,9 +1,3 @@
-# The Extraction Problem
-
-*Mining vs. being mined*
-
----
-
 Here's the core tension of the Idea Game: **ideas want to be free, but value wants to be captured**.
 
 Ideas spread. That's their nature. A good insight moves from mind to mind, adapting, combining, evolving. You can't stop this, and you shouldn't want to—idea flow is how knowledge advances.

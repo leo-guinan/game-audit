@@ -1,5 +1,3 @@
-# The Empty Prophet
-
 They keep asking you what it means.
 
 And you provide an answer. Because that's what you do. That's why they come to you. You're the one who makes sense of things.

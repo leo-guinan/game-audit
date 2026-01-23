@@ -1,9 +1,3 @@
-# The Cycle
-
-*Observe → Interpret → Narrate → Canonize → Shatter → Reobserve*
-
----
-
 Here's the map of the Meaning Game:
 
 ```

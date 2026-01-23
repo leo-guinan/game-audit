@@ -1,5 +1,3 @@
-# The Illegible Map
-
 You see it so clearly.
 
 The connections. The patterns. The way this thing over here relates to that thing over there. It's obvious to you—once you saw it, you couldn't unsee it.

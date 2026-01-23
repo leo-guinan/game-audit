@@ -1,5 +1,3 @@
-# The Armchair Cartographer
-
 You could explain it to anyone.
 
 The system, the dynamics, the incentives, the likely outcomes—you see it all. While others flail around making predictable mistakes, you watch with the weary recognition of someone who knew this would happen.

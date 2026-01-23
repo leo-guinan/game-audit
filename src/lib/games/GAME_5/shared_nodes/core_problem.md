@@ -1,9 +1,3 @@
-# The Authority Problem
-
-*Interpreting vs. prescribing*
-
----
-
 Here's the core tension of the Meaning Game: **interpretation is a power act, whether you want it to be or not**.
 
 When you tell someone what something means, you're not neutral. You're shaping their perception. You're selecting which features of reality to emphasize and which to minimize. You're constructing a narrative that implies certain responses and forecloses others.

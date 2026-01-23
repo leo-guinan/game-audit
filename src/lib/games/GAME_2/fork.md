@@ -1,9 +1,3 @@
-# The Fork
-
-Where do you find yourself?
-
----
-
 **→** "I have endless ideas but can't seem to do anything with them. They just sit there."
 
 **Go to:** [path_a]

@@ -1,9 +1,3 @@
-# The Cycle
-
-*Explore → Map → Refine → Ossify → Remap*
-
----
-
 Here's the map of the Model Game:
 
 ```

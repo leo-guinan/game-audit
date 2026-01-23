@@ -1,5 +1,3 @@
-# The Bottleneck Coach
-
 You figured it out.
 
 Mirror and Window, together. You can diagnose and inspire. You can show people where they are and where they could go. When you work with someone, they actually improve.

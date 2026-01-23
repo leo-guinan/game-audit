@@ -1,9 +1,3 @@
-# The Frozen God
-
-*I Built Something. Now I'm Trapped By It.*
-
----
-
 You made it.
 
 At some point, the thing you were building caught. People started paying attention. Followers accumulated. Opportunities appeared. You became someone whose name meant something, at least in your corner of the internet.

@@ -1,5 +1,3 @@
-# The Unmined Vein
-
 Your notes are full of gold. You know it. Some of these ideas could change things—the right industry, the right product, the right framing of a problem everyone's been getting wrong.
 
 But they just sit there.

@@ -1,9 +1,3 @@
-# The Fork
-
-Where do you find yourself?
-
----
-
 **→** "I'm invisible. Nobody knows who I am online, and I'm not sure if that's a problem or a gift."
 
 **Go to:** [path_a]

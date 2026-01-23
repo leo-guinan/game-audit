@@ -1,9 +1,3 @@
-# The Cycle
-
-*Raw Ore → Refined Concept → Applied Tactic → Depleted Mine → New Vein*
-
----
-
 Here's the map of the Idea Game:
 
 ```
