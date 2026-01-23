@@ -6,32 +6,76 @@ import type { GameConfig } from "@/lib/games/types";
 
 const ROUTE_MARKER = /(\*\*→\s*([^*]+)\*\*)?\s*\[([a-z_0-9]+)\]/g;
 
-type Part = { type: "md"; text: string } | { type: "link"; label?: string; target: string };
+type Part = 
+  | { type: "md"; text: string } 
+  | { type: "link"; label?: string; target: string }
+  | { type: "link-group"; label?: string; targets: string[] };
 
 function parseRouteMarkers(content: string): Part[] {
   const parts: Part[] = [];
   let lastEnd = 0;
-  for (const m of content.matchAll(ROUTE_MARKER)) {
+  const matches = Array.from(content.matchAll(ROUTE_MARKER));
+  
+  for (let i = 0; i < matches.length; i++) {
+    const m = matches[i];
     const start = m.index!;
     const end = start + m[0].length;
+    
     if (start > lastEnd) {
       const textBefore = content.slice(lastEnd, start).trimEnd();
-      // Only add markdown text if it's not empty (after trimming trailing whitespace)
       if (textBefore) {
         parts.push({ type: "md", text: textBefore });
       }
     }
+    
     const label = m[2]?.trim();
     const target = m[3];
-    parts.push({ type: "link", label: label || undefined, target });
-    lastEnd = end;
+    
+    // Check if this starts a link group (has label and next link is close with separator)
+    const nextMatch = matches[i + 1];
+    const hasLabel = label !== undefined;
+    const hasNextLink = nextMatch !== undefined;
+    const isClose = hasNextLink && (nextMatch.index! - end) < 15; // Links close together
+    const hasSeparator = hasNextLink && /^\s*[·•]\s*$/.test(content.slice(end, nextMatch.index!));
+    
+    // If this has a label and next link is part of a group, collect all links
+    if (hasLabel && hasNextLink && isClose && hasSeparator) {
+      const groupTargets = [target];
+      let groupEnd = end;
+      let j = i + 1;
+      
+      // Collect all consecutive links separated by · or •
+      while (j < matches.length) {
+        const nextM = matches[j];
+        const gap = content.slice(groupEnd, nextM.index!);
+        
+        // Check if next link is part of the group (separated by · or •)
+        if (/^\s*[·•]\s*$/.test(gap)) {
+          groupTargets.push(nextM[3]);
+          groupEnd = nextM.index! + nextM[0].length;
+          j++;
+        } else {
+          break;
+        }
+      }
+      
+      parts.push({ type: "link-group", label, targets: groupTargets });
+      lastEnd = groupEnd;
+      i = j - 1; // Skip the links we just processed
+    } else {
+      // Single link
+      parts.push({ type: "link", label: label || undefined, target });
+      lastEnd = end;
+    }
   }
+  
   if (lastEnd < content.length) {
     const remaining = content.slice(lastEnd).trimStart();
     if (remaining) {
       parts.push({ type: "md", text: remaining });
     }
   }
+  
   return parts;
 }
 
@@ -100,8 +144,36 @@ export function MarkdownWithRoutes({
             </ReactMarkdown>
           );
         }
-        // If there's a label (from **→ ...**), render as block; otherwise inline
-        if (p.label) {
+        
+        // Handle link groups (multiple links on one line)
+        if (p.type === "link-group") {
+          return (
+            <div key={i} className="my-3">
+              {p.label && (
+                <span className="text-muted-foreground mr-2">{p.label}</span>
+              )}
+              <span className="inline-flex items-center gap-2 flex-wrap">
+                {p.targets.map((target, idx) => (
+                  <span key={idx} className="inline-flex items-center">
+                    <CrossLink
+                      gameNumber={gameNumber}
+                      target={target}
+                      config={config}
+                      fromNodeType={fromNodeType}
+                      fromNodeId={fromNodeId}
+                    />
+                    {idx < p.targets.length - 1 && (
+                      <span className="mx-2 text-muted-foreground">·</span>
+                    )}
+                  </span>
+                ))}
+              </span>
+            </div>
+          );
+        }
+        
+        // Single link with label - render as block
+        if (p.type === "link" && p.label) {
           return (
             <div key={i} className="my-3">
               <CrossLink
@@ -115,12 +187,13 @@ export function MarkdownWithRoutes({
             </div>
           );
         }
+        
+        // Single link without label - render inline
         return (
-          <span key={i} className="inline-flex items-center gap-2">
+          <span key={i} className="inline-flex items-center">
             <CrossLink
               gameNumber={gameNumber}
               target={p.target}
-              label={p.label}
               config={config}
               fromNodeType={fromNodeType}
               fromNodeId={fromNodeId}
