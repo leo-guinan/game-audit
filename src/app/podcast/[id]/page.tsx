@@ -29,6 +29,8 @@ export default function PodcastPage({ params }: PageProps) {
   const [data, setData] = useState<PodcastOverviewResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [episodeTitles, setEpisodeTitles] = useState<Map<string, string>>(new Map());
+  const [guestAppearancesByEpisode, setGuestAppearancesByEpisode] = useState<Map<string, string[]>>(new Map());
 
   useEffect(() => {
     let ok = true;
@@ -62,38 +64,6 @@ export default function PodcastPage({ params }: PageProps) {
     return () => { ok = false; };
   }, [id]);
 
-  const guestData = getGuestImpact(id);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Header />
-        <div className="container mx-auto max-w-7xl px-6 sm:px-8 py-12">
-          <p className="text-muted-foreground">Loading…</p>
-        </div>
-      </div>
-    );
-  }
-  if (error || !data) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Header />
-        <div className="container mx-auto max-w-7xl px-6 sm:px-8 py-12">
-          <p className="text-muted-foreground">{error ?? "Podcast not found"}</p>
-        </div>
-      </div>
-    );
-  }
-
-  const { podcast, metrics, episodes_geometry, episodes_experience, centroids } = data;
-  const phaseBoundaries = Array.from({ length: Math.max(0, metrics.phase_count - 1) }, (_, i) =>
-    Math.floor((i + 1) * (episodes_experience.length / Math.max(1, metrics.phase_count)))
-  );
-
-  // Fetch episode titles and guest appearances
-  const [episodeTitles, setEpisodeTitles] = useState<Map<string, string>>(new Map());
-  const [guestAppearancesByEpisode, setGuestAppearancesByEpisode] = useState<Map<string, string[]>>(new Map());
-  
   useEffect(() => {
     // Fetch episode titles
     fetch(`/api/metaspn/episodes?podcast_id=${encodeURIComponent(id)}`)
@@ -131,6 +101,34 @@ export default function PodcastPage({ params }: PageProps) {
         // If API fails, guest appearances will remain empty
       });
   }, [id]);
+
+  const guestData = getGuestImpact(id);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="container mx-auto max-w-7xl px-6 sm:px-8 py-12">
+          <p className="text-muted-foreground">Loading…</p>
+        </div>
+      </div>
+    );
+  }
+  if (error || !data) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="container mx-auto max-w-7xl px-6 sm:px-8 py-12">
+          <p className="text-muted-foreground">{error ?? "Podcast not found"}</p>
+        </div>
+      </div>
+    );
+  }
+
+  const { podcast, metrics, episodes_geometry, episodes_experience, centroids } = data;
+  const phaseBoundaries = Array.from({ length: Math.max(0, metrics.phase_count - 1) }, (_, i) =>
+    Math.floor((i + 1) * (episodes_experience.length / Math.max(1, metrics.phase_count)))
+  );
 
   // Prepare episodes with type information for trajectory charts
   const episodesWithType: EpisodeWithType[] = episodes_experience.map(exp => {
