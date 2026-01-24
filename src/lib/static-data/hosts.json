@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "bio": null,
+    "id": "person_arvid_kahl",
+    "image_url": null,
+    "name": "Arvid Kahl",
+    "podcast_ids": [
+      "bootstrapped_founder"
+    ]
+  },
+  {
+    "bio": null,
+    "id": "person_david_senra",
+    "image_url": null,
+    "name": "David Senra",
+    "podcast_ids": [
+      "founders"
+    ]
+  },
+  {
+    "bio": null,
+    "id": "person_dr_corey_wilks",
+    "image_url": null,
+    "name": "Dr. Corey Wilks",
+    "podcast_ids": [
+      "creator_alchemy"
+    ]
+  },
+  {
+    "bio": null,
+    "id": "person_jay_clouse",
+    "image_url": null,
+    "name": "Jay Clouse",
+    "podcast_ids": [
+      "creator_science"
+    ]
+  },
+  {
+    "bio": null,
+    "id": "person_jim_oshaughnessy",
+    "image_url": null,
+    "name": "Jim O'Shaughnessy",
+    "podcast_ids": [
+      "infinite_loops"
+    ]
+  }
+]

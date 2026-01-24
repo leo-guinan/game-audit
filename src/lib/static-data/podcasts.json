@@ -1,0 +1,50 @@
+[
+  {
+    "description": null,
+    "host_name": "Arvid Kahl",
+    "id": "bootstrapped_founder",
+    "image_url": null,
+    "rss_feed_url": null,
+    "title": "Bootstrapped Founder"
+  },
+  {
+    "description": null,
+    "host_name": "Dr. Corey Wilks",
+    "id": "creator_alchemy",
+    "image_url": null,
+    "rss_feed_url": null,
+    "title": "Creator Alchemy"
+  },
+  {
+    "description": null,
+    "host_name": "Jay Clouse",
+    "id": "creator_science",
+    "image_url": null,
+    "rss_feed_url": null,
+    "title": "Creator Science"
+  },
+  {
+    "description": null,
+    "host_name": null,
+    "id": "engineering_generosity",
+    "image_url": null,
+    "rss_feed_url": null,
+    "title": "Engineering Generosity"
+  },
+  {
+    "description": null,
+    "host_name": "David Senra",
+    "id": "founders",
+    "image_url": null,
+    "rss_feed_url": null,
+    "title": "Founders"
+  },
+  {
+    "description": null,
+    "host_name": "Jim O'Shaughnessy",
+    "id": "infinite_loops",
+    "image_url": null,
+    "rss_feed_url": null,
+    "title": "Infinite Loops"
+  }
+]
