@@ -184,7 +184,7 @@ export default function HostPage({ params }: PageProps) {
             <SemanticSpaceViewer
               episodes={episodes_geometry}
               centroids={{}}
-              onEpisodeClick={(episodeId) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
+              onEpisodeClick={(episodeId: string) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
               width={500}
               height={500}
             />
