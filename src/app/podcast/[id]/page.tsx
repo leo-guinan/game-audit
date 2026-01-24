@@ -230,7 +230,7 @@ export default function PodcastPage({ params }: PageProps) {
               <SemanticSpaceViewer
                 episodes={episodes_geometry}
                 centroids={centroids}
-                onEpisodeClick={(episodeId) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
+                onEpisodeClick={(episodeId: string) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
               />
             </div>
 
@@ -404,7 +404,7 @@ export default function PodcastPage({ params }: PageProps) {
               <SemanticSpaceViewer
                 episodes={episodes_geometry}
                 centroids={centroids}
-                onEpisodeClick={(episodeId) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
+                onEpisodeClick={(episodeId: string) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
                 width={800}
                 height={800}
               />

@@ -3,6 +3,12 @@
 import type { Game } from "@/lib/types/metaspn";
 import { GAME_COLORS } from "@/lib/constants/game-colors";
 
+interface GameDistributionChartProps {
+  distribution: Record<Game, number>;
+  width?: number;
+  height?: number;
+}
+
 export function GameDistributionChart({
   distribution,
   width = 400,

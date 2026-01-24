@@ -4,6 +4,14 @@ import { useState } from "react";
 import type { EpisodeGeometry, PodcastManifolds, Game } from "@/lib/types/metaspn";
 import { GAME_COLORS } from "@/lib/constants/game-colors";
 
+interface SemanticSpaceViewerProps {
+  episodes: EpisodeGeometry[];
+  centroids: PodcastManifolds['games'];
+  onEpisodeClick?: (episodeId: string) => void;
+  width?: number;
+  height?: number;
+}
+
 export function SemanticSpaceViewer({
   episodes,
   centroids,

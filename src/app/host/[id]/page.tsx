@@ -183,7 +183,14 @@ export default function HostPage({ params }: PageProps) {
           <div className="grid md:grid-cols-2 gap-8">
             <SemanticSpaceViewer
               episodes={episodes_geometry}
-              centroids={{}}
+              centroids={{
+                G1: { centroid: { pc1: 0, pc2: 0 } },
+                G2: { centroid: { pc1: 0, pc2: 0 } },
+                G3: { centroid: { pc1: 0, pc2: 0 } },
+                G4: { centroid: { pc1: 0, pc2: 0 } },
+                G5: { centroid: { pc1: 0, pc2: 0 } },
+                G6: { centroid: { pc1: 0, pc2: 0 } },
+              }}
               onEpisodeClick={(episodeId: string) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
               width={500}
               height={500}
