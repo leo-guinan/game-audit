@@ -1,8 +1,12 @@
 /**
  * Static data loader for MetaSPN
  * Loads JSON data files that can be built as part of static build process
+ * 
+ * SERVER-ONLY: This file uses Node.js fs module and should only be imported
+ * in server components or API routes, not in client components.
  */
 
+import "server-only";
 import * as fs from "fs";
 import * as path from "path";
 import type { Host, HostMetrics, Guest, GuestMetrics, GuestEpisodeAppearance } from "@/lib/types/metaspn";

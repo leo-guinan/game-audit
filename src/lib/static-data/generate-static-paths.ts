@@ -1,8 +1,11 @@
 /**
  * Generate static paths for Next.js static generation
  * Uses static data files to determine which pages to pre-render
+ * 
+ * SERVER-ONLY: This file uses server-only loader functions
  */
 
+import "server-only";
 import { loadHostsData, loadGuestsData } from "./loader";
 
 /**
