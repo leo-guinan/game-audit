@@ -1,47 +1,242 @@
 [
   {
-    "bio": null,
-    "id": "person_arvid_kahl",
-    "image_url": null,
-    "name": "Arvid Kahl",
-    "podcast_ids": [
-      "bootstrapped_founder"
-    ]
+    "host": {
+      "bio": null,
+      "id": "person_arvid_kahl",
+      "image_url": null,
+      "name": "Arvid Kahl",
+      "podcast_ids": [
+        "bootstrapped_founder"
+      ]
+    },
+    "metrics": {
+      "dominant_games": [
+        "G2",
+        "G4"
+      ],
+      "drift_range": [
+        0.0,
+        0.0
+      ],
+      "entropy_range": [
+        0.5420769183376366,
+        2.3894336958370648
+      ],
+      "experience_type": "Convergent",
+      "game_distribution": {
+        "G1": 0.0,
+        "G2": 78.80184331797236,
+        "G3": 2.5345622119815667,
+        "G4": 13.594470046082948,
+        "G5": 0.9216589861751152,
+        "G6": 4.147465437788019
+      },
+      "guest_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.7586794942217316,
+        "avg_experience_score": 20.635737301482997,
+        "count": 132
+      },
+      "solo_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.7160872004157184,
+        "avg_experience_score": 21.73761814634541,
+        "count": 302
+      },
+      "total_episodes": 434,
+      "years_active": 1
+    }
   },
   {
-    "bio": null,
-    "id": "person_david_senra",
-    "image_url": null,
-    "name": "David Senra",
-    "podcast_ids": [
-      "founders"
-    ]
+    "host": {
+      "bio": null,
+      "id": "person_david_senra",
+      "image_url": null,
+      "name": "David Senra",
+      "podcast_ids": [
+        "founders"
+      ]
+    },
+    "metrics": {
+      "dominant_games": [
+        "G4",
+        "G2"
+      ],
+      "drift_range": [
+        0.0,
+        0.0
+      ],
+      "entropy_range": [
+        0.6548364161628968,
+        2.511670913311615
+      ],
+      "experience_type": "Boundary",
+      "game_distribution": {
+        "G1": 0.975609756097561,
+        "G2": 30.24390243902439,
+        "G3": 13.170731707317074,
+        "G4": 49.75609756097561,
+        "G5": 4.390243902439024,
+        "G6": 1.4634146341463417
+      },
+      "guest_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.9090299910573805,
+        "avg_experience_score": 17.10001704773107,
+        "count": 290
+      },
+      "solo_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.962563711832315,
+        "avg_experience_score": 16.796121281687757,
+        "count": 120
+      },
+      "total_episodes": 410,
+      "years_active": 0
+    }
   },
   {
-    "bio": null,
-    "id": "person_dr_corey_wilks",
-    "image_url": null,
-    "name": "Dr. Corey Wilks",
-    "podcast_ids": [
-      "creator_alchemy"
-    ]
+    "host": {
+      "bio": null,
+      "id": "person_dr_corey_wilks",
+      "image_url": null,
+      "name": "Dr. Corey Wilks",
+      "podcast_ids": [
+        "creator_alchemy"
+      ]
+    },
+    "metrics": {
+      "dominant_games": [
+        "G4",
+        "G2"
+      ],
+      "drift_range": [
+        0.0,
+        0.0
+      ],
+      "entropy_range": [
+        0.824567318519866,
+        2.419049121329704
+      ],
+      "experience_type": "Boundary",
+      "game_distribution": {
+        "G1": 4.545454545454546,
+        "G2": 27.27272727272727,
+        "G3": 11.363636363636363,
+        "G4": 43.18181818181818,
+        "G5": 11.363636363636363,
+        "G6": 2.272727272727273
+      },
+      "guest_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.9643981807636905,
+        "avg_experience_score": 17.635654471808937,
+        "count": 17
+      },
+      "solo_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.8329689516303547,
+        "avg_experience_score": 19.104562304038694,
+        "count": 27
+      },
+      "total_episodes": 44,
+      "years_active": 1
+    }
   },
   {
-    "bio": null,
-    "id": "person_jay_clouse",
-    "image_url": null,
-    "name": "Jay Clouse",
-    "podcast_ids": [
-      "creator_science"
-    ]
+    "host": {
+      "bio": null,
+      "id": "person_jay_clouse",
+      "image_url": null,
+      "name": "Jay Clouse",
+      "podcast_ids": [
+        "creator_science"
+      ]
+    },
+    "metrics": {
+      "dominant_games": [
+        "G2",
+        "G4"
+      ],
+      "drift_range": [
+        0.0,
+        0.0
+      ],
+      "entropy_range": [
+        1.0384678244879897,
+        2.340146278438459
+      ],
+      "experience_type": "Convergent",
+      "game_distribution": {
+        "G1": 0.411522633744856,
+        "G2": 95.06172839506173,
+        "G3": 0.0,
+        "G4": 4.11522633744856,
+        "G5": 0.0,
+        "G6": 0.411522633744856
+      },
+      "guest_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.4334641023058228,
+        "avg_experience_score": 27.808938690272168,
+        "count": 215
+      },
+      "solo_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.692130006765151,
+        "avg_experience_score": 27.093247756138158,
+        "count": 28
+      },
+      "total_episodes": 243,
+      "years_active": 1
+    }
   },
   {
-    "bio": null,
-    "id": "person_jim_oshaughnessy",
-    "image_url": null,
-    "name": "Jim O'Shaughnessy",
-    "podcast_ids": [
-      "infinite_loops"
-    ]
+    "host": {
+      "bio": null,
+      "id": "person_jim_oshaughnessy",
+      "image_url": null,
+      "name": "Jim O'Shaughnessy",
+      "podcast_ids": [
+        "infinite_loops"
+      ]
+    },
+    "metrics": {
+      "dominant_games": [
+        "G2",
+        "G4"
+      ],
+      "drift_range": [
+        0.0,
+        0.0
+      ],
+      "entropy_range": [
+        0.6634725839291902,
+        2.36377073365588
+      ],
+      "experience_type": "Convergent",
+      "game_distribution": {
+        "G1": 0.0,
+        "G2": 83.12101910828027,
+        "G3": 8.280254777070063,
+        "G4": 8.598726114649681,
+        "G5": 0.0,
+        "G6": 0.0
+      },
+      "guest_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.726637953827534,
+        "avg_experience_score": 21.640625685064382,
+        "count": 310
+      },
+      "solo_episodes": {
+        "avg_drift": 0.0,
+        "avg_entropy": 1.6651501488531621,
+        "avg_experience_score": 18.75015342999723,
+        "count": 4
+      },
+      "total_episodes": 314,
+      "years_active": 1
+    }
   }
 ]

@@ -6,6 +6,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import type { Host, HostMetrics, Guest, GuestMetrics, GuestEpisodeAppearance } from "@/lib/types/metaspn";
+import { validateHostData, validateGuestData } from "./validate-and-transform";
 
 const STATIC_DATA_DIR = path.join(process.cwd(), "src/lib/static-data");
 
@@ -56,10 +57,15 @@ export interface GuestAppearanceData {
 
 /**
  * Load all hosts data
+ * Filters out entries that don't have full metrics (only basic host info)
  */
 export function loadHostsData(): HostData[] {
-  const data = readJson<HostData[]>("hosts.json");
-  return data ?? [];
+  const data = readJson<unknown[]>("hosts.json");
+  if (!data) return [];
+  
+  return data
+    .map(validateHostData)
+    .filter((item): item is HostData => item !== null);
 }
 
 /**
@@ -72,10 +78,15 @@ export function loadHostData(hostId: string): HostData | null {
 
 /**
  * Load all guests data
+ * Filters out entries that don't have full metrics (only basic guest info)
  */
 export function loadGuestsData(): GuestData[] {
-  const data = readJson<GuestData[]>("guests.json");
-  return data ?? [];
+  const data = readJson<unknown[]>("guests.json");
+  if (!data) return [];
+  
+  return data
+    .map(validateGuestData)
+    .filter((item): item is GuestData => item !== null);
 }
 
 /**

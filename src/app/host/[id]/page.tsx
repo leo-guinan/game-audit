@@ -12,9 +12,23 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { HostPageResponse, EpisodeWithType } from "@/lib/types/metaspn";
 import { GAME_COLORS } from "@/lib/constants/game-colors";
+import { getAllHostIds } from "@/lib/static-data/generate-static-paths";
 
 interface PageProps {
   params: Promise<{ id: string }>;
+}
+
+// Generate static params for all hosts at build time
+export async function generateStaticParams() {
+  try {
+    const hostIds = getAllHostIds();
+    return hostIds.map((id) => ({
+      id: id,
+    }));
+  } catch (error) {
+    console.error("Error generating static params for hosts:", error);
+    return [];
+  }
 }
 
 export default function HostPage({ params }: PageProps) {

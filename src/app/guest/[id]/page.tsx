@@ -9,9 +9,23 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { GuestPageResponse, EpisodeGeometry, EpisodeExperience } from "@/lib/types/metaspn";
 import { GAME_COLORS } from "@/lib/constants/game-colors";
+import { getAllGuestIds } from "@/lib/static-data/generate-static-paths";
 
 interface PageProps {
   params: Promise<{ id: string }>;
+}
+
+// Generate static params for all guests at build time
+export async function generateStaticParams() {
+  try {
+    const guestIds = getAllGuestIds();
+    return guestIds.map((id) => ({
+      id: id,
+    }));
+  } catch (error) {
+    console.error("Error generating static params for guests:", error);
+    return [];
+  }
 }
 
 export default function GuestPage({ params }: PageProps) {
