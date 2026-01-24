@@ -9,7 +9,11 @@
     "start": "next start",
     "lint": "eslint",
     "seed:demo": "tsx scripts/seed-demo-analysis.ts",
-    "dump:podcast": "tsx scripts/dump-podcast-test-data.ts"
+    "dump:podcast": "tsx scripts/dump-podcast-test-data.ts",
+    "test:pages": "node scripts/test-pages.js",
+    "test:pages:dev": "BASE_URL=http://localhost:3002 node scripts/test-pages.js",
+    "test:pages:detailed": "node scripts/test-pages-detailed.js",
+    "test:pages:auth": "BASE_URL=http://localhost:3002 node scripts/test-pages-with-auth.js"
   },
   "dependencies": {
     "@ai-sdk/react": "^3.0.39",
