@@ -1,21 +1,7 @@
 "use client";
 
 import type { Game } from "@/lib/types/metaspn";
-
-interface GameDistributionChartProps {
-  distribution: Record<Game, number>;
-  width?: number;
-  height?: number;
-}
-
-const GAME_COLORS: Record<Game, string> = {
-  G1: '#c41e3a',
-  G2: '#d4af37',
-  G3: '#4a90e2',
-  G4: '#9d7cd8',
-  G5: '#50c878',
-  G6: '#f4a460',
-};
+import { GAME_COLORS } from "@/lib/constants/game-colors";
 
 export function GameDistributionChart({
   distribution,

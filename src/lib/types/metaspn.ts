@@ -159,3 +159,87 @@ export interface CompareResponse {
     margin_distribution_diff: number;
   };
 }
+
+// Host Types
+export interface Host {
+  id: string;
+  name: string;
+  image_url?: string;
+  bio?: string;
+  podcast_ids: string[];
+}
+
+export interface HostMetrics {
+  total_episodes: number;
+  years_active: number;
+  dominant_games: Game[];
+  experience_type: ExperienceType;
+  entropy_range: [number, number];
+  drift_range: [number, number];
+  solo_episodes: {
+    count: number;
+    avg_entropy: number;
+    avg_drift: number;
+    avg_experience_score: number;
+  };
+  guest_episodes: {
+    count: number;
+    avg_entropy: number;
+    avg_drift: number;
+    avg_experience_score: number;
+  };
+  game_distribution: Record<Game, number>;
+}
+
+export interface HostPageResponse {
+  host: Host;
+  metrics: HostMetrics;
+  episodes_geometry: EpisodeGeometry[];
+  episodes_experience: EpisodeExperience[];
+  top_guests: Array<{
+    guest_id: string;
+    guest_name: string;
+    appearances: number;
+    avg_impact: number;
+  }>;
+}
+
+// Guest Types
+export interface GuestMetrics {
+  avg_delta_entropy: number;
+  avg_delta_drift: number;
+  avg_impact_magnitude: number;
+  games_shifted_count: number;
+  dominant_game_influence: Game;
+  top_hosts: Array<{
+    host_id: string;
+    host_name: string;
+    appearances: number;
+    avg_impact: number;
+  }>;
+}
+
+export interface GuestEpisodeAppearance {
+  episode_id: string;
+  podcast_id: string;
+  podcast_title: string;
+  episode_title: string;
+  delta_entropy: number;
+  delta_drift: number;
+  game_shift?: { from: Game; to: Game };
+}
+
+export interface GuestPageResponse {
+  guest: Guest;
+  metrics: GuestMetrics;
+  appearances: number;
+  episodes: GuestEpisodeAppearance[];
+}
+
+// Episode type indicators
+export interface EpisodeWithType extends EpisodeExperience {
+  is_guest_episode: boolean;
+  guest_names?: string[];
+  entropy?: number;
+  drift?: number;
+}

@@ -7,11 +7,16 @@ import { getGuestImpact } from "@/lib/mock-data/metaspn";
 import { SemanticSpaceViewer } from "@/components/metaspn/semantic-space-viewer";
 import { ExperienceTimeline } from "@/components/metaspn/experience-timeline";
 import { GameDistributionChart } from "@/components/metaspn/game-distribution-chart";
+import { RadarChart } from "@/components/metaspn/radar-chart";
+import { TrajectoryChart } from "@/components/metaspn/trajectory-chart";
 import { GuestImpactScatter } from "@/components/metaspn/guest-impact-scatter";
+import { GuestImpactBars } from "@/components/metaspn/guest-impact-bars";
+import { EpisodeList } from "@/components/metaspn/episode-list";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import type { PodcastOverviewResponse } from "@/lib/types/metaspn";
+import type { PodcastOverviewResponse, EpisodeWithType } from "@/lib/types/metaspn";
+import { GAME_COLORS } from "@/lib/constants/game-colors";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -85,6 +90,28 @@ export default function PodcastPage({ params }: PageProps) {
     Math.floor((i + 1) * (episodes_experience.length / Math.max(1, metrics.phase_count)))
   );
 
+  // Prepare episodes with type information for trajectory charts
+  const episodesWithType: EpisodeWithType[] = episodes_experience.map(exp => {
+    const geometry = episodes_geometry.find(g => g.episode_id === exp.episode_id);
+    // Mock: assume 30% are guest episodes
+    const isGuest = Math.random() < 0.3;
+    return {
+      ...exp,
+      is_guest_episode: isGuest,
+      entropy: exp.rolling_entropy ?? metrics.entropy_mean,
+      drift: 0.3 + Math.random() * 0.4, // Mock drift value
+      guest_names: isGuest ? ['Guest Name'] : undefined,
+    };
+  });
+
+  // Calculate summary stats for geometry
+  const entropyValues = episodes_geometry.map(() => metrics.entropy_mean);
+  const driftValues = episodes_geometry.map(() => 0.3 + Math.random() * 0.4);
+  const minEntropy = Math.min(...entropyValues, 0);
+  const maxEntropy = Math.max(...entropyValues, 2.5);
+  const minDrift = Math.min(...driftValues, 0);
+  const maxDrift = Math.max(...driftValues, 1);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -131,10 +158,10 @@ export default function PodcastPage({ params }: PageProps) {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 font-mono text-sm border-b-2 transition-colors whitespace-nowrap ${
+              className={`px-4 py-2 font-mono text-sm border-b-2 transition-all whitespace-nowrap relative ${
                 activeTab === tab
-                  ? 'border-primary text-primary'
-                  : 'border-transparent text-muted-foreground hover:text-foreground'
+                  ? 'border-primary text-primary font-semibold'
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/30'
               }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -145,31 +172,43 @@ export default function PodcastPage({ params }: PageProps) {
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="space-y-8">
-            {/* Show DNA Card */}
-            <div className="question-card">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Show DNA</h2>
+            {/* Show DNA Card with glow effect */}
+            <div className="question-card relative" style={{
+              boxShadow: `0 0 40px ${GAME_COLORS[metrics.dominant_game]}20`,
+              borderColor: `${GAME_COLORS[metrics.dominant_game]}40`,
+            }}>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Show DNA</h2>
               
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <div className="text-sm font-mono text-muted-foreground mb-2">Dominant Game</div>
-                  <div className="text-3xl font-bold font-mono text-primary mb-4">
-                    {metrics.dominant_game}
+              <div className="grid md:grid-cols-2 gap-8 mb-6">
+                <div className="space-y-4">
+                  <div>
+                    <div className="text-sm font-mono text-muted-foreground mb-2">Dominant Game</div>
+                    <div 
+                      className="text-4xl font-bold font-mono mb-4"
+                      style={{ color: GAME_COLORS[metrics.dominant_game] }}
+                    >
+                      {metrics.dominant_game}
+                    </div>
                   </div>
                   
-                  <div className="text-sm font-mono text-muted-foreground mb-2">Experience Type</div>
-                  <div className="text-xl font-semibold text-foreground mb-4">
-                    {metrics.experience_type}
+                  <div>
+                    <div className="text-sm font-mono text-muted-foreground mb-2">Experience Type</div>
+                    <div className="text-xl font-semibold text-foreground mb-4">
+                      {metrics.experience_type}
+                    </div>
                   </div>
                   
-                  <div className="text-sm font-mono text-muted-foreground mb-2">Experience Score</div>
-                  <div className="text-3xl font-bold text-foreground">
-                    {metrics.experience_score_final.toFixed(0)}/100
+                  <div>
+                    <div className="text-sm font-mono text-muted-foreground mb-2">Experience Score</div>
+                    <div className="text-3xl font-bold text-foreground">
+                      {metrics.experience_score_final.toFixed(0)}/100
+                    </div>
                   </div>
                 </div>
                 
                 <div>
                   <div className="text-sm font-mono text-muted-foreground mb-2">Summary</div>
-                  <p className="text-foreground leading-relaxed">
+                  <p className="text-foreground leading-relaxed text-lg">
                     {podcast.title} is a <strong>{metrics.experience_type}</strong> {metrics.dominant_game} show with{' '}
                     {metrics.experience_type === 'Convergent' ? 'extreme coherence' : 'high exploration'} and{' '}
                     {metrics.margin_mean > 0.6 ? 'high' : metrics.margin_mean > 0.4 ? 'moderate' : 'low'} separation.
@@ -177,7 +216,9 @@ export default function PodcastPage({ params }: PageProps) {
                 </div>
               </div>
               
-              <GameDistributionChart distribution={metrics.game_distribution} />
+              <div className="mt-6">
+                <RadarChart distribution={metrics.game_distribution} width={400} height={400} />
+              </div>
             </div>
 
             {/* Semantic Space */}
@@ -205,56 +246,31 @@ export default function PodcastPage({ params }: PageProps) {
 
         {/* Episodes Tab */}
         {activeTab === 'episodes' && (
-          <div className="space-y-4">
-            {episodes_geometry.map((geometry, idx) => {
+          <EpisodeList
+            episodes={episodes_geometry.map((geometry, idx) => {
               const episode = episodes_experience.find(e => e.episode_id === geometry.episode_id);
-              return (
-                <Link
-                  key={geometry.episode_id}
-                  href={`/episode/${encodeURIComponent(geometry.episode_id)}`}
-                  className="block question-card lift-on-hover"
-                >
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-mono border border-primary/30">
-                          {geometry.primary_game}
-                        </span>
-                        {geometry.secondary_game && (
-                          <span className="px-2 py-1 bg-muted text-muted-foreground text-xs font-mono border border-border">
-                            {geometry.secondary_game}
-                          </span>
-                        )}
-                        {geometry.boundary_flag && (
-                          <span className="px-2 py-1 bg-destructive/20 text-destructive text-xs font-mono border border-destructive/30">
-                            Boundary
-                          </span>
-                        )}
-                      </div>
-                      <div className="font-semibold text-foreground mb-1">
-                        Episode {idx + 1}
-                      </div>
-                      {episode && (
-                        <div className="text-sm text-muted-foreground">
-                          Experience: {episode.experience_score.toFixed(1)}
-                        </div>
-                      )}
-                    </div>
-                    <div className="text-sm font-mono text-muted-foreground">
-                      Margin: {geometry.margin.toFixed(2)}
-                    </div>
-                  </div>
-                </Link>
-              );
+              const episodeWithType = episodesWithType.find(e => e.episode_id === geometry.episode_id);
+              return {
+                episode_id: geometry.episode_id,
+                geometry,
+                experience: episode,
+                episode_number: idx + 1,
+                is_guest_episode: episodeWithType?.is_guest_episode ?? false,
+                guest_names: episodeWithType?.guest_names,
+              };
             })}
-          </div>
+            podcastId={id}
+            layout="list"
+            showFilters={true}
+            showSort={true}
+          />
         )}
 
         {/* Trajectory Tab */}
         {activeTab === 'trajectory' && (
           <div className="space-y-8">
             <div className="question-card">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Experience Trajectory</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Experience Score Over Time</h2>
               <ExperienceTimeline
                 episodes={episodes_experience}
                 phaseBoundaries={phaseBoundaries}
@@ -262,13 +278,25 @@ export default function PodcastPage({ params }: PageProps) {
             </div>
 
             <div className="question-card">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Game Distribution Over Time</h2>
-              <p className="text-sm text-muted-foreground mb-4">
-                How the show's game distribution evolved over time
-              </p>
-              <div className="h-64 flex items-center justify-center border border-border bg-muted/20">
-                <p className="text-muted-foreground">Stacked area chart visualization (coming soon)</p>
-              </div>
+              <TrajectoryChart
+                episodes={episodesWithType}
+                metric="entropy"
+                title="Entropy Over Time"
+                yAxisLabel="Entropy"
+                width={800}
+                height={250}
+              />
+            </div>
+
+            <div className="question-card">
+              <TrajectoryChart
+                episodes={episodesWithType}
+                metric="drift"
+                title="Drift Over Time"
+                yAxisLabel="Drift"
+                width={800}
+                height={250}
+              />
             </div>
           </div>
         )}
@@ -277,58 +305,89 @@ export default function PodcastPage({ params }: PageProps) {
         {activeTab === 'guests' && (
           <div className="space-y-8">
             <div className="question-card">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Guest Impact Analysis</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Guest Impact Vectors</h2>
               <p className="text-sm text-muted-foreground mb-6">
                 Not all guests are equal—some sharpen your show, some blur it.
               </p>
+              {guestData.guests.length > 0 ? (
+                <GuestImpactBars guests={guestData.guests} />
+              ) : (
+                <div className="p-8 border border-border bg-muted/20 text-center">
+                  <p className="text-muted-foreground">No guest data available yet.</p>
+                </div>
+              )}
+            </div>
+
+            <div className="question-card">
+              <h2 className="text-2xl font-bold text-foreground mb-4">Guest Impact Scatter</h2>
               <GuestImpactScatter guests={guestData.guests} />
             </div>
 
             <div className="question-card">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Guest Leaderboards</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Top Guests</h2>
               
               <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Top Geometry Amplifiers</h3>
-                  <div className="space-y-2">
-                    {[...guestData.guests]
-                      .filter(g => g.avg_delta_margin > 0)
-                      .sort((a, b) => b.avg_delta_margin - a.avg_delta_margin)
-                      .slice(0, 5)
-                      .map(guest => (
-                        <div key={guest.guest_id} className="flex justify-between items-center p-3 border border-border bg-muted/20">
-                          <div>
-                            <div className="font-semibold text-foreground">{guest.guest_name}</div>
-                            <div className="text-sm text-muted-foreground">{guest.appearances} appearances</div>
-                          </div>
-                          <div className="text-sm font-mono text-primary">
-                            +{guest.avg_delta_margin.toFixed(3)} margin
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div>
+                {guestData.guests.length > 0 ? (
+                  <>
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground mb-3">Top Geometry Amplifiers</h3>
+                      <div className="space-y-2">
+                        {[...guestData.guests]
+                          .filter(g => g.avg_delta_margin > 0)
+                          .sort((a, b) => b.avg_delta_margin - a.avg_delta_margin)
+                          .slice(0, 5)
+                          .map(guest => (
+                            <Link
+                              key={guest.guest_id}
+                              href={`/guest/${encodeURIComponent(guest.guest_id)}`}
+                              className="block p-3 border border-border bg-muted/20 hover:bg-muted/40 transition-colors"
+                            >
+                              <div className="flex justify-between items-center">
+                                <div>
+                                  <div className="font-semibold text-foreground">{guest.guest_name}</div>
+                                  <div className="text-sm text-muted-foreground">{guest.appearances} appearances</div>
+                                </div>
+                                <div className="text-sm font-mono text-primary">
+                                  +{guest.avg_delta_margin.toFixed(3)} margin
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                      </div>
+                    </div>
 
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Top Distorters</h3>
-                  <div className="space-y-2">
-                    {[...guestData.guests]
-                      .filter(g => g.avg_delta_margin < 0)
-                      .sort((a, b) => a.avg_delta_margin - b.avg_delta_margin)
-                      .slice(0, 5)
-                      .map(guest => (
-                        <div key={guest.guest_id} className="flex justify-between items-center p-3 border border-border bg-muted/20">
-                          <div>
-                            <div className="font-semibold text-foreground">{guest.guest_name}</div>
-                            <div className="text-sm text-muted-foreground">{guest.appearances} appearances</div>
-                          </div>
-                          <div className="text-sm font-mono text-destructive">
-                            {guest.avg_delta_margin.toFixed(3)} margin
-                          </div>
-                        </div>
-                      ))}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground mb-3">Top Distorters</h3>
+                      <div className="space-y-2">
+                        {[...guestData.guests]
+                          .filter(g => g.avg_delta_margin < 0)
+                          .sort((a, b) => a.avg_delta_margin - b.avg_delta_margin)
+                          .slice(0, 5)
+                          .map(guest => (
+                            <Link
+                              key={guest.guest_id}
+                              href={`/guest/${encodeURIComponent(guest.guest_id)}`}
+                              className="block p-3 border border-border bg-muted/20 hover:bg-muted/40 transition-colors"
+                            >
+                              <div className="flex justify-between items-center">
+                                <div>
+                                  <div className="font-semibold text-foreground">{guest.guest_name}</div>
+                                  <div className="text-sm text-muted-foreground">{guest.appearances} appearances</div>
+                                </div>
+                                <div className="text-sm font-mono text-destructive">
+                                  {guest.avg_delta_margin.toFixed(3)} margin
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="p-8 border border-border bg-muted/20 text-center">
+                    <p className="text-muted-foreground">No guest data available yet.</p>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -336,18 +395,51 @@ export default function PodcastPage({ params }: PageProps) {
 
         {/* Geometry Tab */}
         {activeTab === 'geometry' && (
-          <div className="question-card">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Semantic Geometry</h2>
-            <p className="text-sm text-muted-foreground mb-6">
-              Explore the semantic space of all episodes. Click on any episode to view details.
-            </p>
-            <SemanticSpaceViewer
-              episodes={episodes_geometry}
-              centroids={centroids}
-              onEpisodeClick={(episodeId) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
-              width={800}
-              height={800}
-            />
+          <div className="space-y-8">
+            <div className="question-card">
+              <h2 className="text-2xl font-bold text-foreground mb-4">Semantic Geometry</h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                Explore the semantic space of all episodes. Click on any episode to view details.
+              </p>
+              <SemanticSpaceViewer
+                episodes={episodes_geometry}
+                centroids={centroids}
+                onEpisodeClick={(episodeId) => router.push(`/episode/${encodeURIComponent(episodeId)}`)}
+                width={800}
+                height={800}
+              />
+            </div>
+
+            {/* Summary Stats */}
+            <div className="question-card">
+              <h2 className="text-2xl font-bold text-foreground mb-4">Geometric Summary</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <div className="text-sm font-mono text-muted-foreground mb-2">Entropy Range</div>
+                  <div className="text-lg font-mono text-foreground">
+                    {minEntropy.toFixed(2)} - {maxEntropy.toFixed(2)}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm font-mono text-muted-foreground mb-2">Drift Range</div>
+                  <div className="text-lg font-mono text-foreground">
+                    {minDrift.toFixed(2)} - {maxDrift.toFixed(2)}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm font-mono text-muted-foreground mb-2">Total Episodes</div>
+                  <div className="text-lg font-mono text-foreground">
+                    {episodes_geometry.length}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm font-mono text-muted-foreground mb-2">Boundary Episodes</div>
+                  <div className="text-lg font-mono text-foreground">
+                    {episodes_geometry.filter(e => e.boundary_flag).length} ({((episodes_geometry.filter(e => e.boundary_flag).length / episodes_geometry.length) * 100).toFixed(1)}%)
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </main>

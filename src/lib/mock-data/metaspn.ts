@@ -16,6 +16,12 @@ import type {
   EpisodePageResponse,
   GuestImpactResponse,
   CompareResponse,
+  Host,
+  HostMetrics,
+  HostPageResponse,
+  GuestMetrics,
+  GuestPageResponse,
+  GuestEpisodeAppearance,
 } from '../types/metaspn';
 
 const GAMES: Game[] = ['G1', 'G2', 'G3', 'G4', 'G5', 'G6'];
@@ -460,4 +466,243 @@ export function getBoundaryEpisodes() {
   });
   
   return episodes;
+}
+
+// Mock Hosts
+export const MOCK_HOSTS: Host[] = [
+  {
+    id: 'host-1',
+    name: 'Jenny Blake',
+    podcast_ids: ['pod-1'],
+  },
+  {
+    id: 'host-2',
+    name: 'Tim Ferriss',
+    podcast_ids: ['pod-2'],
+  },
+  {
+    id: 'host-3',
+    name: 'Sam Parr & Shaan Puri',
+    podcast_ids: ['pod-3'],
+  },
+  {
+    id: 'host-4',
+    name: 'Guy Raz',
+    podcast_ids: ['pod-4'],
+  },
+  {
+    id: 'host-5',
+    name: 'Shane Parrish',
+    podcast_ids: ['pod-5'],
+  },
+];
+
+// Generate mock host data
+export function generateMockHostData(hostId: string): HostPageResponse | null {
+  const host = MOCK_HOSTS.find(h => h.id === hostId);
+  if (!host) return null;
+
+  // Aggregate data from all podcasts for this host
+  const allEpisodes: Episode[] = [];
+  const allGeometries: EpisodeGeometry[] = [];
+  const allExperiences: EpisodeExperience[] = [];
+  const gameCounts: Record<Game, number> = { G1: 0, G2: 0, G3: 0, G4: 0, G5: 0, G6: 0 };
+  let soloCount = 0;
+  let guestCount = 0;
+  const soloEntropies: number[] = [];
+  const guestEntropies: number[] = [];
+  const soloDrifts: number[] = [];
+  const guestDrifts: number[] = [];
+  const soloScores: number[] = [];
+  const guestScores: number[] = [];
+  const entropies: number[] = [];
+  const drifts: number[] = [];
+
+  host.podcast_ids.forEach(podcastId => {
+    const overview = getPodcastOverview(podcastId);
+    if (!overview) return;
+
+    overview.episodes_geometry.forEach((geom, idx) => {
+      allGeometries.push(geom);
+      gameCounts[geom.primary_game]++;
+      
+      const exp = overview.episodes_experience[idx];
+      if (exp) {
+        allExperiences.push(exp);
+        entropies.push(exp.rolling_entropy ?? 0.5);
+        drifts.push(0.3 + Math.random() * 0.4); // Mock drift
+        
+        // Randomly assign solo vs guest (70% solo)
+        const isGuest = Math.random() < 0.3;
+        if (isGuest) {
+          guestCount++;
+          guestEntropies.push(exp.rolling_entropy ?? 0.5);
+          guestDrifts.push(0.3 + Math.random() * 0.4);
+          guestScores.push(exp.experience_score);
+        } else {
+          soloCount++;
+          soloEntropies.push(exp.rolling_entropy ?? 0.5);
+          soloDrifts.push(0.3 + Math.random() * 0.4);
+          soloScores.push(exp.experience_score);
+        }
+      }
+    });
+  });
+
+  const totalEpisodes = allGeometries.length;
+  const dominantGames = (Object.entries(gameCounts) as [Game, number][])
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 2)
+    .map(([game]) => game);
+
+  const entropyRange: [number, number] = [
+    Math.min(...entropies, 0),
+    Math.max(...entropies, 2.5),
+  ];
+  const driftRange: [number, number] = [
+    Math.min(...drifts, 0),
+    Math.max(...drifts, 1),
+  ];
+
+  const game_distribution: Record<Game, number> = { G1: 0, G2: 0, G3: 0, G4: 0, G5: 0, G6: 0 };
+  GAMES.forEach(game => {
+    game_distribution[game] = totalEpisodes > 0 ? (100 * gameCounts[game]) / totalEpisodes : 0;
+  });
+
+  const experienceType: ExperienceType = dominantGames.length === 1 && gameCounts[dominantGames[0]!]! / totalEpisodes >= 0.6
+    ? 'Convergent'
+    : 'Boundary';
+
+  const metrics: HostMetrics = {
+    total_episodes: totalEpisodes,
+    years_active: Math.ceil(totalEpisodes / 12), // Rough estimate
+    dominant_games: dominantGames,
+    experience_type: experienceType,
+    entropy_range: entropyRange,
+    drift_range: driftRange,
+    solo_episodes: {
+      count: soloCount,
+      avg_entropy: soloEntropies.length > 0 ? soloEntropies.reduce((a, b) => a + b, 0) / soloEntropies.length : 0,
+      avg_drift: soloDrifts.length > 0 ? soloDrifts.reduce((a, b) => a + b, 0) / soloDrifts.length : 0,
+      avg_experience_score: soloScores.length > 0 ? soloScores.reduce((a, b) => a + b, 0) / soloScores.length : 0,
+    },
+    guest_episodes: {
+      count: guestCount,
+      avg_entropy: guestEntropies.length > 0 ? guestEntropies.reduce((a, b) => a + b, 0) / guestEntropies.length : 0,
+      avg_drift: guestDrifts.length > 0 ? guestDrifts.reduce((a, b) => a + b, 0) / guestDrifts.length : 0,
+      avg_experience_score: guestScores.length > 0 ? guestScores.reduce((a, b) => a + b, 0) / guestScores.length : 0,
+    },
+    game_distribution,
+  };
+
+  // Generate top guests (mock)
+  const topGuests = MOCK_GUESTS.slice(0, 5).map((guest, idx) => ({
+    guest_id: guest.id,
+    guest_name: guest.name,
+    appearances: Math.floor(Math.random() * 10) + 1,
+    avg_impact: (Math.random() - 0.5) * 0.5,
+  }));
+
+  return {
+    host,
+    metrics,
+    episodes_geometry: allGeometries,
+    episodes_experience: allExperiences,
+    top_guests: topGuests,
+  };
+}
+
+// Generate mock guest data
+export function generateMockGuestData(guestId: string): GuestPageResponse | null {
+  const guest = MOCK_GUESTS.find(g => g.id === guestId);
+  if (!guest) return null;
+
+  // Generate mock appearances across podcasts
+  const appearances = Math.floor(Math.random() * 15) + 3;
+  const episodes: GuestEpisodeAppearance[] = [];
+  const deltaEntropies: number[] = [];
+  const deltaDrifts: number[] = [];
+  const gameShifts: Array<{ from: Game; to: Game }> = [];
+  const hostAppearances: Record<string, { host_name: string; count: number; impacts: number[] }> = {};
+
+  for (let i = 0; i < appearances; i++) {
+    const podcast = MOCK_PODCASTS[Math.floor(Math.random() * MOCK_PODCASTS.length)]!;
+    const episodeId = `ep-${podcast.id}-${i + 1}`;
+    const deltaEntropy = (Math.random() - 0.5) * 0.4;
+    const deltaDrift = (Math.random() - 0.5) * 0.3;
+    
+    deltaEntropies.push(deltaEntropy);
+    deltaDrifts.push(deltaDrift);
+
+    // Random game shift (30% chance)
+    let gameShift: { from: Game; to: Game } | undefined;
+    if (Math.random() < 0.3) {
+      const from = GAMES[Math.floor(Math.random() * GAMES.length)]!;
+      const to = GAMES.filter(g => g !== from)[Math.floor(Math.random() * (GAMES.length - 1))]!;
+      gameShift = { from, to };
+      gameShifts.push(gameShift);
+    }
+
+    episodes.push({
+      episode_id: episodeId,
+      podcast_id: podcast.id,
+      podcast_title: podcast.title,
+      episode_title: `Episode ${i + 1}`,
+      delta_entropy: deltaEntropy,
+      delta_drift: deltaDrift,
+      game_shift: gameShift,
+    });
+
+    // Track host appearances
+    const host = MOCK_HOSTS.find(h => h.podcast_ids.includes(podcast.id));
+    if (host) {
+      if (!hostAppearances[host.id]) {
+        hostAppearances[host.id] = {
+          host_name: host.name,
+          count: 0,
+          impacts: [],
+        };
+      }
+      hostAppearances[host.id]!.count++;
+      hostAppearances[host.id]!.impacts.push(Math.abs(deltaEntropy) + Math.abs(deltaDrift));
+    }
+  }
+
+  const avgDeltaEntropy = deltaEntropies.reduce((a, b) => a + b, 0) / deltaEntropies.length;
+  const avgDeltaDrift = deltaDrifts.reduce((a, b) => a + b, 0) / deltaDrifts.length;
+  const avgImpactMagnitude = [...deltaEntropies, ...deltaDrifts]
+    .map(v => Math.abs(v))
+    .reduce((a, b) => a + b, 0) / (deltaEntropies.length + deltaDrifts.length);
+
+  // Determine dominant game influence (most common "to" in shifts, or random)
+  const shiftTos = gameShifts.map(s => s.to);
+  const gameInfluenceCounts: Record<Game, number> = { G1: 0, G2: 0, G3: 0, G4: 0, G5: 0, G6: 0 };
+  shiftTos.forEach(game => gameInfluenceCounts[game]++);
+  const dominantGameInfluence = (Object.entries(gameInfluenceCounts) as [Game, number][])
+    .sort((a, b) => b[1] - a[1])[0]?.[0] ?? GAMES[Math.floor(Math.random() * GAMES.length)]!;
+
+  const topHosts = Object.entries(hostAppearances)
+    .map(([host_id, data]) => ({
+      host_id,
+      host_name: data.host_name,
+      appearances: data.count,
+      avg_impact: data.impacts.reduce((a, b) => a + b, 0) / data.impacts.length,
+    }))
+    .sort((a, b) => b.appearances - a.appearances);
+
+  const metrics: GuestMetrics = {
+    avg_delta_entropy: avgDeltaEntropy,
+    avg_delta_drift: avgDeltaDrift,
+    avg_impact_magnitude: avgImpactMagnitude,
+    games_shifted_count: gameShifts.length,
+    dominant_game_influence: dominantGameInfluence,
+    top_hosts: topHosts,
+  };
+
+  return {
+    guest,
+    metrics,
+    appearances,
+    episodes,
+  };
 }

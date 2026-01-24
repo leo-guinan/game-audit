@@ -1,25 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import type { EpisodeGeometry, PodcastManifolds } from "@/lib/types/metaspn";
-import { Game } from "@/lib/types/metaspn";
-
-interface SemanticSpaceViewerProps {
-  episodes: EpisodeGeometry[];
-  centroids: PodcastManifolds['games'];
-  onEpisodeClick?: (episodeId: string) => void;
-  width?: number;
-  height?: number;
-}
-
-const GAME_COLORS: Record<Game, string> = {
-  G1: '#c41e3a', // red
-  G2: '#d4af37', // gold
-  G3: '#4a90e2', // blue
-  G4: '#9d7cd8', // purple
-  G5: '#50c878', // green
-  G6: '#f4a460', // sandy brown
-};
+import type { EpisodeGeometry, PodcastManifolds, Game } from "@/lib/types/metaspn";
+import { GAME_COLORS } from "@/lib/constants/game-colors";
 
 export function SemanticSpaceViewer({
   episodes,

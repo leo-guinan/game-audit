@@ -354,6 +354,7 @@ button:disabled {
   padding: 3rem 2.5rem;
   margin: 2rem 0;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .question-card::before {
@@ -364,6 +365,22 @@ button:disabled {
   width: 3px;
   height: 100%;
   background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%);
+}
+
+.question-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+/* Enhanced card with glow effect */
+.question-card.glow {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+  border-color: var(--gold);
+}
+
+.question-card.glow::before {
+  width: 4px;
+  box-shadow: 0 0 10px var(--gold);
 }
 
 .result-card {
@@ -902,4 +919,73 @@ footer {
   .games-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Enhanced tab navigation */
+.tab-nav {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.tab-nav button {
+  padding: 0.75rem 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+}
+
+.tab-nav button:hover {
+  color: var(--foreground);
+  border-bottom-color: var(--border);
+}
+
+.tab-nav button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 600;
+}
+
+/* Chart container consistency */
+.chart-container {
+  border: 1px solid var(--border);
+  background: var(--muted);
+  background-opacity: 0.2;
+  position: relative;
+}
+
+/* Stat card */
+.stat-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--mono);
+  color: var(--foreground);
+}
+
+.stat-card .stat-label {
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-foreground);
+  margin-top: 0.5rem;
 }
