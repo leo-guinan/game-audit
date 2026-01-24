@@ -151,6 +151,14 @@ export function getEpisodeAppearances(episodeId: string): GuestAppearanceData[] 
 }
 
 /**
+ * Get all guest appearances for episodes in a podcast
+ */
+export function getPodcastGuestAppearances(podcastId: string): GuestAppearanceData[] {
+  const appearances = loadGuestAppearances();
+  return appearances.filter(a => a.podcast_id === podcastId);
+}
+
+/**
  * Check if static data files exist
  */
 export function hasStaticData(): boolean {

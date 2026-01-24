@@ -214,6 +214,11 @@ export function EpisodeList({
                 <div className="font-semibold text-foreground">
                   {episode.title || `Episode ${episode.episode_number ?? idx + 1}`}
                 </div>
+                {episode.guest_names && episode.guest_names.length > 0 && (
+                  <div className="text-sm text-muted-foreground mb-1">
+                    with {episode.guest_names.join(', ')}
+                  </div>
+                )}
                 {episode.experience && (
                   <div className="text-sm text-muted-foreground">
                     Score: {episode.experience.experience_score.toFixed(1)}

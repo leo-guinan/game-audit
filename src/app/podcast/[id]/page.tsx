@@ -90,17 +90,59 @@ export default function PodcastPage({ params }: PageProps) {
     Math.floor((i + 1) * (episodes_experience.length / Math.max(1, metrics.phase_count)))
   );
 
+  // Fetch episode titles and guest appearances
+  const [episodeTitles, setEpisodeTitles] = useState<Map<string, string>>(new Map());
+  const [guestAppearancesByEpisode, setGuestAppearancesByEpisode] = useState<Map<string, string[]>>(new Map());
+  
+  useEffect(() => {
+    // Fetch episode titles
+    fetch(`/api/metaspn/episodes?podcast_id=${encodeURIComponent(id)}`)
+      .then(r => r.json())
+      .then(response => {
+        const titlesMap = new Map<string, string>();
+        if (response.episodes && Array.isArray(response.episodes)) {
+          response.episodes.forEach((ep: { id: string; title: string }) => {
+            if (ep.id && ep.title) {
+              titlesMap.set(ep.id, ep.title);
+            }
+          });
+        }
+        setEpisodeTitles(titlesMap);
+      })
+      .catch(() => {
+        // If API fails, titles will remain empty and fallback to episode number
+      });
+    
+    // Fetch guest appearances
+    fetch(`/api/metaspn/podcast/${encodeURIComponent(id)}/guests`)
+      .then(r => r.json())
+      .then(response => {
+        const appearancesMap = new Map<string, string[]>();
+        if (response.guest_appearances) {
+          Object.entries(response.guest_appearances).forEach(([episodeId, names]) => {
+            if (Array.isArray(names)) {
+              appearancesMap.set(episodeId, names);
+            }
+          });
+        }
+        setGuestAppearancesByEpisode(appearancesMap);
+      })
+      .catch(() => {
+        // If API fails, guest appearances will remain empty
+      });
+  }, [id]);
+
   // Prepare episodes with type information for trajectory charts
   const episodesWithType: EpisodeWithType[] = episodes_experience.map(exp => {
     const geometry = episodes_geometry.find(g => g.episode_id === exp.episode_id);
-    // Mock: assume 30% are guest episodes
-    const isGuest = Math.random() < 0.3;
+    const guestNames = guestAppearancesByEpisode.get(exp.episode_id) || [];
+    const isGuest = guestNames.length > 0;
     return {
       ...exp,
       is_guest_episode: isGuest,
+      guest_names: guestNames.length > 0 ? guestNames : undefined,
       entropy: exp.rolling_entropy ?? metrics.entropy_mean,
       drift: 0.3 + Math.random() * 0.4, // Mock drift value
-      guest_names: isGuest ? ['Guest Name'] : undefined,
     };
   });
 
@@ -250,11 +292,13 @@ export default function PodcastPage({ params }: PageProps) {
             episodes={episodes_geometry.map((geometry, idx) => {
               const episode = episodes_experience.find(e => e.episode_id === geometry.episode_id);
               const episodeWithType = episodesWithType.find(e => e.episode_id === geometry.episode_id);
+              const episodeTitle = episodeTitles.get(geometry.episode_id);
               return {
                 episode_id: geometry.episode_id,
                 geometry,
                 experience: episode,
                 episode_number: idx + 1,
+                title: episodeTitle || undefined,
                 is_guest_episode: episodeWithType?.is_guest_episode ?? false,
                 guest_names: episodeWithType?.guest_names,
               };
